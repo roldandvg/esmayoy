@@ -1,0 +1,216 @@
+<div id="column_left">
+	<ul>
+		<li class='left'>{{form3.nhijos.label}}</li>
+		<li class='right'>
+			{{form3.nhijos}}<label id="helpnhi" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpnhi|safe}}
+			<div class="errores" id="e2">{{form3.nhijos.errors}}</div>
+		</li>
+		<li class='left'>{{form3.costeo_est.label}}</li>
+		<li class='right'>
+			{{form3.costeo_est}}<label id="helpces" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpces|safe}}
+			<div class="errores" id="e3">{{form3.costeo_est.errors}}</div>
+		</li>
+		<li class='left'>{{form3.cond_alojamiento.label}}</li>
+		<li class='right'>
+			{{form3.cond_alojamiento}}<label id="helpcal" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpcal|safe}}
+			<div class="errores" id="e4">{{form3.cond_alojamiento.errors}}</div>
+		</li>
+		<li class='left'>{{form3.nivel_m.label}}</li>
+		<li class='right'>
+			{{form3.nivel_m}}<label id="helpnim" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpnim|safe}}
+			<div class="errores" id="e5">{{form3.nivel_m.errors}}</div>
+		</li>
+		<li class='left'>{{form3.trabaja.label}}</li>
+		<li class='right'>
+			{{form3.trabaja}}<label id="helptra" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helptra|safe}}
+			<div class="errores" id="e6">{{form3.trabaja.errors}}</div>
+		</li>
+		<li class='left'>{{form3.empresa.label}}</li>
+		<li class='right'>
+			{{form3.empresa}}<label id="helpemp" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpemp|safe}}
+			{% if not form3.empresa.errors %}<br><br><br><br>{% endif %}
+			<div class="errores" id="e7">{{form3.empresa.errors}}</div>
+		</li>
+		<li class='left'>{{form3.telefonoe.label}}</li>
+		<li class='right'>
+			{{form3.telefonoe}}<label id="helptlfe" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helptlfe|safe}}
+			<div class="errores" id="e8">{{form3.telefonoe.errors}}</div>
+		</li>
+		<li class='left'>{{form3.discapacidad.label}}</li>
+		<li class='right'>
+			{{form3.discapacidad}}<label id="helpdisc" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpdisc|safe}}
+			<div class="errores" id="e9">{{form3.discapacidad.errors}}</div>
+		</li>
+		<li class='left'>{{form3.indigena.label}}</li>
+		<li class='right'>
+			{{form3.indigena}}<label id="helpindi" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpindi|safe}}
+			<div class="errores" id="e10">{{form3.indigena.errors}}</div>
+		</li>
+	</ul>
+</div>
+<div id="column_right">
+	<ul>
+		<li class='left'>{{form3.mtraslado.label}}</li>
+		<li class='right'>
+			{{form3.mtraslado}}<label id="helpmtr" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpmtr|safe}}
+			<div class="errores" id="e12">{{form3.mtraslado.errors}}</div>
+		</li>
+		<li class='left'>{{form3.tipovivienda.label}}</li>
+		<li class='right'>
+			{{form3.tipovivienda}}<label id="helptvi" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helptvi|safe}}
+			<div class="errores" id="e13">{{form3.tipovivienda.errors}}</div>
+		</li>
+		<li class='left'>{{form3.monto_ingreso.label}}</li>
+		<li class='right'>
+			{{form3.monto_ingreso}}<label id="helpmin" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpmin|safe}}
+			<div class="errores" id="e14">{{form3.monto_ingreso.errors}}</div>
+		</li>
+		<li class='left'>{{form3.nivel_p.label}}</li>
+		<li class='right'>
+			{{form3.nivel_p}}<label id="helpnip" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpnip|safe}}
+			<div class="errores" id="e15">{{form3.nivel_p.errors}}</div>
+		</li>
+		<li class='left'>{{form3.tipo_empresa.label}}</li>
+		<li class='right'>
+			{{form3.tipo_empresa}}<label id="helptpem" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helptpem|safe}}
+			<div class="errores" id="e16">{{form3.tipo_empresa.errors}}</div>
+		</li>
+		<li class='left'>{{form3.direc_empresa.label}}</li>
+		<li class='right'>
+			{{form3.direc_empresa}}<label id="helpdiem" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpdiem|safe}}
+			<div class="errores" id="e17">{{form3.direc_empresa.errors}}</div>
+		</li>
+		<li class='left'>{{form3.obs_datse.label}}</li>
+		<li class='right'>
+			{{form3.obs_datse}}<label id="helpobsd" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpobsd|safe}}
+			<div class="errores" id="e18">{{form3.obs_datse.errors}}</div>
+		</li>
+		<li class='left'>{{form3.des_discapacidad.label}}</li>
+		<li class='right'>
+			{{form3.des_discapacidad}}<label id="helpdesd" class="ayudacampo">?</label><label class="req">*</label>
+			{{form3.helpdesd|safe}}
+			<div class="errores" id="e19">{{form3.des_discapacidad.errors}}</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+	$("#helpnhi").mouseenter(function(evento) {
+		$("#ayudanhi").css("display","block");
+	});
+	$("#helpnhi").mouseleave(function(evento) {
+		$("#ayudanhi").css("display","none");
+	});
+	$("#helpmtr").mouseenter(function(evento) {
+		$("#ayudamtr").css("display","block");
+	});
+	$("#helpmtr").mouseleave(function(evento) {
+		$("#ayudamtr").css("display","none");
+	});
+	$("#helpces").mouseenter(function(evento) {
+		$("#ayudaces").css("display","block");
+	});
+	$("#helpces").mouseleave(function(evento) {
+		$("#ayudaces").css("display","none");
+	});
+	$("#helptvi").mouseenter(function(evento) {
+		$("#ayudatvi").css("display","block");
+	});
+	$("#helptvi").mouseleave(function(evento) {
+		$("#ayudatvi").css("display","none");
+	});
+	$("#helpcal").mouseenter(function(evento) {
+		$("#ayudacal").css("display","block");
+	});
+	$("#helpcal").mouseleave(function(evento) {
+		$("#ayudacal").css("display","none");
+	});
+	$("#helpnim").mouseenter(function(evento) {
+		$("#ayudanim").css("display","block");
+	});
+	$("#helpnim").mouseleave(function(evento) {
+		$("#ayudanim").css("display","none");
+	});
+	$("#helpnip").mouseenter(function(evento) {
+		$("#ayudanip").css("display","block");
+	});
+	$("#helpnip").mouseleave(function(evento) {
+		$("#ayudanip").css("display","none");
+	});
+	$("#helpmin").mouseenter(function(evento) {
+		$("#ayudamin").css("display","block");
+	});
+	$("#helpmin").mouseleave(function(evento) {
+		$("#ayudamin").css("display","none");
+	});
+	$("#helptra").mouseenter(function(evento) {
+		$("#ayudatra").css("display","block");
+	});
+	$("#helptra").mouseleave(function(evento) {
+		$("#ayudatra").css("display","none");
+	});
+	$("#helptpem").mouseenter(function(evento) {
+		$("#ayudatpem").css("display","block");
+	});
+	$("#helptpem").mouseleave(function(evento) {
+		$("#ayudatpem").css("display","none");
+	});
+	$("#helpemp").mouseenter(function(evento) {
+		$("#ayudaemp").css("display","block");
+	});
+	$("#helpemp").mouseleave(function(evento) {
+		$("#ayudaemp").css("display","none");
+	});
+	$("#helpdiem").mouseenter(function(evento) {
+		$("#ayudadiem").css("display","block");
+	});
+	$("#helpdiem").mouseleave(function(evento) {
+		$("#ayudadiem").css("display","none");
+	});
+	$("#helptlfe").mouseenter(function(evento) {
+		$("#ayudatlfe").css("display","block");
+	});
+	$("#helptlfe").mouseleave(function(evento) {
+		$("#ayudatlfe").css("display","none");
+	});
+	$("#helpdisc").mouseenter(function(evento) {
+		$("#ayudadisc").css("display","block");
+	});
+	$("#helpdisc").mouseleave(function(evento) {
+		$("#ayudadisc").css("display","none");
+	});
+	$("#helpdesd").mouseenter(function(evento) {
+		$("#ayudadesd").css("display","block");
+	});
+	$("#helpdesd").mouseleave(function(evento) {
+		$("#ayudadesd").css("display","none");
+	});
+	$("#helpindi").mouseenter(function(evento) {
+		$("#ayudaindi").css("display","block");
+	});
+	$("#helpindi").mouseleave(function(evento) {
+		$("#ayudaindi").css("display","none");
+	});
+	$("#helpobsd").mouseenter(function(evento) {
+		$("#ayudaobsd").css("display","block");
+	});
+	$("#helpobsd").mouseleave(function(evento) {
+		$("#ayudaobsd").css("display","none");
+	});
+</script>

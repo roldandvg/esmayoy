@@ -1,0 +1,94 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url institucion.views.inicio %}">{% trans "institución" %}</a>
+	&#160;>&#160;<a href="{% url institucion.views.registrarCarrSed %}">{% trans "carrera por sede" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Carreras por Sede" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url institucion.views.registrarCarrSed %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url institucion.views.registrarCarrSed %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.sede.label}}</li>
+			<li class='right'>
+				{{form.sede}}<label id="helpsede" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.sede.errors}}</div>
+			</li>
+			<li class='left'>{{form.prefijo_sede.label}}</li>
+			<li class='right'>
+				{{form.prefijo_sede}}<label id="helpprefixsede" class="ayudacampo">?</label>
+				<div class="errores" id="e2">{{form.prefijo_sede.errors}}</div>
+			</li>
+			<li class='left'>{{form.nro_carnet.label}}</li>
+			<li class='right'>
+				{{form.nro_carnet}}<label id="helpnrocarnet" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.nro_carnet.errors}}</div>
+			</li>
+			<li class='left'>{{form.format_carnet.label}}</li>
+			<li class='right'>
+				{{form.format_carnet}}<label id="helpformatcarnet" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.format_carnet.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.carrera.label}}</li>
+			<li class='right'>
+				{{form.carrera}}<label id="helpcarr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.carrera.errors}}</div>
+			</li>
+			<li class='left'>{{form.prefijo_carrera.label}}</li>
+			<li class='right'>
+				{{form.prefijo_carrera}}<label id="helpprefixcarr" class="ayudacampo">?</label>
+				<div class="errores" id="e6">{{form.prefijo_carrera.errors}}</div>
+			</li>
+			<li class='left'>{{form.cant_carnet.label}}</li>
+			<li class='right'>
+				{{form.cant_carnet}}<label id="helpcantcarnet" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.cant_carnet.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{{form.modificar}}
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Carreras Registradas por Sede" %}<br/><br/></caption>
+				<col width="35%">
+				<col width="35%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "sede" %}</td>
+						<td class="borde_delgado">{% trans "carrera" %}</td>
+						<td class="borde_delgado">{% trans "nro de carnet" %}</td>
+						<td class="borde_delgado">{% trans "cant. carnet" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id}}">
+							<td class="borde_delgado">{{reg.sede.descripcion}}</td>
+							<td class="borde_delgado">{{reg.carrera.descripcion}}</td>
+							<td class="borde_delgado alineacioncent">{% if reg.prefijo_sede %}{{reg.sede.cod_sede}}{% endif %}{% if reg.prefijo_carrera %}{{reg.carrera.cod_carrera}}{% endif %}{{reg.nro_carnet}}</td>
+							<td class="borde_delgado alineacionder">{{reg.cant_carnet}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.institucion_mostrarDatosCarreraSede({'carrerasede':'{{reg.id}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('carrera_sede', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+Modo de uso: python install.py [OPCIONES]
+
+Opciones:
+	-h, --help
+		Muestra un listado de opciones que pueden ser suministradas como argumentos al script
+	-m, --man
+		Muestra la documentación de uso del script de instalación del PST Esmayoy
+	-p, --pasos-install
+		Indica los pasos a seguir para la instalación manual del PST Esmayoy
+	-l
+		Muestra los pre-requisitos necesarios para la instalación del PST Esmayoy
+	-v, --VERSION
+		Indica el número del versión del Proyecto Esmayoy
+	-c, --copyright
+		Muestra los terminos de la licencia bajo la cual se libera la aplicación Esmayoy

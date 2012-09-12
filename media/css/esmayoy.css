@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/*@import "estilo.css"*/
+
+body {
+	margin: 10px;
+	padding: 0;
+	background: #fff;
+	padding-bottom: 1px;
+	font-size: 11px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*
+ * Sección para los estilos del banner de la aplicación
+ */
+#banner {
+	height: 60px;
+	background-image: url(../images/base/cabecera.png);
+	background-repeat: repeat-x;
+}
+
+#banner .bannerLeft {
+	display: block;
+	width: auto;
+	float: left;
+	padding: 0 0 0 0;
+}
+
+#banner .bannerRight {
+	display: block;
+	width: auto;
+	float: right;
+	padding: 0 0 0 0;
+}
+
+/*
+ * Sección para los estilos a utilizar en el cuerpo de la aplicación
+ */
+#contenedor {
+	height:500px;
+	padding:10px;
+	background: #f0f0f0;
+	border: 1px solid #ccc;
+	overflow:auto;
+}
+
+#contenedor div#barra {
+	width:100%;
+	height:45px;
+	border-bottom:1px solid #ccc;
+}
+
+#contenedor div#barra div#logoApp {
+	float:left;
+}
+
+#contenedor div#barra .botones {
+	text-align:right;
+	width:70%;
+	float:right;
+}
+
+#contenedor div#barra .botones div#accion {
+	height:30px;
+}
+
+/*#contenedor div#barra .botones div#accion .btnAction {
+	border:1px solid #ccc; position:static;
+}*/
+
+#contenedor div#descModulo {
+	width:48%;
+	float:left;
+	font-size:12px;
+	text-align:justify;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#contenedor div#descModulo p {
+	text-indent:20px;
+	line-height:20px;
+}
+
+#contenedor div#opcionesModulo {
+	width:48%;
+	height:370px;
+	float:right;
+	background-color:#FFFFFF;
+	border: 1px solid #ccc;
+	padding:10px;
+}
+
+#contenedor div#opcionesModulo div.sep {
+	width:10px;
+	float:left;
+}
+
+#contenedor div#opcionesModulo div.seccion {
+	padding-top:20px;
+	width:90%;
+	clear:both;
+	color:#1982B5;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#contenedor div#opcionesModulo .itemMnu {
+	height:80px;
+	width:70px;
+	border: 1px solid #ccc;
+	text-align:center;
+	float:left;
+	margin-top:10px;
+}
+
+#contenedor div#opcionesModulo .itemMnu .imgItem {
+	height:50px;
+	width:50px;
+	cursor:pointer;
+}
+
+#contenedor div#opcionesModulo .itemMnu span {
+	color:#1982B5;
+}
+
+#contenedor div.titulo {
+	color:#1982B5;
+	font-size:18px;
+	font-weight:bold;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+
+/*
+ * Sección para el pie de página de la aplicación
+ */
+#footer  {
+	height:70px;
+	text-align: center;
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	margin-bottom:0px;
+}
+
+.imgBoton {
+	width:25px;
+	height:25px;
+}
+
+/**
+ * Sección de estilos de alineación
+ */
+.alineacionjust {
+  text-align:justify;
+}
+
+.alineacioncent {
+  text-align:center; 
+}
+
+.alineacionder {
+  text-align:right;
+}
+
+.alineacionizq {
+  text-align:left;
+}
+
+.alineacionmid {
+  vertical-align:middle;
+}
+
+.alineaciontop {
+  vertical-align: top;
+}
+
+.alineacionbot {
+  vertical-align: bottom;
+}

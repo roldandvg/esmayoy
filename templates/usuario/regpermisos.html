@@ -1,0 +1,32 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url usuario.views.registrarPermisosUsuario %}">{% trans "permiso usuario" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Permisos de Usuario" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url usuario.views.registrarPermisosUsuario %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url usuario.views.registrarPermisosUsuario %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.usuario.label}}</li>
+			<li class='right'>
+				{{form.usuario}}<label id="helpusr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.usuario.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul style="height:500px;">
+			<li class='left'>{{form.permiso.label}}<label id="helpperm" class="ayudacampo">?</label><label class="req">*</label></li>
+			<li class='right' style="height:500px;overflow:auto;">
+				{{form.permiso}}
+				<div class="errores" id="e2">{{form.permiso.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+{% endblock %}

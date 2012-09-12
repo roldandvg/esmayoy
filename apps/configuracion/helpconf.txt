@@ -1,0 +1,17 @@
+Modo de uso: python crearkey.py [OPCIONES]
+
+Opciones:
+	--help
+		Muestra un listado de opciones que pueden ser suministradas como argumentos al script
+	-m, --man
+		Muestra la documentación de uso del script de la creación de claves GPG del PST Esmayoy
+        -h
+                Establece el nombre del servidor de base de datos
+        -P
+                Establece el puerto de conexión de la base de datos
+        -b
+                Establece el nombre de la base de datos
+        -u
+                Establece el nombre del usuario con acceso a la base de datos
+        -p
+                Establece la contraseña del usuario

@@ -1,0 +1,144 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}
+	"loadCalendario('finicio','calfinicio');
+	loadCalendario('fculmina','calfculmina');"
+{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url academico.views.inicio %}">{% trans "académico" %}</a>
+	&#160;>&#160;<a href="{% url academico.views.registrarAnualidad %}">{% trans "anualidad" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Anualidad" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarAnualidad %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url academico.views.registrarAnualidad %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.idanualidad.label}}</li>
+			<li class='right'>
+				{{form.idanualidad}}<label id="helpid" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpid|safe}}
+				<div class="errores" id="e1">{{form.idanualidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.finicio.label}}</li>
+			<li class='right'>
+				{{form.finicio}}&#160;<img src="../../media/images/base/calendar.png" id="calfinicio" style="cursor:pointer"><label id="helpfini" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpfini|safe}}
+				<div class="errores" id="e2">{{form.finicio.errors}}</div>
+			</li>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpdes" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpdes|safe}}
+				<div class="errores" id="e3">{{form.descripcion.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpest" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpest|safe}}
+				<div class="errores" id="e4">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.fculmina.label}}</li>
+			<li class='right'>
+				{{form.fculmina}}&#160;<img src="../../media/images/base/calendar.png" id="calfculmina" style="cursor:pointer"><label id="helpfcul" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpfcul|safe}}
+				<div class="errores" id="e5">{{form.fculmina.errors}}</div>
+			</li>
+			<li class='left'>{{form.observaciones.label}}</li>
+			<li class='right'>
+				{{form.observaciones}}<label id="helpobs" class="ayudacampo">?</label>
+				{{form.helpobs|safe}}
+				<div class="errores" id="e6">{{form.observaciones.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Anualidades Registradas" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="25%">
+				<col width="25%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "fecha inicio" %}</td>
+						<td class="borde_delgado">{% trans "fecha fin" %}</td>
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "observaciones" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.idanualidad}}">
+							<td class="borde_delgado">{{reg.idanualidad}}</td>
+							<td class="borde_delgado">{{reg.finicio|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{{reg.fculmina|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado">{% if reg.observaciones %}{{reg.observaciones}}{% else %}Ninguna{% endif %}</td>
+							<td class="borde_delgado">{% if reg.estatus %}Activo{% else %}Inactivo{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.idanualidad}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('anualidad', '{{reg.idanualidad}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+	<script type="text/javascript">
+		/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+		$("#helpid").mouseenter(function(evento) {
+			$("#ayudaid").css("display","block");
+		});
+		$("#helpid").mouseleave(function(evento) {
+			$("#ayudaid").css("display","none");
+		});
+		$("#helpfini").mouseenter(function(evento) {
+			$("#ayudafini").css("display","block");
+		});
+		$("#helpfini").mouseleave(function(evento) {
+			$("#ayudafini").css("display","none");
+		});
+		$("#helpdes").mouseenter(function(evento) {
+			$("#ayudades").css("display","block");
+		});
+		$("#helpdes").mouseleave(function(evento) {
+			$("#ayudades").css("display","none");
+		});
+		$("#helpest").mouseenter(function(evento) {
+			$("#ayudaest").css("display","block");
+		});
+		$("#helpest").mouseleave(function(evento) {
+			$("#ayudaest").css("display","none");
+		});
+		$("#helpfcul").mouseenter(function(evento) {
+			$("#ayudafcul").css("display","block");
+		});
+		$("#helpfcul").mouseleave(function(evento) {
+			$("#ayudafcul").css("display","none");
+		});
+		$("#helpobs").mouseenter(function(evento) {
+			$("#ayudaobs").css("display","block");
+		});
+		$("#helpobs").mouseleave(function(evento) {
+			$("#ayudaobs").css("display","none");
+		});
+	</script>
+{% endblock %}

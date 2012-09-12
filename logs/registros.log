@@ -1,0 +1,85 @@
+'12-09-2012 14:43:28' - ERROR    - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 252, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 252, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 158, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 164, in _get_callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 124, in wrapper
+    result = func(*args)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 91, in get_callable
+    lookup_view = getattr(import_module(mod_name), func_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/views.py", line 11, in <module>
+    from usuario.forms import FormAcceso, FormSegIngAlumn, FormPermisoUsuario, FormModContrasenha, FormUsuario
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/forms.py", line 157, in <module>
+    class FormPermisoUsuario(forms.Form):
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/forms.py", line 159, in FormPermisoUsuario
+    permiso = forms.MultipleChoiceField(label=_(u"Permisos:"), choices=cargarPermisos(), widget=forms.CheckboxSelectMultiple(attrs={'title': _(u'Seleccione los permisos a conceder'), 'size':cargarPermisos().__len__(), 'tabindex':'2'}))
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/comun/funciones.py", line 24, in cargarPermisos
+    permisos = [(p.id, (p.name).replace('Can add', 'Registrar').replace('Can change','Modificar').replace('Can delete','Eliminar')) for p in per]
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 107, in _result_iter
+    self._fill_cache()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 772, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 734, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py", line 252, in cursor
+    cursor = util.CursorWrapper(self._cursor(), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/postgresql_psycopg2/base.py", line 125, in _cursor
+    raise ImproperlyConfigured("You need to specify NAME in your Django settings file.")
+ImproperlyConfigured: You need to specify NAME in your Django settings file.
+'12-09-2012 14:43:29' - ERROR    - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py", line 101, in get_response
+    request.path_info)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 252, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 252, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 158, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 164, in _get_callback
+    self._callback = get_callable(self._callback_str)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/functional.py", line 124, in wrapper
+    result = func(*args)
+  File "/usr/local/lib/python2.7/dist-packages/django/core/urlresolvers.py", line 91, in get_callable
+    lookup_view = getattr(import_module(mod_name), func_name)
+  File "/usr/local/lib/python2.7/dist-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/views.py", line 11, in <module>
+    from usuario.forms import FormAcceso, FormSegIngAlumn, FormPermisoUsuario, FormModContrasenha, FormUsuario
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/forms.py", line 157, in <module>
+    class FormPermisoUsuario(forms.Form):
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/usuario/forms.py", line 159, in FormPermisoUsuario
+    permiso = forms.MultipleChoiceField(label=_(u"Permisos:"), choices=cargarPermisos(), widget=forms.CheckboxSelectMultiple(attrs={'title': _(u'Seleccione los permisos a conceder'), 'size':cargarPermisos().__len__(), 'tabindex':'2'}))
+  File "/home/rvargas/PERSONAL/PROYECTOS/esmayoy/apps/comun/funciones.py", line 24, in cargarPermisos
+    permisos = [(p.id, (p.name).replace('Can add', 'Registrar').replace('Can change','Modificar').replace('Can delete','Eliminar')) for p in per]
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 107, in _result_iter
+    self._fill_cache()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 772, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/query.py", line 273, in iterator
+    for row in compiler.results_iter():
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 680, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/usr/local/lib/python2.7/dist-packages/django/db/models/sql/compiler.py", line 734, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/__init__.py", line 252, in cursor
+    cursor = util.CursorWrapper(self._cursor(), self)
+  File "/usr/local/lib/python2.7/dist-packages/django/db/backends/postgresql_psycopg2/base.py", line 125, in _cursor
+    raise ImproperlyConfigured("You need to specify NAME in your Django settings file.")
+ImproperlyConfigured: You need to specify NAME in your Django settings file.
+'12-09-2012 14:51:04' - INFO     - Acceso al sistema desde la IP [127.0.0.1]
+'12-09-2012 14:51:05' - INFO     - Acceso al sistema desde la IP [127.0.0.1]
+'12-09-2012 14:51:16' - INFO     - El usuario [admin] a ingresado al sistema desde la IP [127.0.0.1]

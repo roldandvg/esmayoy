@@ -1,0 +1,107 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}"loadCalendario('fasignacion','calfasignacion');"{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url planta.views.inicio %}">{% trans "planta" %}</a>
+	&#160;>&#160;<a href="#">{% trans "académica" %}</a>
+	&#160;>&#160;<a href="{% url planta.academica.views.registrarProfDisponibilidad %}">{% trans "disponibilidad profesor" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro Disponibilidad de Profesor" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url planta.academica.views.registrarProfDisponibilidad %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url planta.academica.views.registrarProfDisponibilidad %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.profesor.label}}</li>
+			<li class='right'>
+				{{form.profesor}}<label id="helpprof" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.profesor.errors}}</div>
+			</li>
+			<li class='left'>{{form.nro_horas.label}}</li>
+			<li class='right'>
+				{{form.nro_horas}}<label id="helphrs" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.nro_horas.errors}}</div>
+			</li>
+			<li class='left'>{{form.dia.label}}</li>
+			<li class='right'>
+				{{form.dia}}<label id="helpdia" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.dia.errors}}</div>
+			</li>
+			<li class='left'>{{form.observacion.label}}</li>
+			<li class='right'>
+				{{form.observacion}}<label id="helpobs" class="ayudacampo">?</label>
+				<div class="errores" id="e4">{{form.observacion.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.fasignacion.label}}</li>
+			<li class='right'>
+				{{form.fasignacion}}&#160;<img src="../../media/images/base/calendar.png" id="calfasignacion" style="cursor:pointer"><label id="helpfecha" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.fasignacion.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.turno.label}}</li>
+			<li class='right'>
+				{{form.turno}}<label id="helpturno" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.turno.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Disponibilidades de Profesores Registradas" %}<br/><br/></caption>
+				<col width="25%">
+				<col width="15%">
+				<col width="10%">
+				<col width="20%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "profesor" %}</td>
+						<td class="borde_delgado">{% trans "fecha asignación" %}</td>
+						<td class="borde_delgado">{% trans "nro. horas" %}</td>
+						<td class="borde_delgado">{% trans "día" %}</td>
+						<td class="borde_delgado">{% trans "turno" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id}}">
+							<td class="borde_delgado">
+								{{reg.profesor.primerapellido}}&#160;
+								{% if reg.profesor.segundoapellido %}{{reg.profesor.segundoapellido}}&#160;{% endif %}
+								{{reg.profesor.primernombre}}&#160;
+								{% if reg.profesor.segundonombre %}{{reg.profesor.segundonombre}}{% endif %}
+							</td>
+							<td class="borde_delgado">{{reg.fasignacion|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{{reg.nro_horas}}</td>
+							<td class="borde_delgado">{{reg.dia.des_dia}}</td>
+							<td class="borde_delgado">{{reg.turno.des_turno}}</td>
+							<td class="borde_delgado">{% if reg.estatus %}Activo{% else %}Inactivo{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.id}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('profesor_disponibilidad', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

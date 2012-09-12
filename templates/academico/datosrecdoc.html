@@ -1,0 +1,20 @@
+<div id="column_left">
+	<ul>
+		<li class='left'>
+			{{form4.documento.label}}<label id="helpdo" class="ayudacampo">?</label><label class="req">*</label>
+			<label id="help">{{form4.helpdo|safe}}</label>
+		</li>
+		<li class='right'>
+			{{form4.documento}}
+			<div class="errores" id="e2">{{form4.documento.errors}}</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	$("#helpdo").mouseenter(function(evento) {
+		$("#ayudado").css("display","block");
+	});
+	$("#helpdo").mouseleave(function(evento) {
+		$("#ayudado").css("display","none");
+	});
+</script>

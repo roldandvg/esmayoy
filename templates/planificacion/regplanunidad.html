@@ -1,0 +1,112 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url planificacion.views.inicio %}">{% trans "planificación" %}</a>
+	&#160;>&#160;<a href="{% url planificacion.views.registrarPlanificacionUnidad %}">{% trans "unidad curricular" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Planificación de Unidades Curriculares" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url planificacion.views.registrarPlanificacionUnidad %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url planificacion.views.registrarPlanificacionUnidad %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.planificacion.label}}</li>
+			<li class='right'>
+				{{form.planificacion}}<label id="helpplan" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.planificacion.errors}}</div>
+			</li>
+			<li class='left'>{{form.profesor.label}}</li>
+			<li class='right'>
+				{{form.profesor}}<label id="helpprof" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.profesor.errors}}</div>
+			</li>
+			<li class='left'>{{form.cant_alumnos.label}}</li>
+			<li class='right'>
+				{{form.cant_alumnos}}<label id="helpalumn" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.cant_alumnos.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.estatus.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.modulo.label}}</li>
+			<li class='right'>
+				{{form.modulo}}<label id="helpmod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.modulo.errors}}</div>
+			</li>
+			<li class='left'>{{form.seccion.label}}</li>
+			<li class='right'>
+				{{form.seccion}}<label id="helpsecc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.seccion.errors}}</div>
+			</li>
+			<li class='left'>{{form.cupo.label}}</li>
+			<li class='right'>
+				{{form.cupo}}<label id="helpcupo" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.cupo.errors}}</div>
+			</li>
+			<li class='left'>{{form.observaciones.label}}</li>
+			<li class='right'>
+				{{form.observaciones}}<label id="helpobs" class="ayudacampo">?</label>
+				<div class="errores" id="e3">{{form.observaciones.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Planificaciones de Unidades Curriculares Registradas" %}<br/><br/></caption>
+				<col width="15%">
+				<col width="15%">
+				<col width="20%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "planificación" %}</td>
+						<td class="borde_delgado">{% trans "módulo curricular" %}</td>
+						<td class="borde_delgado">{% trans "profesor" %}</td>
+						<td class="borde_delgado">{% trans "sección" %}</td>
+						<td class="borde_delgado">{% trans "alumnos" %}</td>
+						<td class="borde_delgado">{% trans "cupos" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id}}">
+							<td class="borde_delgado">{{reg.planificacion.descripcion}}</td>
+							<td class="borde_delgado">{{reg.modulo.nombre}}</td>
+							<td class="borde_delgado">
+								{{reg.profesor.primerapellido}}
+								{% if reg.profesor.segundoapellido %}&#160;{{reg.profesor.segundoapellido}}{% endif %}
+								{{reg.profesor.primernombre}}
+								{% if reg.profesor.segundonombre %}&#160;{{reg.profesor.segundonombre}}{% endif %}
+							</td>
+							<td class="borde_delgado">{{reg.seccion}}</td>
+							<td class="borde_delgado">{{reg.cant_alumnos}}</td>
+							<td class="borde_delgado">{{reg.cupo}}</td>
+							<td class="borde_delgado">{% if reg.estatus %}{% trans "Activo" %}{% else %}{% trans "Inactivo" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.id}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('planificacion_unidad', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

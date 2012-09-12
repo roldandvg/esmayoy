@@ -1,0 +1,1172 @@
+010122,23 de Enero,0101
+140604,Acequias,1406
+040101,Achaguas,0401
+110602,Acurigua,1106
+110907,Adaure,1109
+170702,Adrián,1707
+110902,Adícora,1109
+211003,Agua Caliente,2110
+110802,Agua Clara,1108
+111002,Agua Larga,1110
+111102,Agua Linda,1111
+070501,Agua Salada,0705
+211002,Agua Santa,2110
+130603,Agua Viva,1306
+080301,Aguas Calientes,0803
+130308,Aguedo Felipe Alvarado,1303
+170602,Aguirre,1706
+880108,Aguistín ó Prestonqui,8801
+221102,Albarico,2211
+200702,Alberto Adriani,2007
+060402,Alfredo Arvelo Larriva,0604
+051105,Alfredo Pacheco Miranda,0511
+100102,Almirante Luis Brión,1001
+231001,Alonso de Ojeda,2310
+231502,Alta Guajira,2315
+010101,Altagracia,0101
+070202,Altagracia,0702
+130817,Altagracia,1308
+191401,Altagracia,1914
+231401,Altagracia,2314
+151002,Altagracia de La Montaña,1510
+120901,Altagracia de Orituco,1209
+060502,Altamira,0605
+121402,Altamira,1214
+060411,Alto Barinas,0604
+020602,Alto Ventuari,0206
+160802,Alto de los Godos,1608
+230301,Ambrosio,2303
+200502,Amenodoro Rangel Lamús,2005
+231402,Ana María Campos,2314
+030101,Anaco,0301
+060202,Andrés Bello,0602
+230902,Andrés Bello,2309
+050308,Andrés Eloy Blanco,0503
+070602,Andrés Eloy Blanco,0706
+141302,Andrés Eloy Blanco,1413
+211801,Andrés Linares,2118
+181002,Antolín Tovar,1810
+231301,Antonio Borjas Romero,2313
+130802,Antonio Díaz,1308
+190302,Antonio José de Sucre,1903
+210702,Antonio José de Sucre,2107
+211602,Antonio Nicolás Briceño,2116
+141201,Antonio Spinetti Dini,1412
+010102,Antímano,0101
+130502,Anzoátegui,1305
+160902,Aparicio,1609
+180702,Aparición,1807
+040102,Apurito,0401
+110202,Aracua,1102
+210102,Araguaney,2101
+150102,Aragüita,1501
+040402,Aramendi,0404
+111103,Araurima,1111
+190801,Araya,1908
+191202,Arenas,1912
+160502,Areo,1605
+141202,Arias,1412
+191203,Aricagua,1912
+071002,Aripao,0710
+060301,Arismendi,0603
+210402,Arnoldo Gabaldón,2104
+210802,Arnoldo Gabaldón,2108
+051102,Arévalo Aponte,0511
+150103,Arévalo González,1501
+230308,Arístides Calvani,2303
+070203,Ascensión Farreras,0702
+030502,Atapirire,0305
+051605,Augusto Mijares,0516
+110803,Avaria,1108
+191402,Ayacucho,1914
+210204,Ayacucho,2102
+020604,Bajo Ventuari,0206
+880120,Bajo de Botuto,8801
+110903,Baraived,1109
+070702,Barceloneta,0707
+060401,Barinas,0604
+060501,Barinitas,0605
+110302,Bariro,1103
+060601,Barrancas,0606
+081101,Bartolomé Salom,0811
+231102,Bartolomé de las Casas,2311
+150301,Baruta,1503
+230802,Barí,2308
+080101,Bejuma,0801
+051302,Bella Vista,0513
+080202,Belén,0802
+031803,Bergantín,0318
+211501,Betijoque,2115
+191502,Bideau,1915
+040201,Biruaca,0402
+232001,Bobures,2320
+112002,Boca de Aroa,1120
+031602,Boca de Chávez,0316
+880119,Boca de Cote,8801
+200902,Boca de Grita,2009
+111502,Boca de Tocuyo,1115
+031601,Boca de Uchire,0316
+030503,Boca del Pao,0305
+202202,Boconó,2022
+210201,Boconó,2102
+210403,Bolivia,2104
+130501,Bolívar,1305
+152102,Bolívar,1521
+170502,Bolívar,1705
+190501,Bolívar,1905
+231302,Bolívar,2313
+160803,Boquerón,1608
+081107,Borburata,0811
+110303,Borojó,1103
+880110,Botoqui,8801
+201404,Bramón,2014
+040301,Bruzual,0403
+112402,Bruzual,1124
+110904,Buena Vista,1109
+130309,Buena Vista,1303
+211102,Buena Vista,2111
+210205,Burbusay,2102
+880112,Burqui,8801
+880305,Burro,8803
+130702,Buría,1307
+211902,Cabimbú,2119
+120602,Cabruta,1206
+130601,Cabudare,1306
+111701,Cabure,1117
+070101,Cachamay,0701
+030202,Cachipo,0302
+161002,Cachipo,1610
+231303,Cacique Mara,2313
+141702,Cacute,1417
+031804,Caigua,0318
+120801,Calabozo,1208
+060503,Calderas,0605
+130803,Camacaro,1308
+120101,Camaguán,1201
+211603,Campo Alegre,2116
+191002,Campo Claro,1910
+190902,Campo Elías,1909
+210801,Campo Elías,2108
+220302,Campo Elías,2203
+231003,Campo Lara,2310
+020204,Caname,0202
+010103,Candelaria,0101
+081401,Candelaria,0814
+181402,Canelones,1814
+080102,Canoabo,0801
+121202,Cantagallo,1212
+110102,Capadare,1101
+110301,Capatárida,1103
+150104,Capaya,1501
+160101,Capital Acosta,1601
+180101,Capital Agua Blanca,1801
+160201,Capital Aguasay,1602
+020101,Capital Alto Orinoco,0201
+140201,Capital Andrés Bello,1402
+200101,Capital Andrés Bello,2001
+170101,Capital Antolín del Campo,1701
+140301,Capital Antonio Pinto Salinas,1403
+200201,Capital Antonio Rómulo Costa,2002
+030201,Capital Aragua,0302
+180201,Capital Araure,1802
+140401,Capital Aricagua,1404
+170201,Capital Arismendi,1702
+140501,Capital Arzobispo Chacón,1405
+220101,Capital Arístides Bastidas,2201
+020201,Capital Atabapo,0202
+020401,Capital Autana,0204
+200301,Capital Ayacucho,2003
+050101,Capital Bolívar,0501
+160301,Capital Bolívar,1603
+190601,Capital Bolívar,1906
+200401,Capital Bolívar,2004
+220201,Capital Bolívar,2202
+220301,Capital Bruzual,2203
+110401,Capital Cacique Manaure,1104
+050201,Capital Camatagua,0502
+140701,Capital Caracciolo Parra Olmedo,1407
+140801,Capital Cardenal Quintero,1408
+160401,Capital Caripe,1604
+160501,Capital Cedeño,1605
+220401,Capital Cocorote,2204
+200501,Capital Cárdenas,2005
+200601,Capital Córdoba,2006
+110701,Capital Dabajuro,1107
+170301,Capital Díaz,1703
+070301,Capital El Callao,0703
+180301,Capital Esteller,1803
+160601,Capital Ezequiel Zamora,1606
+030301,Capital Fernando de Peñalver,0303
+200701,Capital Fernández Feo,2007
+051701,Capital Francisco Linares Alcántara,0517
+030501,Capital Francisco de Miranda,0305
+200801,Capital Francisco de Miranda,2008
+170401,Capital García,1704
+200901,Capital García de Hevia,2009
+180401,Capital Guanare,1804
+180501,Capital Guanarito,1805
+140901,Capital Guaraque,1409
+201001,Capital Guásimos,2010
+170501,Capital Gómez,1705
+030701,Capital Independencia,0307
+201101,Capital Independencia,2011
+220501,Capital Independencia,2205
+050401,Capital José Angel Lamas,0504
+220601,Capital José Antonio Páez,2206
+050501,Capital José Félix Ribas,0505
+031001,Capital José Gregorio Monagas,0310
+201301,Capital José María Vargas,2013
+050601,Capital José Rafael Revenga,0506
+141001,Capital Julio César Salas,1410
+201401,Capital Junín,2014
+141101,Capital Justo Briceño,1411
+201201,Capital Jáuregui,2012
+220701,Capital La Trinidad,2207
+031101,Capital Libertad,0311
+201501,Capital Libertad,2015
+050701,Capital Libertador,0507
+160701,Capital Libertador,1607
+201601,Capital Libertador,2016
+201701,Capital Lobatera,2017
+020601,Capital Manapiare,0206
+170601,Capital Maneiro,1706
+220801,Capital Manuel Monge,2208
+170701,Capital Marcano,1707
+050801,Capital Mario Briceño Iragorry,0508
+170801,Capital Mariño,1708
+160801,Capital Maturín,1608
+191101,Capital Mejía,1911
+201801,Capital Michelena,2018
+141301,Capital Miranda,1413
+180601,Capital Monseñor José Vicente de Unda,1806
+220901,Capital Nirgua,2209
+141401,Capital Obispo Ramos de Lora,1414
+051801,Capital Ocumare de La Costa de Oro,0518
+180701,Capital Ospino,1807
+141501,Capital Padre Noguera,1415
+071101,Capital Padre Pedro Chien,0711
+111601,Capital Palmasola,1116
+201901,Capital Panamericano,2019
+180901,Capital Papelón,1809
+031301,Capital Pedro María Freites,0313
+202001,Capital Pedro María Ureña,2020
+170901,Capital Península de Macanao,1709
+221001,Capital Peña,2210
+160901,Capital Piar,1609
+141601,Capital Pueblo Llano,1416
+161001,Capital Punceres,1610
+180801,Capital Páez,1808
+202101,Capital Rafael Urdaneta,2021
+141701,Capital Rangel,1417
+141801,Capital Rivas Dávila,1418
+020701,Capital Río Negro,0207
+202201,Capital Samuel Darío Maldonado,2022
+050901,Capital San Casimiro,0509
+221101,Capital San Felipe,2211
+111901,Capital San Francisco,1119
+181001,Capital San Genaro de Boconoito,1810
+120401,Capital San Gerónimo de Guayabal,1204
+031501,Capital San José de Guanipa,0315
+202901,Capital San Judas Tadeo,2029
+181101,Capital San Rafael de Onoto,1811
+051001,Capital San Sebastián,0510
+161101,Capital Santa Bárbara,1611
+181201,Capital Santa Rosalía,1812
+051101,Capital Santiago Mariño,0511
+141901,Capital Santos Marquina,1419
+051201,Capital Santos Michelena,0512
+202401,Capital Seboruco,2024
+202501,Capital Simón Rodríguez,2025
+161201,Capital Sotillo,1612
+051301,Capital Sucre,0513
+142001,Capital Sucre,1420
+181301,Capital Sucre,1813
+202601,Capital Sucre,2026
+221201,Capital Sucre,2212
+112201,Capital Tocópero,1122
+202701,Capital Torbes,2027
+051401,Capital Tovar,0514
+171001,Capital Tubores,1710
+142201,Capital Tulio Febres Cordero,1422
+181401,Capital Turén,1814
+221301,Capital Urachiche,2213
+161301,Capital Uracoa,1613
+051501,Capital Urdaneta,0515
+202801,Capital Uribante,2028
+221401,Capital Veroes,2214
+171101,Capital Villalba,1711
+051601,Capital Zamora,0516
+142301,Capital Zea,1423
+140502,Capurí,1405
+240101,Caraballeda,2401
+141203,Caracciolo Parra Pérez,1412
+231304,Caracciolo Parra Pérez,2313
+210501,Carache,2105
+240102,Carayaca,2401
+191301,Cariaco,1913
+010104,Caricuao,0101
+110501,Carirubana,1105
+230602,Carlos Quevedo,2306
+240111,Carlos Soublette,2401
+230302,Carmen Herrera,2303
+050202,Carmen de Cura,0502
+210404,Carrillo,2104
+150601,Carrizal,1506
+240103,Caruao,2401
+211601,Carvajal,2116
+111302,Casigua,1113
+020703,Casiquiare,0207
+130804,Castañeda,1308
+050502,Castor Nieves Ríos,0505
+010105,Catedral,0101
+070502,Catedral,0705
+081402,Catedral,0814
+130301,Catedral,1303
+240104,Catia La Mar,2401
+191302,Catuaro,1913
+150101,Caucagua,1501
+151902,Caucagüita,1519
+880113,Cayo Carenero,8801
+880114,Cayo Fernando,8801
+880109,Cayo Loco ó Porqui,8801
+880105,Cayo Pirata,8801
+120402,Cazorla,1204
+050802,Caña de Azúcar,0508
+180902,Caño Delgadito,1809
+142302,Caño El Tigre,1423
+151003,Cecilio Acosta,1510
+231305,Cecilio Acosta,2313
+130805,Cecilio Zubillaga,1308
+210405,Cegarra,2104
+140503,Chacantá,1405
+150701,Chacao,1507
+190802,Chacopata,1908
+160903,Chaguaramal,1609
+120201,Chaguaramas,1202
+160702,Chaguaramas,1607
+150801,Charallave,1508
+210401,Chejendé,2104
+210302,Cheregüé,2103
+111501,Chichiriviche,1115
+142002,Chiguará,1420
+880302,Chimana Grande,8803
+880303,Chimana del Oeste,8803
+880304,Chimana del Sur,8803
+130806,Chiquinquirá,1308
+211802,Chiquinquirá,2118
+230903,Chiquinquirá,2309
+231308,Chiquinquirá,2313
+070102,Chirica,0701
+050302,Choroní,0503
+030602,Chorrerón,0306
+051103,Chuao,0511
+111001,Churuguara,1110
+100202,Cinco de Julio,1002
+201502,Cipriano Castro,2015
+080401,Ciudad Alianza,0804
+060901,Ciudad Bolivia,0609
+061101,Ciudad de Nutrias,0611
+031201,Clarines,0312
+010106,Coche,0101
+191204,Cocollar,1912
+020704,Cocuy,0207
+040502,Codazzi,0405
+090101,Cojedes,0901
+111702,Colina,1117
+020502,Comunidad,0205
+130302,Concepción,1303
+181302,Concepción,1813
+230901,Concepción,2309
+201702,Constitución,2017
+231307,Coquivacoa,2313
+060409,Corazón de Jesús,0604
+130408,Coronel Mariano Peraza,1304
+880106,Crasqui,8801
+231306,Cristo de Aranza,2313
+191503,Cristóbal Colón,1915
+211803,Cristóbal Mendoza,2118
+211804,Cruz Carrillo,2118
+130402,Cuara,1304
+210502,Cuicas,2105
+191201,Cumanacoa,1912
+150202,Cumbo,1502
+040503,Cunaviche,0405
+100101,Curiapo,1001
+150402,Curiepe,1504
+111703,Curimagua,1117
+202802,Cárdenas,2028
+180402,Córdoba,1804
+152001,Cúa,1520
+151601,Cúpira,1516
+070103,Dalla Costa,0701
+070902,Dalla Costa,0709
+081102,Democracia,0811
+130403,Diego de Lozada,1304
+180503,Divina Pastora,1805
+061002,Dolores,0610
+060414,Dominga Ortiz de Páez,0604
+141204,Domingo Peña,1412
+231703,Domitila Flores,2317
+231602,Donaldo García,2316
+201603,Doradas,2016
+202305,Dr. Francisco Romero Lobo,2023
+010108,EL Paraíso,0101
+031901,Edmundo Barrios,0319
+040403,El Amparo,0404
+090602,El Amparo,0906
+142101,El Amparo,1421
+231702,El Bajo,2317
+232002,El Batey,2320
+211202,El Baño,2112
+090301,El Baúl,0903
+130807,El Blanco,1308
+150302,El Cafetal,1503
+150105,El Café,1501
+120802,El Calvario,1208
+061201,El Cantón,0612
+031102,El Carito,0311
+230904,El Carmelo,2309
+031801,El Carmen,0318
+060407,El Carmen,0604
+210202,El Carmen,2102
+151102,El Cartanal,1511
+211004,El Cenizo,2110
+032001,El Chaparro,0320
+112302,El Charal,1123
+160807,El Corozo,1608
+130303,El Cují,1303
+211001,El Dividive,2110
+160808,El Furrial,1608
+151402,El Guapo,1514
+221402,El Guayabo,2214
+160402,El Guácharo,1604
+150901,El Hatillo,1509
+110908,El Hato,1109
+210103,El Jagüito,2101
+151004,El Jarillo,1510
+240105,El Junko,2401
+010107,El Junquito,0101
+141205,El Llano,1412
+142102,El Llano,1421
+231802,El Mene,2318
+140504,El Molino,1405
+032102,El Morro,0321
+141214,El Morro,1412
+190303,El Morro de Puerto Santo,1903
+030504,El Pao,0305
+090501,El Pao,0905
+211702,El Paraíso,2117
+190702,El Paujil,1907
+031805,El Pilar,0318
+190401,El Pilar,1904
+160904,El Pinto,1609
+210902,El Progreso,2109
+120803,El Rastro,1208
+060802,El Real,0608
+010109,El Recreo,0101
+040702,El Recreo,0407
+061102,El Regalo,0611
+190402,El Rincón,1904
+231601,El Rosario,2316
+060602,El Socorro,0606
+081403,El Socorro,0814
+120301,El Socorro,1203
+210701,El Socorro,2107
+120701,El Sombrero,1207
+160602,El Tejero,1606
+010110,El Valle,0101
+110909,El Vínculo,1109
+040103,El Yagual,0401
+202602,Eleazar López Contreras,2026
+231004,Eleazar López Contreras,2310
+040601,Elorza,0406
+141402,Eloy Paredes,1414
+231503,Elías Sánchez Rubio,2315
+201602,Emeterio Ochoa,2016
+201202,Emilio Constantino Guerrero,2012
+230401,Encontrados,2304
+210601,Escuque,2106
+120502,Espino,1205
+130808,Espinoza de los Monteros,1308
+142003,Estánquez,1420
+231403,Faría,2314
+020301,Fernando Girón Tovar,0203
+140601,Fernández Peña,1406
+151903,Fila de Mariches,1519
+211302,Flor de Patria,2113
+140702,Florencio Ramírez,1407
+181202,Florida,1812
+100103,Francisco Aniceto Lugo,1001
+231309,Francisco Eugenio Bustamante,2313
+170402,Francisco Fajardo,1704
+230603,Francisco Javier Pulgar,2306
+231704,Francisco Ochoa,2317
+051702,Francisco de Miranda,0517
+880103,Francisqui del Norte,8801
+880104,Francisqui del Sur ó Cayo Refugio,8801
+081103,Fraternidad,0811
+130201,Fréitez,1302
+140104,Gabriel Picón González,1401
+190403,General Francisco Antonio Vásquez,1904
+210206,General Rivas,2102
+230202,General Urdaneta,2302
+090901,General en Jefe José Laurencio Silva,0909
+230303,Germán Ríos Linares,2303
+141802,Gerónimo Maldonado,1418
+232003,Gibraltar,2320
+081104,Goaigoaza,0811
+141206,Gonzalo Picón Febres,1412
+880101,Gran Roque,8801
+210303,Granados,2103
+880500,Grupo 5,8805
+080402,Guacara,0804
+040104,Guachara,0401
+060302,Guadarrama,0603
+110603,Guaibacoa,1106
+140505,Guaimaral,1405
+231504,Guajira,2315
+110304,Guajiro,1103
+160905,Guanaguana,1609
+031202,Guanape,0312
+070204,Guaniamo,0702
+030601,Guanta,0306
+210207,Guaramacal,2102
+071003,Guarataro,0710
+190404,Guaraúnos,1904
+120804,Guardatinajas,1208
+151701,Guarenas,1517
+130503,Guarico,1305
+040401,Guasdualito,0404
+152101,Guatire,1521
+020405,Guayapo,0204
+170503,Guevara,1705
+130703,Gustavo Vegas León,1307
+111404,Guzmán Guillermo,1114
+080201,Güigüe,0802
+191501,Güiria,1915
+050902,Güiripa,0509
+232004,Heras,2320
+130815,Heriberto Arroyo,1308
+202203,Hernández,2022
+150401,Higuerote,1504
+130504,Hilario Luna y Luna,1305
+020102,Huachamacare,0201
+130505,Humocaro Alto,1305
+130506,Humocaro Bajo,1305
+140105,Héctor Amable Mora,1401
+231310,Idelfonso Vásquez,2313
+060902,Ignacio Briceño,0609
+880202,Iguana,8802
+070402,Ikabarú,0704
+100201,Imataca,1002
+080602,Independencia,0806
+111004,Independencia,1110
+142202,Independencia,1422
+191001,Irapa,1910
+200404,Isaías Medina Angarita,2004
+880601,Isla de Patos,8806
+230101,Isla de Toas,2301
+141207,Jacinto Plaza,1412
+111101,Jacura,1111
+110905,Jadacaquiva,1109
+140605,Jají,1406
+211903,Jajó,2119
+211203,Jalisco,2112
+230801,Jesús María Semprún,2308
+050305,Joaquín Crespo,0503
+230305,Jorge Hernández,2303
+070503,José Antonio Páez,0705
+200903,José Antonio Páez,2009
+130407,José Bernardo Dorante,1304
+050307,José Casanova Godoy,0503
+231803,José Cenovio Urribarri,2318
+060903,José Félix Ribas,0609
+130602,José Gregorio Bastidas,1306
+211504,José Gregorio Hernández,2115
+060702,José Ignacio del Pumar,0607
+211604,José Leonardo Suárez,2116
+130202,José María Blanco,1302
+140106,José Nucete Sardi,1401
+230702,José Ramón Yepes,2307
+100402,José Vidal Marcano,1004
+090802,Juan Angel Bravo,0908
+060413,Juan Antonio Rodríguez Domínguez,0604
+100203,Juan Bautista Arismendi,1002
+130401,Juan Bautista Rodríguez,1304
+201102,Juan Germán Roscio,2011
+212001,Juan Ignacio Montilla,2120
+081105,Juan José Flores,0811
+100403,Juan Millán,1004
+202803,Juan Pablo Peñaloza,2028
+141208,Juan Rodríguez Suárez,1412
+200403,Juan Vicente Gómez,2004
+090102,Juan de Mata Suárez,0901
+130304,Juan de Villegas,1303
+231311,Juana de Avila,2313
+111202,Judibana,1112
+211703,Junín,2117
+160809,Jusepín,1608
+130310,Juárez,1303
+090402,La Aguadita,0904
+212002,La Beatriz,2120
+880401,La Blanquilla,8804
+880301,La Borracha,8803
+130507,La Candelaria,1305
+210903,La Ceiba,2109
+112502,La Ciénaga,1125
+210503,La Concepción,2105
+211402,La Concepción,2114
+230701,La Concepción,2307
+202301,La Concordia,2023
+151202,La Democracia,1512
+151904,La Dolorita,1519
+210104,La Esperanza,2101
+180703,La Estación,1807
+200503,La Florida,2005
+240106,La Guaira,2401
+160403,La Guanota,1604
+060803,La Luz,0608
+140606,La Mesa,1406
+211904,La Mesa,2119
+201902,La Palmita,2019
+010111,La Pastora,0101
+110103,La Pastora,1101
+211304,La Paz,2113
+201402,La Petrólea,2014
+110203,La Peña,1102
+160810,La Pica,1608
+211502,La Pueblita,2115
+212005,La Puerta,2120
+211901,La Quebrada,2119
+230304,La Rosa,2303
+070504,La Sabanita,0705
+231202,La Sierrita,2312
+112503,La Soledad,1125
+141703,La Toma,1417
+160906,La Toscana,1609
+142004,La Trampa,1420
+040602,La Trinidad,0406
+060303,La Unión,0603
+210602,La Unión,2106
+070205,La Urbana,0702
+010112,La Vega,0101
+110601,La Vela de Coro,1106
+141303,La Venta,1413
+232101,La Victoria,2321
+130809,Lara,1308
+160703,Las Alhuacas,1607
+150802,Las Brisas,1508
+110604,Las Calderas,1106
+160804,Las Cocuizas,1608
+050303,Las Delicias,0503
+050503,Las Guacamayas,0505
+071004,Las Majadas,0710
+120601,Las Mercedes,1206
+130810,Las Mercedes,1308
+150303,Las Minas de Baruta,1503
+231203,Las Parcelas,2312
+051502,Las Peñitas,0515
+140802,Las Piedras,1408
+112303,Las Vegas del Tuy,1123
+141209,Lasso de la Vega,1412
+032101,Lecherías,0321
+100404,Leonardo Ruíz Pineda,1004
+151905,Leoncio Martínez,1519
+120902,Lezama,1209
+061001,Libertad,0610
+190703,Libertad,1907
+231002,Libertad,2310
+231101,Libertad,2311
+090601,Libertad de Cojedes,0906
+120903,Libertad de Orituco,1209
+031302,Libertador,0313
+110104,Libertador,1101
+230203,Libertador,2302
+171002,Los Barales,1710
+161202,Los Barrancos de Fajardo,1612
+210703,Los Caprichos,2107
+211503,Los Cedros,2115
+231705,Los Cortijos,2317
+060804,Los Guasimitos,0608
+080701,Los Guayos,0807
+141215,Los Nevados,1412
+050309,Los Tacariguas,0503
+111201,Los Taques,1112
+151001,Los Teques,1510
+020302,Luis Alberto Gómez,0203
+100302,Luis Beltrán Prieto Figueroa,1003
+231312,Luis Hurtado Higuera,2313
+231204,Luis de Vicente,2312
+090401,Macapo,0904
+010113,Macarao,0101
+190502,Macarapana,1905
+151602,Machurucuto,1516
+110605,Macoruca,1106
+240107,Macuto,2401
+050304,Madre María de San José,0503
+880102,Madrisqui (Madrisque - Cayo Rata),8801
+051602,Magdaleno,0516
+240108,Maiquetía,2401
+030702,Mamo,0307
+150501,Mamporal,1505
+190803,Manicuare,1908
+040302,Mantecal,0403
+231313,Manuel Dagnino,2313
+201503,Manuel Felipe Rugeles,2015
+230204,Manuel Guanipa Matos,2302
+090803,Manuel Manrique,0908
+231901,Manuel Manrique,2319
+130811,Manuel Morillo,1308
+060412,Manuel Palacio Fajardo,0604
+100204,Manuel Piar,1002
+100104,Manuel Renaud,1001
+210406,Manuel Salvador Ulloa,2104
+111005,Mapararí,1110
+191003,Marabal,1910
+020103,Marawaka,0201
+230205,Marcelino Briceño,2302
+231706,Marcial Hernández,2317
+070505,Marhuanta,0705
+230703,Mariano Parra León,2307
+141210,Mariano Picón Salas,1412
+080302,Mariara,0803
+100405,Mariscal Antonio José de Sucre,1004
+150106,Marizapa,1501
+190101,Mariño,1901
+142203,María de la Concepción Palacios Blanco,1422
+060603,Masparrito,0606
+170504,Matasiete,1705
+140602,Matriz,1406
+211805,Matriz,2118
+020104,Mavaca,0201
+020603,Medio Ventuari,0206
+212006,Mendoza,2120
+111301,Mene de Mauroa,1113
+212003,Mercedes Díaz,2120
+140302,Mesa Bolívar,1403
+140303,Mesa de Las Palmas,1403
+140902,Mesa de Quintero,1409
+031902,Miguel Otero Silva,0319
+081404,Miguel Peña,0814
+141211,Milla,1412
+080801,Miranda,0808
+111405,Mitare,1114
+071005,Moitaco,0710
+230102,Monagas,2301
+880307,Monos,8803
+100406,Monseñor Argimiro García,1004
+232005,Monseñor Arturo Celestino Alvarez,2320
+211806,Monseñor Carrillo,2118
+051703,Monseñor Feliciano González,0517
+210209,Monseñor Jáuregui,2102
+231205,Monseñor Marcos Sergio Godoy,2312
+201203,Monseñor Miguel Antonio Salas,2012
+080901,Montalbán,0809
+140603,Montalbán,1406
+130812,Montaña Verde,1308
+211101,Monte Carmelo,2111
+130813,Montes de Oca,1308
+230502,Moralito,2305
+130902,Moroturo,1309
+880501,Morro de la Pecha (Puerto Real),8805
+110906,Moruy,1109
+130508,Morán,1305
+080501,Morón,0805
+210203,Mosquey,2102
+880115,Mosquises Norte,8801
+880116,Mosquises Sur (F.C.L.R.),8801
+211201,Motatán,2112
+140507,Mucuchachí,1405
+040105,Mucuritas,0401
+141704,Mucurubá,1417
+140506,Mucutuy,1405
+020404,Munduapo,0204
+030505,Múcura,0305
+081001,Naguanagua,0810
+240109,Naiguatá,2401
+031806,Naricual,0318
+081409,Negro Primero,0814
+060203,Nicolás Pulido,0602
+110502,Norte,1105
+202002,Nueva Arcadia,2020
+152002,Nueva Cúa,1520
+060801,Obispos,0608
+151201,Ocumare del Tuy,1512
+231314,Olegario Villalobos,2313
+050903,Ollas de Caramacate,0509
+070104,Once de Abril,0701
+030901,Onoto,0309
+070507,Orinoco,0705
+121001,Ortiz,1210
+141212,Osuna Rodríguez,1412
+100105,Padre Barral,1001
+061003,Palacios Fajardo,0610
+141002,Palmira,1410
+200402,Palotal,2004
+211401,Pampanito,2114
+211403,Pampanito II,2114
+211301,Pampán,2113
+210504,Panamericana,2105
+070508,Panapana,0705
+150107,Panaquire,1501
+050504,Pao de Zárate,0505
+151404,Paparo,1514
+151005,Paracotos,1510
+121203,Parapara,1212
+130404,Paraíso de San José,1304
+020303,Parhueña,0203
+120904,Paso Real de Macaira,1209
+081108,Patanemo,0811
+111003,Paují,1110
+180802,Payara,1808
+112102,Pecaya,1121
+100301,Pedernales,1003
+110801,Pedregal,1108
+060703,Pedro Briceño Méndez,0607
+070603,Pedro Cova,0706
+050306,Pedro José Ovalles,0503
+231804,Pedro Lucas Urribarri,2318
+202302,Pedro María Morantes,2023
+880117,Pelona de Dos Mosquises,8801
+151901,Petare,1519
+180602,Peña Blanca,1806
+040703,Peñalver,0407
+031002,Piar,0310
+880308,Picuda Grande,8803
+110804,Piedra Grande,1108
+070206,Pijiguaos,0702
+180803,Pimpinela,1808
+141304,Piñango,1413
+020304,Platanillal,0203
+202804,Potosí,2028
+230905,Potreritos,2309
+070109,Pozo Verde,0701
+030802,Pozuelos,0308
+140101,Presidente Betancourt,1401
+140102,Presidente Páez,1401
+140103,Presidente Rómulo Gallegos,1401
+112504,Pueblo Cumarebo,1125
+031702,Pueblo Nuevo,0317
+110901,Pueblo Nuevo,1109
+230206,Pueblo Nuevo,2302
+142005,Pueblo Nuevo del Sur,1420
+112501,Puerto Cumarebo,1125
+030801,Puerto La Cruz,0308
+120102,Puerto Miranda,1201
+190304,Puerto Santo,1903
+061203,Puerto Vivas,0612
+061103,Puerto de Nutrias,0611
+140107,Pulido Méndez,1401
+110503,Punta Cardón,1105
+230309,Punta Gorda,2303
+191504,Punta de Piedras,1915
+110805,Purureche,1108
+060904,Páez,0609
+130101,Pío Tamayo,1301
+031401,Píritu,0314
+111801,Píritu,1118
+880701,Píritu Adentro,8807
+130102,Quebrada Honda de Guache,1301
+040106,Queseras del Medio,0401
+201403,Quinimarí,2014
+040303,Quintero,0403
+231902,Rafael María Baralt,2319
+210210,Rafael Rangel,2102
+081405,Rafael Urdaneta,0814
+231903,Rafael Urdaneta,2319
+232102,Rafael Urdaneta,2321
+060410,Ramón Ignacio Méndez,0604
+060704,Ramón Ignacio Méndez,0607
+180804,Ramón Peraza,1808
+880107,Rasqui,8801
+232103,Raúl Cuenca,2321
+191406,Raúl Leoni,1914
+231315,Raúl Leoni,2313
+240110,Raúl Leoni,2401
+191303,Rendón,1913
+130816,Reyes Vargas,1308
+150108,Ribas,1501
+231206,Ricaurte,2312
+040304,Rincón Hondo,0403
+200302,Rivas Berti,2003
+060102,Rodríguez Domínguez,0601
+201103,Román Cárdenas,2011
+180202,Río Acarigua,1802
+190301,Río Caribe,1903
+151401,Río Chico,1514
+140903,Río Negro,1409
+231103,Río Negro,2311
+111406,Río Seco,1114
+060408,Rómulo Betancourt,0604
+230306,Rómulo Betancourt,2303
+090701,Rómulo Gallegos,0907
+100205,Rómulo Gallegos,1002
+190102,Rómulo Gallegos,1901
+232006,Rómulo Gallegos,2320
+210301,Sabana Grande,2103
+210603,Sabana Libre,2106
+211701,Sabana de Mendoza,2117
+160404,Sabana de Piedra,1604
+031203,Sabana de Uchire,0312
+060101,Sabaneta,0601
+111407,Sabaneta,1114
+141213,Sagrario,1412
+070802,Salom,0708
+220902,Salom,2209
+020402,Samariapo,0204
+880111,Samqui,8801
+051104,Samán de Güere,0511
+010114,San Agustín,0101
+160405,San Agustín,1604
+221002,San Andrés,2210
+060304,San Antonio,0603
+111401,San Antonio,1114
+140402,San Antonio,1404
+231404,San Antonio,2314
+191004,San Antonio de Irapa,1910
+151301,San Antonio de Los Altos,1513
+151802,San Antonio de Yare,1518
+230307,San Benito,2303
+010115,San Bernardino,0101
+081406,San Blas,0814
+040404,San Camilo,0404
+090801,San Carlos de Austria,0908
+230501,San Carlos del Zulia,2305
+031802,San Cristóbal,0318
+141102,San Cristóbal de Torondoy,1411
+081201,San Diego,0812
+031003,San Diego de Cabrutica,0310
+040701,San Fernando,0407
+191205,San Fernando,1912
+151405,San Fernando del Guapo,1514
+031402,San Francisco,0314
+070703,San Francisco,0707
+142103,San Francisco,1421
+160102,San Francisco,1601
+170902,San Francisco,1709
+231701,San Francisco,2317
+051603,San Francisco de Asís,0516
+051503,San Francisco de Cara,0515
+120905,San Francisco de Macaira,1209
+121002,San Francisco de Tiznados,1210
+151801,San Francisco de Yare,1518
+111303,San Félix,1113
+160503,San Félix,1605
+111402,San Gabriel,1114
+070903,San Isidro,0709
+231318,San Isidro,2313
+181404,San Isidro Labrador,1814
+221103,San Javier,2211
+030102,San Joaquín,0301
+081301,San Joaquín,0813
+201604,San Joaquín de Navay,2016
+010116,San José,0101
+081407,San José,0814
+100401,San José,1004
+210212,San José,2102
+210407,San José,2104
+230704,San José,2307
+231405,San José,2314
+190201,San José de Aerocuar,1902
+150201,San José de Barlovento,1502
+121301,San José de Guaribe,1213
+231104,San José de Perijá,2311
+181305,San José de Saguaz,1813
+121003,San José de Tiznados,1210
+121502,San José de Unare,1215
+111802,San José de la Costa,1118
+180403,San José de la Montaña,1804
+140607,San José del Sur,1406
+010117,San Juan,0101
+142006,San Juan,1420
+191405,San Juan,1914
+202303,San Juan Bautista,2023
+180404,San Juan de Guanaguanare,1804
+190305,San Juan de Las Galdonas,1903
+121201,San Juan de Los Morros,1212
+040501,San Juan de Payara,0405
+110101,San Juan de los Cayos,1101
+191206,San Lorenzo,1912
+121004,San Lorenzo de Tiznados,1210
+110201,San Luis,1102
+212004,San Luis,2120
+050702,San Martín de Porres,0507
+030302,San Miguel,0303
+130405,San Miguel,1304
+130903,San Miguel,1309
+210211,San Miguel,2102
+030902,San Pablo,0309
+202603,San Pablo,2026
+010118,San Pedro,0101
+151006,San Pedro,1510
+200303,San Pedro del Río,2003
+100407,San Rafael,1004
+141705,San Rafael,1417
+231201,San Rafael,2312
+141403,San Rafael de Alcázar,1414
+040704,San Rafael de Atamaica,0407
+121102,San Rafael de Laya,1211
+120906,San Rafael de Orituco,1209
+181303,San Rafael de Palo Alzado,1813
+202304,San Sebastián,2023
+060403,San Silvestre,0604
+160805,San Simón,1608
+230201,San Timoteo,2302
+040305,San Vicente,0403
+160811,San Vicente,1608
+031701,Santa Ana,0317
+110504,Santa Ana,1105
+111403,Santa Ana,1114
+211305,Santa Ana,2113
+142204,Santa Apolonia,1422
+210901,Santa Apolonia,2109
+030402,Santa Bárbara,0304
+060701,Santa Bárbara,0607
+070704,Santa Bárbara,0707
+151203,Santa Bárbara,1512
+230503,Santa Bárbara,2305
+061104,Santa Catalina,0611
+190503,Santa Catalina,1905
+031004,Santa Clara,0310
+160806,Santa Cruz,1608
+181403,Santa Cruz,1814
+191304,Santa Cruz,1913
+210505,Santa Cruz,2105
+112301,Santa Cruz de Bucaral,1123
+061202,Santa Cruz de Guacas,0612
+230504,Santa Cruz del Zulia,2305
+181102,Santa Fe,1811
+191407,Santa Fe,1914
+031103,Santa Inés,0311
+060404,Santa Inés,0604
+191403,Santa Inés,1914
+210101,Santa Isabel,2101
+060405,Santa Lucía,0604
+151501,Santa Lucía,1515
+231316,Santa Lucía,2313
+191305,Santa María,1913
+121401,Santa María de Ipire,1214
+211103,Santa María del Horcón,2111
+210604,Santa Rita,2106
+231801,Santa Rita,2318
+120603,Santa Rita de Manapire,1206
+031303,Santa Rosa,0313
+061004,Santa Rosa,0610
+081408,Santa Rosa,0814
+130305,Santa Rosa,1303
+190504,Santa Rosa,1905
+010119,Santa Rosalía,0101
+010120,Santa Teresa,0101
+190505,Santa Teresa,1905
+151101,Santa Teresa del Tuy,1511
+211905,Santiago,2119
+200703,Santo Domingo,2007
+100106,Santos de Abelgas,1001
+130701,Sarare,1307
+070201,Sección Capital Cedeño,0702
+070401,Sección Capital Gran Sabana,0704
+070601,Sección Capital Piar,0706
+070701,Sección Capital Raúl Leoni,0707
+070801,Sección Capital Roscio,0708
+070901,Sección Capital Sifontes,0709
+071001,Sección Capital Sucre,0710
+110305,Seque,1103
+020105,Sierra Parima,0201
+070105,Simón Bolívar,0701
+080103,Simón Bolívar,0801
+230601,Simón Rodríguez,2306
+231501,Sinamaica,2315
+020403,Sipapo,0204
+130901,Siquisique,1309
+231603,Sixto Zambrano,2316
+020702,Solano,0207
+191005,Soro,1910
+120702,Sosa,1207
+120907,Soublette,1209
+010121,Sucre,0101
+030303,Sucre,0303
+090302,Sucre,0903
+112101,Sucre,1121
+170505,Sucre,1705
+160704,Tabasca,1607
+080203,Tacarigua,0802
+150403,Tacarigua,1504
+151403,Tacarigua de La Laguna,1514
+051504,Taguay,0515
+160907,Taguaya,1609
+130306,Tamaca,1303
+231207,Tamare,2312
+190202,Tavera Acosta,1902
+220903,Temerla,2209
+160406,Teresén,1604
+880201,Testigos Grandes,8802
+181103,Thermo Morles,1811
+051202,Tiara,0512
+060201,Ticoporo,0602
+090201,Tinaquillo,0902
+130406,Tintorero,1304
+080601,Tocuyito,0806
+111503,Tocuyo de la Costa,1115
+032002,Tomás Alfaro Calatrava,0320
+130814,Torres,1308
+060406,Torunos,0604
+142104,Tovar,1421
+211807,Tres Esquinas,2118
+210904,Tres de Febrero,2109
+130801,Trinidad Samuel,1308
+180502,Trinidad de la Capilla,1805
+112001,Tucacas,1120
+121101,Tucupido,1211
+190405,Tunapuicito,1904
+190901,Tunapuy,1909
+211906,Tuñame,2119
+151007,Tácata,1510
+020202,Ucata,0202
+230402,Udón Pérez,2304
+070106,Unare,0701
+070107,Universidad,0701
+081106,Unión,0811
+130307,Unión,1303
+190406,Unión,1904
+080502,Urama,0805
+040405,Urdaneta,0404
+031304,Urica,0313
+230505,Urribarri,2305
+112401,Urumaco,1124
+181304,Uvencio Antonio Velásquez,1813
+180302,Uveral,1803
+031005,Uverito,0310
+120103,Uverito,1201
+191404,Valentín Valiente,1914
+211005,Valerita,2110
+050904,Valle Morín,0509
+030401,Valle de Guanape,0304
+120501,Valle de La Pascua,1205
+051604,Valles de Tucutunemo,0516
+211704,Valmore Rodríguez,2117
+880306,Varadero,8803
+210208,Vega de Guaramacal,2102
+231317,Venancio Pulgar,2313
+231005,Venezuela,2310
+880118,Vespen ó Cayo Sal,8801
+171102,Vicente Fuentes,1711
+020501,Victorino,0205
+160504,Viento Fresco,1605
+181306,Villa Rosa,1813
+180405,Virgen de la Coromoto,1804
+100408,Virgen del Valle,1004
+070506,Vista Hermosa,0705
+070108,Vista al Sol,0701
+130904,Xaguas,1309
+130103,Yacambú,1301
+080403,Yagua,0804
+190701,Yaguaraparo,1907
+020203,Yapacana,0202
+070110,Yocoima,0701
+170302,Zabala,1703
+121501,Zaraza,1215
+110306,Zazárida,1103
+112505,Zazárida,1125
+070509,Zea,0705
+031006,Zuata,0310
+050505,Zuata,0505

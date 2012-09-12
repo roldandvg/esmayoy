@@ -1,0 +1,159 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}
+	"loadCalendario('finicio','calfinicio');
+	loadCalendario('fculmina','calfculmina');"
+{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url academico.views.inicio %}">{% trans "académico" %}</a>
+	&#160;>&#160;<a href="{% url academico.views.registrarTrimestre %}">{% trans "trimestre" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Trimestre" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarTrimestre %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url academico.views.registrarTrimestre %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.idtrimestre.label}}</li>
+			<li class='right'>
+				{{form.idtrimestre}}<label id="helpid" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpid|safe}}
+				<div class="errores" id="e1">{{form.idtrimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.finicio.label}}</li>
+			<li class='right'>
+				{{form.finicio}}&#160;<img src="../../media/images/base/calendar.png" id="calfinicio" style="cursor:pointer"><label id="helpfi" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpfi|safe}}
+				<div class="errores" id="e2">{{form.finicio.errors}}</div>
+			</li>
+			<li class='left'>{{form.observaciones.label}}</li>
+			<li class='right'>
+				{{form.observaciones}}<label id="helpob" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpob|safe}}
+				<div class="errores" id="e3">{{form.observaciones.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpes" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpes|safe}}
+				<div class="errores" id="e4">{{form.estatus.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.tipotrimestre.label}}</li>
+			<li class='right'>
+				{{form.tipotrimestre}}<label id="helptp" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helptp|safe}}
+				<div class="errores" id="e5">{{form.tipotrimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.fculmina.label}}</li>
+			<li class='right'>
+				{{form.fculmina}}&#160;<img src="../../media/images/base/calendar.png" id="calfculmina" style="cursor:pointer"><label id="helpfc" class="ayudacampo">?</label>
+				{{form.helpfc|safe}}
+				<div class="errores" id="e6">{{form.fculmina.errors}}</div>
+			</li>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpde" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpde|safe}}
+				<div class="errores" id="e7">{{form.descripcion.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Trimestres Registrados" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="20%">
+				<col width="10%">
+				<col width="10%">
+				<col width="15%">
+				<col width="15%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "tipo de trimestre" %}</td>
+						<td class="borde_delgado">{% trans "fecha inicio" %}</td>
+						<td class="borde_delgado">{% trans "fecha fin" %}</td>
+						<td class="borde_delgado">{% trans "observaciones" %}</td>
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.idtrimestre}}">
+							<td class="borde_delgado">{{reg.idtrimestre}}</td>
+							<td class="borde_delgado">{{reg.tipotrimestre.tipotrimestre}}</td>
+							<td class="borde_delgado">{{reg.finicio|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{{reg.fculmina|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{{reg.observaciones}}</td>
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado">{% if reg.estatus %}Activo{% else %}Inactivo{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.idtrimestre}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('trimestre', '{{reg.idtrimestre}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+	<script type="text/javascript">
+		/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+		$("#helpid").mouseenter(function(evento) {
+			$("#ayudaid").css("display","block");
+		});
+		$("#helpid").mouseleave(function(evento) {
+			$("#ayudaid").css("display","none");
+		});
+		$("#helpfi").mouseenter(function(evento) {
+			$("#ayudafi").css("display","block");
+		});
+		$("#helpfi").mouseleave(function(evento) {
+			$("#ayudafi").css("display","none");
+		});
+		$("#helpob").mouseenter(function(evento) {
+			$("#ayudaob").css("display","block");
+		});
+		$("#helpob").mouseleave(function(evento) {
+			$("#ayudaob").css("display","none");
+		});
+		$("#helpes").mouseenter(function(evento) {
+			$("#ayudaes").css("display","block");
+		});
+		$("#helpes").mouseleave(function(evento) {
+			$("#ayudaes").css("display","none");
+		});
+		$("#helptp").mouseenter(function(evento) {
+			$("#ayudatp").css("display","block");
+		});
+		$("#helptp").mouseleave(function(evento) {
+			$("#ayudatp").css("display","none");
+		});
+		$("#helpfc").mouseenter(function(evento) {
+			$("#ayudafc").css("display","block");
+		});
+		$("#helpfc").mouseleave(function(evento) {
+			$("#ayudafc").css("display","none");
+		});
+		$("#helpde").mouseenter(function(evento) {
+			$("#ayudade").css("display","block");
+		});
+		$("#helpde").mouseleave(function(evento) {
+			$("#ayudade").css("display","none");
+		});
+	</script>
+{% endblock %}

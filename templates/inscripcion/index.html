@@ -1,0 +1,31 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url inscripcion.views.inicio %}">{% trans "inscripción" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Inscripción" %}{% endblock %}
+{% block descripcionApp %}<p>{% trans "En este módulo el usuario podrá registrar los datos para la inscripción de alumnos" %}</p>{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/inscripcion/estatusanual.png" title='{% trans "acceso al módulo de regsitro de estatus de anualidades" %}' onclick="window.location='{% url inscripcion.views.registrarEstatusInscAnual %}'">
+		<span>{% trans "estatus anual" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/inscripcion/estatustrimestral.png" title='{% trans "acceso al módulo de registro de los estatus trimestrales" %}' onclick="window.location='{% url inscripcion.views.registrarEstatusInscTrimestral %}'">
+		<span>{% trans "estatus trimestral" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/inscripcion/inscripcionanual.png" title='{% trans "acceso al módulo de Registro de Inscripción Anual por alumno" %}' onclick="window.location='{% url inscripcion.views.registrarInscripcionAnual %}'">
+		<span>{% trans "inscripción anual" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/inscripcion/inscripciontrimestral.png" title='{% trans "acceso al módulo de registro de inscripción trimestral por alumno" %}' onclick="window.location='{% url inscripcion.views.registrarInscripcionTrimestral %}'">
+		<span>{% trans "inscripción trimestral" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/inscripcion/hito.png" title='{% trans "acceso al módulo de registro de Hitos por alumno" %}' onclick="window.location='{% url inscripcion.views.registrarHito %}'">
+		<span>{% trans "hito" %}</span>
+	</div>
+{% endblock %}

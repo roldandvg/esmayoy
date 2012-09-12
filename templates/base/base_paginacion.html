@@ -1,0 +1,24 @@
+<div id='paginacion'>
+	&#160;<a href="?page=1" title='Inicio'>inicio</a>&#160;
+	{% if registros.has_previous %}
+		&#160;<a href="?page={{ registros.previous_page_number }}" title="anterior">atras</a>&#160;
+	{% else %}
+		&#160;<a href="#">atras</a>&#160;
+	{% endif %}
+	&#160;
+	{% for num in registros.paginator.page_range %}
+		{% ifequal num registros.number  %}
+			&#160;<a>{{num}}</a>&#160;
+		{% else %}
+			&#160;<a href="?page={{num}}">{{num}}</a>&#160;
+		{% endifequal %}
+	{% endfor%}
+	&#160;
+	{% if registros.has_next %}
+		&#160;<a href="?page={{ registros.next_page_number }}">adelante</a>&#160;
+	{% else %}
+		&#160;<a href="#">adelante</a>&#160;
+	{% endif %}
+	&#160;<a href="?page={{ registros.paginator.num_pages }}">fin</a>&#160;
+	&#160;&#160;Página {{ registros.number }} de {{ registros.paginator.num_pages }}
+</div>

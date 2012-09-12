@@ -1,0 +1,118 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}
+	"loadCalendario('finicio','calfinicio');
+	loadCalendario('ffinal','calffinal');"
+{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url usuario.views.registrarSeguridadIngAlumnos %}">{% trans "inscripción alumno" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Seguridad para Inscripción de Alumnos" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url usuario.views.registrarSeguridadIngAlumnos %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url usuario.views.registrarSeguridadIngAlumnos %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.validar_seg.label}}</li>
+			<li class='right'>
+				{{form.validar_seg}}<label id="helpvals" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.validar_seg.errors}}</div>
+			</li>
+			<li class='left'>{{form.finicio.label}}</li>
+			<li class='right'>
+				{{form.finicio}}&#160;<img class="calendario" src="../../media/images/base/calendar.png" id="calfinicio" style="cursor:pointer;display:none;"><label id="helpfini" class="ayudacampo">?</label>
+				<div class="errores" id="e2">{{form.finicio.errors}}</div>
+			</li>
+			<li class='left'>{{form.validar_cantalumn.label}}</li>
+			<li class='right'>
+				{{form.validar_cantalumn}}<label id="helpvalc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.validar_cantalumn.errors}}</div>
+			</li>
+			<li class='left'>{{form.usuario.label}}</li>
+			<li class='right'>
+				{{form.usuario}}<label id="helpusr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.usuario.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.validar_fecha.label}}</li>
+			<li class='right'>
+				{{form.validar_fecha}}<label id="helpvalf" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.validar_fecha.errors}}</div>
+			</li>
+			<li class='left'>{{form.ffinal.label}}</li>
+			<li class='right'>
+				{{form.ffinal}}&#160;<img class="calendario" src="../../media/images/base/calendar.png" id="calffinal" style="cursor:pointer;display:none;"><label id="helpffinal" class="ayudacampo">?</label>
+				<div class="errores" id="e7">{{form.ffinal.errors}}</div>
+			</li>
+			<li class='left'>{{form.cant_alumnos.label}}</li>
+			<li class='right'>
+				{{form.cant_alumnos}}<label id="helpcantal" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e8">{{form.cant_alumnos.errors}}</div>
+			</li>
+			<li class='left'>{{form.carrsed.label}}</li>
+			<li class='right'>
+				{{form.carrsed}}<label id="helpcarrsed" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.carrsed.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Seguridad de Inscripción Registradas" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "sede" %}</td>
+						<td class="borde_delgado">{% trans "carrera" %}</td>
+						<td class="borde_delgado">{% trans "usuario" %}</td>
+						<td class="borde_delgado">{% trans "val. seg." %}</td>
+						<td class="borde_delgado">{% trans "val. per." %}</td>
+						<td class="borde_delgado">{% trans "val. cant." %}</td>
+						<td class="borde_delgado">{% trans "cant. alumnos" %}</td>
+						<td class="borde_delgado">{% trans "fecha ini." %}</td>
+						<td class="borde_delgado">{% trans "fecha. cie." %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id}}">
+							<td class="borde_delgado">{{reg.carrera_sede.sede.descripcion}}</td>
+							<td class="borde_delgado">{{reg.carrera_sede.carrera.descripcion}}</td>
+							<td class="borde_delgado">{{reg.username}}</td>
+							<td class="borde_delgado">{% if reg.validar_seg %}{% trans "Sí" %}{% else %}{% trans "No" %}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.validar_fecha %}{% trans "Sí" %}{% else %}{% trans "No" %}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.validar_cantalumn %}{% trans "Sí" %}{% else %}{% trans "No" %}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.cant_alumnos %}{{reg.contador_cantidad}}/{{reg.cant_alumnos}}{% else %}{% trans "S/R" %}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.finicio %}{{reg.finicio|date:"d-m-Y"}}{% else %}{% trans "S/R" %}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.ffinal %}{{reg.ffinal|date:"d-m-Y"}}{% else %}{% trans "S/R" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.id}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('seguridad_ingreso_alumno', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

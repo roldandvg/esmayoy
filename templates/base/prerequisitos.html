@@ -1,0 +1,29 @@
+{% load i18n %}
+<div id="dialog-prerequisitos" title='{% trans "Requisitos Previos" %}' class="ui-dialog-content" style="display:none;">
+	<p style="text-align:justify;">
+		<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+		{% trans "Para registrar datos en este módulo del sistema se requieren de los siguientes registros:" %}
+		{% for mod in prerequisito %}
+			<ul id="prereq">
+				<li>{{mod}}</li>
+			</ul>
+		{% endfor %}
+	</p>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$("#dialog-prerequisitos").dialog('open');
+		$("#dialog-prerequisitos").dialog({
+			resizable: false,
+			height:250,
+			width: 300,
+			modal: true,
+			buttons: {
+				'Aceptar': function() {
+					$(this).dialog('destroy');
+					$(location).attr('href','{{inicio}}');
+				}
+			}
+		});
+	});
+</script>

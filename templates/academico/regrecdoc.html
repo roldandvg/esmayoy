@@ -1,0 +1,36 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block titulo %}{% trans "Registro de Recepción de Documentos" %}{% endblock %}
+{% block barratools %}
+	<button class="btnTools" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarRecdoc %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	&#160;
+	<img class="imgBoton" title='{% trans "Pulse el botón para borrar el formulario" %}' src="../../media/images/botones/borrar.png" onclick="window.location='{% url academico.views.registrarRecdoc %}'">
+	&#160;
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cedula.label}}</li>
+			<li class='right'>
+				{{form.cedula}}<label class="req">*</label>
+				<input type="button" name='btnBuscar' id='btnBuscar' value='buscar' title='{% trans "buscar alumnos registrados" %}' onclick="Dajax.academico_buscarAlumno({'cedula':document.getElementById('cedula').value});"/>
+				<div class="errores" id="e1">{{form.cedula.errors}}</div>
+			</li>
+			<li class='left'>{{form.documento.label}}<label class="req">*</label></li>
+			<li class='right'>
+				{{form.documento}}
+				<div class="errores" id="e2">{{form.documento.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label class="req">*</label>
+				<div class="errores" id="e3">{{form.nombre.errors}}</div>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

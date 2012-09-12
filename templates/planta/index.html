@@ -1,0 +1,59 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url planta.views.inicio %}">{% trans "planta" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Planta" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "En este módulo el usuario podrá registrar los datos de la planta académica y de la planta física" %}</p>
+{% endblock %}
+{% block menu %}
+	<div class='seccion'>Académica</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/profesion.png" title='{% trans "acceso al módulo de regsitro de profesiones de los profesores" %}' onclick="window.location='{% url planta.academica.views.registrarProfesion %}'">
+		<span>profesion</span>	
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/condicion.png" title='{% trans "acceso al módulo de registro de las condiciones academicas de los profesores" %}' onclick="window.location='{% url planta.academica.views.registrarCondProfesor %}'">
+		<span>condición de profesor</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/profesor.png" title='{% trans "acceso al módulo de registro de datos de profesores" %}' onclick="window.location='{% url planta.academica.views.registrarProfesor %}'">
+		<span>profesor</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/profesorcarrera.png" title='{% trans "acceso al módulo de registro de asignación de profesores por carreras" %}' onclick="window.location='{% url planta.academica.views.registrarProfCarrera %}'">
+		<span>profesor por carrera</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/disponibilidad.png" title='{% trans "acceso al módulo de registro de datos de la disponibilidad academica del profesor" %}' onclick="window.location='{% url planta.academica.views.registrarProfDisponibilidad %}'">
+		<span>disponibilidad de profesor</span>
+	</div>
+	<div class='seccion'>Física</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/tipoaula.png" title='{% trans "acceso al módulo de registro de tipo de aulas" %}' onclick="window.location='{% url planta.fisica.views.registrarTipoAula %}'">
+		<span>tipo de aula</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/tipoedificio.png" title='{% trans "acceso al módulo de tipo de edificios" %}' onclick="window.location='{% url planta.fisica.views.registrarTipoEdificio %}'">
+		<span>tipo de edificio</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/edificio.png" title='{% trans "acceso al módulo de registro de datos de edificios" %}' onclick="window.location='{% url planta.fisica.views.registrarEdificio %}'">
+		<span>edificio</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/aula.png" title='{% trans "acceso al módulo de Aulas" %}' onclick="window.location='{% url planta.fisica.views.registrarAula %}'">
+		<span>aula</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/planta/aulacarrera.png" title='{% trans "acceso al módulo de registro de datos de aulas por carrera" %}' onclick="window.location='{% url planta.fisica.views.registrarAulaCarrera %}'">
+		<span>aula por carrera</span>
+	</div>
+{% endblock %}

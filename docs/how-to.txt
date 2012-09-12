@@ -1,0 +1,61 @@
+pasos a seguir para instalar esmayoy:
+- Descargar el framework DJango de la siguiente dirección: http://www.djangoproject.com/download/1.2.5/tarball/
+
+- Una vez descargado descomprimir el archivo con el siguiente comando:
+  tar zxvf Django-1.2.5.tar.gz
+
+- Para instalar el framework se debe ingresar a la carpeta descomprimida y ejecutar el comando:
+  sudo python setup.py install
+
+- Para comprobar si el framework fue instalado se ejecuta:
+  python -c "import django"
+  si no muestra un mensaje de error quiere decir que todo esta bien
+
+- Instalar la base de datos postgreSQL con el siguiente comando:
+  sudo aptitude postgresql-8.4
+
+- Instalar las librerías python-imaging, python-psycopg2 y gnupg ejecutando el comando (se asumen distribuciones basadas en Debian):
+  sudo aptitude install python-imaging python-psycopg2 gnupg
+
+- descomprimir las librerías suministradas con la aplicación en la carpeta extapps de la siguiente forma:
+  tar zxvf dajax-0.7.5.0.tar.gz
+  tar zxvf pycaptcha-0.4.tar.gz
+  tar zxvf python-gnupg-0.2.5.tar.gz
+
+- Instalar las librerías descomprimidas de la siguiente manera (entrando en cada una de las carpetas descomprimidas):
+  sudo python setup.py install
+
+- Para comprobar si las librerías instaladas fueron instaladas satisfactoriamente se ejecuta el comando:
+  python -c "import dajax,Captcha,gnupg"
+
+- En caso de ser necesario cambiar los permisos de las carpetas logs y tmp (en el directorio raíz de la aplicación):
+  sudo chmod 777 -R logs
+  sudo chmod 777 -R tmp
+
+- Crear la base de datos que se va a utilizar en la aplicación:
+  sudo su postgres
+  psql template1
+  CREATE DATABASE nombrebd WITH ENCODING 'UTF-8';
+  \q
+  exit
+
+- Crear un archivo llamado servidorbd.txt en la carpeta apps/configuracion con la siguiente información (cada una en líneas separadas y sin espacios en blanco):
+  nombrebd
+  usuariobd
+  contraseñabd
+  servidorbd
+  puertobd
+
+- Una vez creado este archivo se debe ejecutar el script crearkey.py ubicado en la misma carpeta (apps/configuración):
+  python crearkey.py
+  
+debe ser paciente ya que este procedimiento suele demorar un poco. Esto permite crear un par de claves gnupg que permiten cifrar y firmar el archivo de configuración de acceso a la base de datos.
+
+- Antes de ejecutar la aplicación se debe ejecutar el comando syncdb para crear la estructura de la base de datos (en el directorio raíz de la aplicación):
+  python manage.py syncdb
+
+- Para ejecutar la aplicación en modo de desarrollo se ejecuta el servidor que viene incluído con el framework (en el directorio raíz de la aplicación):
+  python manage.py runserver
+
+- Abrir un navegador web e introducir la siguiente URL:
+  http://localhost:8000/

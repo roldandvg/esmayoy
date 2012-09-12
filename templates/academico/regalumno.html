@@ -1,0 +1,98 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}
+	"loadCalendario('fnacimiento','calfnacimiento');
+	loadCalendario('fingreso','calfingreso');"
+{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url academico.views.inicio %}">{% trans "académico" %}</a>
+	&#160;>&#160;<a href="{% url academico.views.registrarAlumno %}">{% trans "alumno" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Alumnos" %}{% endblock %}
+{% block head %}
+	<!--<script language="javascript" type="text/javascript" src="/media/js/jquery.upload-1.0.2.js"></script>
+	<script language="javascript" type="text/javascript" src="/media/js/uploadimage.js"></script>-->
+{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarAlumno %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url academico.views.registrarAlumno %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="tabs" style="overflow:auto;padding-bottom:30px;">
+	    <ul>
+	        <li><a href="#fragment-1"><span {% if form.errors %}style="color:red;"{% endif %}>Datos del Alumno</span></a></li>
+	        <li><a href="#fragment-2"><span {% if form2.errors %}style="color:red;"{% endif %}>Datos Académicos</span></a></li>
+	        <li><a href="#fragment-3"><span {% if form3.errors %}style="color:red;"{% endif %}>Datos Socio-Económicos</span></a></li>
+			<li><a href="#fragment-4"><span {% if form4.errors %}style="color:red;"{% endif %}>Recepción de Documentos</span></a></li>
+	    </ul>
+	    <div id="fragment-1">
+	        {% include "academico/datosalumno.html" %}
+	    </div>
+	    <div id="fragment-2">
+	        {% include "academico/datosacademicos.html" %}
+	    </div>
+	    <div id="fragment-3">
+	        {% include "academico/datossocioecon.html" %}
+	    </div>
+		<div id="fragment-4">
+	        {% include "academico/datosrecdoc.html" %}
+	    </div>
+	</div>
+	<script type='text/javascript'>
+  		$(document).ready(function() {
+    		$("#tabs").tabs();
+  		});
+  	</script>
+
+	{{form.modificar}}
+	
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Alumnos Registrados" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="10%">
+				<col width="30%">
+				<col width="20%">
+				<col width="20%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "cédula" %}</td>
+						<td class="borde_delgado">{% trans "carnet" %}</td>
+						<td class="borde_delgado">{% trans "nombre" %}</td>
+						<td class="borde_delgado">{% trans "sede" %}</td>
+						<td class="borde_delgado">{% trans "carrera" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_alumno}}">
+							<td class="borde_delgado">{{reg.cedula}}</td>
+							<td class="borde_delgado">{{reg.cod_alumno}}</td>
+							<td class="borde_delgado">
+								{{reg.primerapellido}}
+								{% if reg.segundoapellido %}
+									&#160;{{reg.segundoapellido}}
+								{% endif %}
+								&#160;{{reg.primernombre}}
+								{% if reg.segundonombre %}
+									&#160;{{reg.segundonombre}}
+								{% endif %}
+							</td>
+							<td class="borde_delgado">{{reg.carrera_sede.sede.descripcion}}</td>
+							<td class="borde_delgado">{{reg.carrera_sede.carrera.descripcion}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.cod_alumno}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('alumno', '{{reg.cod_alumno}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

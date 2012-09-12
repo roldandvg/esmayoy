@@ -1,0 +1,30 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url institucion.views.inicio %}">{% trans "institución" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Institución" %}{% endblock %}
+{% block descripcionApp %}
+	<p>
+		{% trans "En este módulo el usuario podrá registrar los datos de la institución" %}
+	</p>
+{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/institucion/sede.png" title='{% trans "acceso al módulo de regsitro de las sedes institución" %}' onclick="window.location='{% url institucion.views.registrarSede %}'">
+		<span>sede</span>	
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/institucion/departamento.png" title='{% trans "acceso al módulo de departamentos de la institución" %}' onclick="window.location='{% url institucion.views.registrarDpto %}'">
+		<span>departamento</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/institucion/carrera.png" title='{% trans "acceso al módulo de registro de las carreras" %}' onclick="window.location='{% url institucion.views.registrarCarrera %}'">
+		<span>carrera</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/institucion/carrerasede.png" title='{% trans "acceso al módulo de registro de carreras por sede" %}' onclick="window.location='{% url institucion.views.registrarCarrSed %}'">
+		<span>carrera por sede</span>
+	</div>
+{% endblock %}

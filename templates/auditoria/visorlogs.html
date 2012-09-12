@@ -1,0 +1,96 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url comun.views.auditoriaLogs %}">{% trans "eventos logs" %}</a>
+	{% ifequal modulo "academico" %}
+		&#160;>&#160;<a href="{% url comun.views.auditoriaLogsAcademico %}">{% trans "académico" %}</a>
+	{% else %}
+		{% ifequal modulo "configuracion" %}
+			&#160;>&#160;<a href="{% url comun.views.auditoriaLogsConfiguracion %}">{% trans "configuración" %}</a>
+		{% else %}
+			{% ifequal modulo "horario" %}
+				&#160;>&#160;<a href="{% url comun.views.auditoriaLogsHorario %}">{% trans "horario" %}</a>
+			{% else %}
+				{% ifequal modulo "inscripcion" %}
+					&#160;>&#160;<a href="{% url comun.views.auditoriaLogsInscripcion %}">{% trans "inscripción" %}</a>
+				{% else %}
+					{% ifequal modulo "institucion" %}
+						&#160;>&#160;<a href="{% url comun.views.auditoriaLogsInstitucion %}">{% trans "institución" %}</a>
+					{% else %}
+						{% ifequal modulo "planificacion" %}
+							&#160;>&#160;<a href="{% url comun.views.auditoriaLogsPlanificacion %}">{% trans "planificación" %}</a>
+						{% else %}
+							{% ifequal modulo "planta.academica" %}
+								&#160;>&#160;<a href="{% url comun.views.auditoriaLogsPlantaAca %}">{% trans "planta académica" %}</a>
+							{% else %}
+								{% ifequal modulo "planta.fisica" %}
+									&#160;>&#160;<a href="{% url comun.views.auditoriaLogsPlantaFis %}">{% trans "planta física" %}</a>
+								{% else %}
+									{% ifequal modulo "seguridad" %}
+										&#160;>&#160;<a href="{% url comun.views.auditoriaLogsSeguridad %}">{% trans "seguridad" %}</a>
+									{% else %}
+										{% ifequal modulo "unidadcurricular" %}
+											&#160;>&#160;<a href="{% url comun.views.auditoriaLogsUnidadCurr %}">{% trans "unidad curricular" %}</a>
+										{% else %}
+											&#160;>&#160;<a href="{% url comun.views.auditoriaLogsGeneral %}">{% trans "general" %}</a>
+										{% endifequal %}
+									{% endifequal %}
+								{% endifequal %}
+							{% endifequal %}
+						{% endifequal %}
+					{% endifequal %}
+				{% endifequal %}
+			{% endifequal %}
+		{% endifequal %}
+	{% endifequal %}
+{% endblock %}
+{% block titulo %}
+	{% trans "Registro de Eventos Logs" %}
+	{% ifequal modulo "academico" %}
+		{% trans "del módulo Académico" %}
+	{% else %}
+		{% ifequal modulo "configuracion" %}
+			{% trans "del módulo Configuración" %}
+		{% else %}
+			{% ifequal modulo "horario" %}
+				{% trans "del módulo Horario" %}
+			{% else %}
+				{% ifequal modulo "inscripcion" %}
+					{% trans "del módulo Inscripción" %}
+				{% else %}
+					{% ifequal modulo "institucion" %}
+						{% trans "del módulo Institución" %}
+					{% else %}
+						{% ifequal modulo "planificacion" %}
+							{% trans "del módulo Planificación" %}
+						{% else %}
+							{% ifequal modulo "planta.academica" %}
+								{% trans "del módulo Planta Académica" %}
+							{% else %}
+								{% ifequal modulo "planta.fisica" %}
+									{% trans "del módulo Planta Física" %}
+								{% else %}
+									{% ifequal modulo "seguridad" %}
+										{% trans "del módulo Seguridad" %}
+									{% else %}
+										{% ifequal modulo "unidadcurricular" %}
+											{% trans "del módulo Unidad Curricular" %}
+										{% endifequal %}
+									{% endifequal %}
+								{% endifequal %}
+							{% endifequal %}
+						{% endifequal %}
+					{% endifequal %}
+				{% endifequal %}
+			{% endifequal %}
+		{% endifequal %}
+	{% endifequal %}
+{% endblock %}
+{% block formulario %}
+<ul class="logs" style="overflow:auto;">
+{% for registros in logs %}
+<li><font style="{% if 'INFO' in registros %}color:green{% else %}{% if 'WARNING' in registros %}color:red{% endif %}{% endif %}">{{registros}}</font></li>
+{% endfor %}
+</ul>
+{% endblock %}

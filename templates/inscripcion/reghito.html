@@ -1,0 +1,117 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url inscripcion.views.inicio %}">{% trans "inscripción" %}</a>
+	&#160;>&#160;<a href="{% url inscripcion.views.registrarHito %}">{% trans "hito" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Hito" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url inscripcion.views.registrarHito %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url inscripcion.views.registrarHito %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cedula.label}}</li>
+			<li class='right'>
+				{{form.cedula}}<label id="helpci" class="ayudacampo">?</label><label class="req">*</label>
+				<input type="button" name='btnBuscar' id='btnBuscar' value='buscar' title='{% trans "buscar alumnos registrados" %}' onclick="Dajax.academico_buscarAlumno({'cedula':document.getElementById('cedula').value});"/>
+				<div class="errores" id="e1">{{form.cedula.errors}}</div>
+			</li>
+			<li class='left'>{{form.inscripcion_anual.label}}</li>
+			<li class='right'>
+				{{form.inscripcion_anual}}<label id="helpinscanual" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.inscripcion_anual.errors}}</div>
+			</li>
+			<li class='left'>{{form.trimestre.label}}</li>
+			<li class='right'>
+				{{form.trimestre}}<label id="helptri" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.trimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.seccion.label}}</li>
+			<li class='right'>
+				{{form.seccion}}<label id="helpsecc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.seccion.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label id="helpnom" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.modulo_curricular.label}}</li>
+			<li class='right'>
+				{{form.modulo_curricular}}<label id="helpmod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.modulo_curricular.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.nota.label}}</li>
+			<li class='right'>
+				{{form.nota}}<label id="helpnota" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e8">{{form.nota.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Inscripciones Trimestrales Registradas" %}<br/><br/></caption>
+				<col width="20%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "alumno" %}</td>
+						<td class="borde_delgado">{% trans "cédula" %}</td>
+						<td class="borde_delgado">{% trans "insc. anual" %}</td>
+						<td class="borde_delgado">{% trans "módulo curricular" %}</td>
+						<td class="borde_delgado">{% trans "trimestre" %}</td>
+						<td class="borde_delgado">{% trans "sección" %}</td>
+						<td class="borde_delgado">{% trans "nota" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id}}">
+							<td class="borde_delgado">
+								{{reg.alumno.primerapellido}}&#160;
+								{% if reg.alumno.segundoapellido %}{{reg.alumno.segundoapellido}}&#160;{% endif %}
+								{{reg.alumno.primernombre}}&#160;
+								{% if reg.alumno.segundonombre %}{{reg.alumno.segundonombre}}{% endif %}
+							</td>
+							<td class="borde_delgado">{{reg.alumno.cedula}}</td>
+							<td class="borde_delgado">{{reg.inscripcion_anual.anualidad.descripcion}}</td>
+							<td class="borde_delgado">{{reg.modulo_curricular.nombre}}</td>
+							<td class="borde_delgado">{{reg.trimestre.descripcion}}</td>
+							<td class="borde_delgado">{{reg.seccion}}</td>
+							<td class="borde_delgado">{{reg.nota}}</td>
+							<td class="borde_delgado">{{reg.estatus.descripcion}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosPensum({'pensum':'{{reg.id}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('hito', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

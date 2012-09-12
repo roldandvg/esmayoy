@@ -1,0 +1,74 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url academico.views.inicio %}">{% trans "académico" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Académico" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "En este módulo el usuario podrá registrar los datos académicos del estudiante" %}</p>
+{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/documentos.png" title='{%trans "acceso al módulo de registro de los documentos generales solicitados" %}' onclick="window.location='{% url academico.views.registrarDocumento %}'">
+		<span>{% trans "documentos" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/alumno.png" title='{% trans "acceso al módulo de regsitro de los alumnos" %}' onclick="window.location='{% url academico.views.registrarAlumno %}'">
+		<span>{% trans "alumno" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/tipotrimestre.png" title='{% trans "acceso al módulo de registro de datos de los tipos de trimestre" %}' onclick="window.location='{% url academico.views.registrarTipotrime %}'">
+		<span>{% trans "tipo de trimestre" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/trimestre.png" title='{% trans "acceso al módulo de registro de trimestre" %}' onclick="window.location='{% url academico.views.registrarTrimestre %}'">
+		<span>{% trans "trimestre" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/anualidad.png" title='{% trans "acceso al módulo de registro de datos de Anualidades" %}' onclick="window.location='{% url academico.views.registrarAnualidad %}'">
+		<span>{% trans "anualidad" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/anualcarrera.png" title='{% trans "acceso al módulo de registro de anualidades por carrera" %}' onclick="window.location='{% url academico.views.registrarAnualidadCarrera %}'">
+		<span>{% trans "anualidad por carrera" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/academico/anualtrimestre.png" title='{% trans "acceso al módulo de registro de datos de Anualidad por Trimestre" %}' onclick="window.location='{% url academico.views.registrarAnualidadTriCarrera %}'">
+		<span>{% trans "anualidad por trimestre" %}</span>
+	</div>
+        <!--<div style="margin-top:0px;">&#1160;</div>
+		<ul>
+			<li class="itemRight">
+				<div class="left">
+					<img class="imgItem" src="../../media/images/academico/socioeconom.png" title='{% trans "acceso al módulo de registro de datos Socio-Económicos de los alumnos" %}' onclick="window.location='{% url academico.views.registrarDatosocioecon %}'">
+				</div>
+				<div class="right">
+					<label class="negrita">{% trans "Datos Socio-Económicos" %}</label>
+					<br>{%trans "Registro de datos Socio-Económicos de los alumnos" %}
+				</div>
+			</li>
+		
+			<li class="itemLeft">
+				<div class="left">
+					<img class="imgItem" src="../../media/images/academico/datosacade.png" title='{% trans "acceso al módulo de registro de datos académicos de los alumnos" %}' onclick="window.location='{% url academico.views.registrarDatosaca %}'">
+				</div>
+				<div class="right">
+					<label class="negrita">{% trans "Datos Académicos" %}</label>
+					<br>{% trans "Registro de Datos Académicos de los alumnos" %}
+				</div>
+			</li>
+		
+			<li class="itemRight">
+				<div class="left">
+					<img class="imgItem" src="../../media/images/academico/recepcion.png" title='{% trans "acceso al módulo de registro de Recepción de Documentos del Alumno" %}' onclick="window.location='{% url academico.views.registrarRecdoc %}'">
+				</div>
+				<div class="right">
+					<label class="negrita">{% trans "Recepción de Documentos" %}</label>
+					<br>{% trans "Registro de Recepción de Documentos del alumno" %}
+				</div>
+			</li>-->
+{% endblock %}

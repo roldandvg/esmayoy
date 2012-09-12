@@ -1,0 +1,48 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}"loadCalendario('fregistro','calfregistro');"{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url planificacion.views.inicio %}">{% trans "planificación" %}</a>
+	&#160;>&#160;<a href="{% url horario.views.registrarHorarioTrimestral %}">{% trans "horario trimestral" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Horario Trimestral" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url horario.views.registrarHorarioTrimestral %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url horario.views.registrarHorarioTrimestral %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.fregistro.label}}</li>
+			<li class='right'>
+				{{form.fregistro}}&#160;<img src="../../media/images/base/calendar.png" id="calfregistro" style="cursor:pointer"><label id="helpfecha" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.fregistro.errors}}</div>
+			</li>
+			<li class='left'>{{form.planificacion_unidad.label}}</li>
+			<li class='right'>
+				{{form.planificacion_unidad}}<label id="helpplan" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.planificacion_unidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.horario.label}}</li>
+			<li class='right'>
+				{{form.horario}}<label id="helphorario" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.horario.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.aula.label}}</li>
+			<li class='right'>
+				{{form.aula}}<label id="helpaula" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.aula.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{{form.modificar}}
+{% endblock %}

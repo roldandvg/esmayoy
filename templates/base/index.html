@@ -1,0 +1,215 @@
+{% load i18n %}
+{% load dajax_templatetags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ESMAYOY - {% trans "Sistema para Admisión, Registro y Control de Estudio de los PNF" %}</title>
+		<link rel="stylesheet" href="/media/css/esmayoy.css" type="text/css"/>
+		<link rel="stylesheet" href="/media/css/forms.css" type="text/css"/>
+		<link rel="stylesheet" href="/media/css/estilo_calendario.css" type="text/css" />
+		<link type="text/css" href="/media/css/jquery-ui/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="/media/js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="/media/js/jquery-ui-1.8.13.custom.min.js"></script>
+		<script language="javascript" type="text/javascript" src="/media/js/calendar.js"></script>
+    	<script language="javascript" type="text/javascript" src="/media/js/calendar-es.js"></script>
+    	<script language="javascript" type="text/javascript" src="/media/js/calendar-setup.js"></script>
+		{% dajax_js_import %}
+		{% block head %}{% endblock head %}
+	</head>
+	<body onload={% block onload %}{% endblock %}>
+		<div id="banner">
+			<span class="bannerLeft"><img src="../../media/images/base/topbandera.png" width="325" height="49" /></span>
+			<span class="bannerRight"><img src="../../media/images/base/esdetodos.png" width="83" height="45" /></span>
+		</div>
+		<br/>
+		<a href="{% url comun.views.inicio %}">{% trans "inicio" %}</a>
+		{% block ruta %}{% endblock %}
+		<br>
+		<!--Corregir lo de los botónes en los formularios para guardar, etc.-->
+		<div id="contenedor">
+			<form method="post" enctype="multipart/form-data" name='frmPpal' id='frmPpal'>
+				<div id="barra">
+					<div id="logoApp">
+						<img src="../../media/images/base/logo_esmayoy.png" width="100px">
+					</div>
+					<div class='botones'>
+						<div id="accion">
+							{% block botones %}{% endblock %}
+							<button class="btnAction" title='{% trans "Pulse el botón para ayuda del sistema" %}' onclick="window.open('../../docs/manual_usuario.pdf')"><img class="imgBoton" src="../../media/images/menu/info.png"></button>
+							<button class="btnAction" title='{% trans "Pulse el botón para salir del sistema" %}' onclick="window.location='{% url usuario.views.salir %}'"><img class="imgBoton" src="../../media/images/menu/salir.png"></button>
+						</div>
+					</div>
+				</div>
+				<div class='titulo'>{% block titulo %}{% trans "Bienvenido usuario " %}{{username}}{% endblock %}</div>			
+				{% block formulario %}
+					<div id="descModulo">
+						{% trans "La fecha de su última visita fue el:" %} <b>{{username.last_login|date:"d-m-Y P"}}</b>
+						<br/><br/>
+						{% block descripcionApp %}
+							<p>
+								{% trans "El Sistema de Admisión, Registro y Control de Estudio denominado 'ESMAYOY', permite llevar el control de todas las actividades inherentes a los Programas Nacionales de Formación (PNF)." %}	
+							</p>
+							<p>
+								{% trans "En el panel derecho se encuentran las opciones disponibles del sistema mediante las cuales podrá registrar o consultar la información deseada." %}
+							</p>
+						{% endblock %}
+					</div>
+					<div id="opcionesModulo">
+						{% block menu %}
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/institucion.png" title='{% trans "acceso al módulo de regsitro de la institución" %}' onclick="window.location='{% url institucion.views.inicio %}'">
+								<span>institucion</span>	
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/unidadcurricular.png" title='{% trans "acceso al módulo de registro de la unidad curricular" %}' onclick="window.location='{% url unidadcurricular.views.inicio %}'">
+								<span>unidad curricular</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/academico.png" title='{% trans "acceso al módulo de registro de datos académicos" %}' onclick="window.location='{% url academico.views.inicio %}'">
+								<span>académico</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/horarios.png" title='{% trans "acceso al módulo de registro de horarios" %}' onclick="window.location='{% url horario.views.inicio %}'">
+								<span>horario</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/planta.png" title='{% trans "acceso al módulo de registro de datos de la planta física y académica" %}' onclick="window.location='{% url planta.views.inicio %}'">
+								<span>planta</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/seguridad.png" title='{% trans "acceso al módulo de seguridad" %}' onclick="window.location='{% url usuario.views.inicio %}'">
+								<span>seguridad</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/planificacion.png" title='{% trans "acceso al módulo de registro de datos de la planificación" %}' onclick="window.location='{% url planificacion.views.inicio %}'">
+								<span>planificación</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/inscripcion.png" title='{% trans "acceso al módulo de inscripción" %}' onclick="window.location='{% url inscripcion.views.inicio %}'">
+								<span>inscripción</span>
+							</div>
+							<div class="sep">&#160</div>
+							<div class='itemMnu'>
+								<img class="imgItem" src="../../media/images/base/configuracion.png" title='{% trans "acceso al módulo de registro de datos de la configuración de la aplicación" %}' onclick="window.location='{% url configuracion.views.inicio %}'">
+								<span>configuración</span>
+							</div>
+						{% endblock %}
+					</div>
+				{% endblock %}
+			</form>
+		</div>
+		<br/>
+		<div id="footer">
+			<br/>
+			<div>{% trans "Sistema para la Administración, Registro y Control de Estudio del PNF" %}</div>
+			<div>{% trans "Proyecto Socio-Tecnológico" %} ESMAYOY</div>
+			<div>{% trans "Distribuído bajo Licencia" %} GPL v2</div><br/>
+		</div>
+		{% if prerequisito %}
+			{% include "base/prerequisitos.html" %}
+		{% endif %}
+		{% if exito %}
+			<div id="dialog-guardar" title='{% trans "Guardar Registros" %}' class="ui-dialog-content" style="display:none;">
+				<p style="text-align:justify;">
+					<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+					{% trans "Los registros fueron almacenados con éxito" %}
+				</p>
+			</div>
+			<script type="text/javascript">
+				$(function() {
+					$("#dialog-guardar").dialog('open');
+					$("#dialog-guardar").dialog({
+						resizable: false,
+						height:150,
+						width: 300,
+						modal: true,
+						buttons: {
+							'Aceptar': function() {
+								$(this).dialog('destroy');
+							}
+						}
+					});
+				});
+			</script>
+		{% endif %}
+		<!-- Mensaje de confirmación para la eliminación de datos -->
+		<div id="dialog-eliminar" title='{% trans "Eliminar Registro" %}' class="ui-dialog-content" style="display:none;">
+			<p style="text-align:justify;">
+				<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+				{% trans "¿Esta seguro de querer eliminar este registro?" %}
+			</p>
+		</div>
+		<div id="dialog-exito-eliminar" title='{% trans "Registro Eliminado" %}' class="ui-dialog-content" style="display:none;">
+			<p style="text-align:justify;">
+				<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+				{% trans "El registro fue eliminado satisfactoriamente" %}
+			</p>
+		</div>
+		<div id="dialog-error-eliminar" title='{% trans "Registro Eliminado" %}' class="ui-dialog-content" style="display:none;">
+			<p style="text-align:justify;">
+				<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+				{% trans "El registro no pudo ser eliminado" %}
+			</p>
+		</div>
+		<script type="text/javascript">
+			function confirmarEliminar(opcion,id) {
+				$("#dialog-eliminar").dialog('open');
+				$("#dialog-eliminar").dialog({
+					resizable: false,
+					height:150,
+					width: 300,
+					modal: true,
+					buttons: {
+						'Si': function() {
+							Dajax.comun_eliminarRegistro({'opcion':opcion, 'id':id});
+						},
+						'No': function() {
+							$(this).dialog('destroy');
+						}
+					}
+				});
+			}
+			
+			function exitoEliminar(sitio) {
+				$("#dialog-eliminar").dialog('destroy');
+				$("#dialog-exito-eliminar").dialog('open');
+				$("#dialog-exito-eliminar").dialog({
+					resizable: false,
+					height:150,
+					width: 300,
+					modal: true,
+					buttons: {
+						'Ok': function() {
+							$(this).dialog('destroy');
+							window.location.href=sitio;
+						}
+					}
+				});
+			}
+			
+			function errorEliminar() {
+				$("#dialog-eliminar").dialog('destroy');
+				$("#dialog-error-eliminar").dialog('open');
+				$("#dialog-error-eliminar").dialog({
+					resizable: false,
+					height:150,
+					width: 300,
+					modal: true,
+					buttons: {
+						'Ok': function() {
+							$(this).dialog('destroy');
+						}
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

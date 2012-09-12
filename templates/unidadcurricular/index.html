@@ -1,0 +1,45 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url unidadcurricular.views.inicio %}">{% trans "unidad curricular" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Unidad Curricular" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "En este módulo el usuario podrá registrar los datos requeridos para el control de las unidades curriculares" %}</p>
+{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/pensum.png" title='{% trans "acceso al módulo de regsitro de pesum de estudio" %}' onclick="window.location='{% url unidadcurricular.views.registrarPensum %}'">
+		<span>pensum</span>	
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		&#160;
+		<img class="imgItem" src="../../media/images/unidadcurricular/eje.png" title='{% trans "acceso al módulo de registro de ejes de unidades curriculares" %}' onclick="window.location='{%  url unidadcurricular.views.registrarEjeCurr %}'">
+		&#160;
+		<span>eje curricular</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/condicion.png" title='{% trans "acceso al módulo de registro de condiciones de las unidades curriculares" %}' onclick="window.location='{% url unidadcurricular.views.registrarCondUnidad %}'">
+		<span>condición unidad</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/tipo.png" title='{% trans "acceso al módulo de tipo de unidad curricular" %}' onclick="window.location='{% url unidadcurricular.views.registrarTipoUnidCurr %}'">
+		<span>tipo unidad curricular</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/unidad.png" title='{% trans "acceso al módulo de registro de datos de las unidades curriculares" %}' onclick="window.location='{% url unidadcurricular.views.registrarUnidadCurr %}'">
+		<span>unidad curricular</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/prelacion.png" title='{% trans "acceso al módulo de asignación de prelaciones por unidad curricular" %}' onclick="window.location='{% url unidadcurricular.views.registrarPrelacion %}'">
+		<span>prelación</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/unidadcurricular/modulo.png" title='{% trans "acceso al módulo de registro de los modulos que conforman las unidades curriculares" %}' onclick="window.location='{% url unidadcurricular.views.registrarModuloCurricular %}'">
+		<span>módulo curricular</span>
+	</div>
+{% endblock %}

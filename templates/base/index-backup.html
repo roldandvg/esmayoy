@@ -1,0 +1,41 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ESMAYOY</title>
+		<link rel="stylesheet" href="/media/css/estilobase.css" type="text/css"/>
+		{% block head %}{% endblock head %}
+	</head>
+	
+	<body>
+		<div class="sidebox">{% block opciones %}{% endblock opciones %}</div>
+		<div id="main_container">
+			<div id="top_banner">
+				<div id="banner">
+					<img src="/media/images/base/baner_gobierno.png" width="1200" height="60" border="0" alt="" />
+				</div>
+			</div>
+			<div class="navigation">{% include "base/menu.html" %}</div>
+			
+			<div id="center_content">
+				{% if errores %}{{errores}}{% endif %}
+				<br/><br/>
+				<div class="box">
+					{% block titulo %}{% endblock titulo %}
+					<br/>
+					<form name="frmPpal" id="frmPpal" method="post">
+						{% block formulario %}{% endblock formulario %}
+					</form>
+				</div>
+				<br/>
+				
+				<div style="width:500px; clear:both; padding-bottom:2px;"></div>
+			</div>
+		</div>
+		{% include "base/footer.html" %}
+	</body>
+	{% if exito %}
+		<script type="text/javascript">alert('{% trans "registros almacenados satisfactoriamente" %}');</script>
+	{% endif %}
+</html>

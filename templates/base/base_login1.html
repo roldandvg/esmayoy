@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load dajax_templatetags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>ESMAYOY - {% trans "Sistema para Admisión, Registro y Control de Estudio de los PNF" %}</title>
+		<link rel="stylesheet" href="/media/css/estilos_login.css" type="text/css"/>
+		<script type="text/javascript" src="/media/js/jquery-1.3.2.min.js"></script>
+		{% dajax_js_import %}
+		{% block head %}{% endblock head %}
+	</head>
+	<body>
+		<center>
+			<div id="encabezado">
+				<center><img src="../../media/images/base/banner-mppes.png" width="1200px" height="70px"></center>
+			</div>
+			<div id="contenedor">
+				<center>
+					<div id="frameacceso">
+						<form name="frmAcces" id="frmAcces" method="post">
+							{% block formulario %}{% endblock %}
+						</form>
+					</div>
+				</center>
+			</div>
+			<div id="pie">
+				<div>{% trans "Sistema para la Administración, Registro y Control de Estudio del PNF" %}</div>
+				<div>{% trans "Proyecto Socio-Tecnológico" %} ESMAYOY</div>
+				<div>{% trans "Distribuído bajo Licencia" %} GPL v2</div>
+			</div>
+		</center>
+		{% if exito %}
+			<script type="text/javascript">alert('{% trans "registros almacenados satisfactoriamente" %}');</script>
+		{% endif %}
+	</body>
+</html>

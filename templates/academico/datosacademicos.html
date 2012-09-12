@@ -1,0 +1,179 @@
+<div id="column_left">
+	<ul>
+		<li class='left'>{{form2.fingreso.label}}</li>
+		<li class='right'>
+			{{form2.fingreso}}&#160;<img src="../../media/images/base/calendar.png" id="calfingreso" style="cursor:pointer"><label id="helpfing" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpfing|safe}}
+			<div class="errores" id="e2">{{form2.fingreso.errors}}</div>
+		</li>
+		<li class='left'>{{form2.obs_dataca.label}}</li>
+		<li class='right'>
+			{{form2.obs_dataca}}<label id="helpobsda" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpobsda|safe}}
+			<div class="errores" id="e3">{{form2.obs_dataca.errors}}</div>
+		</li>
+		<li class='left'>{{form2.tliceo.label}}
+		<li class='right'>
+			{{form2.tliceo}}<label id="helptlic" class="ayudacampo">?</label>
+			{{form2.helptlic|safe}}
+			<div class="errores" id="e4">{{form2.tliceo.errors}}</div>
+		</li>
+		<li class='left'>{{form2.pais.label}}
+		<li class='right'>
+			{{form2.pais}}<label id="helppais" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helppais|safe}}
+			<div class="errores" id="e5">{{form2.pais.errors}}</div>
+		</li>
+		<li class='left'>{{form2.municipio.label}}</li>
+		<li class='right'>
+			{{form2.municipio}}<label id="helpmun" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpmun|safe}}
+			<div class="errores" id="e6">{{form2.municipio.errors}}</div>
+		</li>
+		<li class='left'>{{form2.trimestre.label}}</li>
+		<li class='right'>
+			{{form2.trimestre}}<label id="helptri" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helptri|safe}}
+			<div class="errores" id="e7">{{form2.trimestre.errors}}</div>
+		</li>
+		<li class='left'>{{form2.sistema_estudio.label}}</li>
+		<li class='right'>
+			{{form2.sistema_estudio}}<label id="helpsises" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpsises|safe}}
+			<div class="errores" id="e8">{{form2.sistema_estudio.errors}}</div>
+		</li>
+	</ul>
+</div>
+<div id="column_right">
+	<ul>
+		<li class='left'>{{form2.profesional.label}}</li>
+		<li class='right'>
+			{{form2.profesional}}<label id="helpprof" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpprof|safe}}
+			<div class="errores" id="e10">{{form2.profesional.errors}}</div>
+		</li>
+		<li class='left'>{{form2.nliceo.label}}
+		<li class='right'>
+			{{form2.nliceo}}<label id="helpnlic" class="ayudacampo">?</label>
+			{{form2.helpnlic|safe}}
+			<div class="errores" id="e11">{{form2.nliceo.errors}}</div>
+		</li>
+		<li class='left'>{{form2.serialtitulo.label}}</li>
+		<li class='right'>
+			{{form2.serialtitulo}}<label id="helpsrti" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpsrti|safe}}
+			<div class="errores" id="e12">{{form2.serialtitulo.errors}}</div>
+		</li>
+		<li class='left'>{{form2.estado.label}}
+		<li class='right'>
+			{{form2.estado}}<label id="helpedo" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpedo|safe}}
+			<div class="errores" id="e13">{{form2.estado.errors}}</div>
+		</li>
+		<li class='left'>{{form2.parroquia.label}}</li>
+		<li class='right'>
+			{{form2.parroquia}}<label id="helpparr" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpparr|safe}}
+			<div class="errores" id="e14">{{form2.parroquia.errors}}</div>
+		</li>
+		<li class='left'>{{form2.condicion_ingreso.label}}</li>
+		<li class='right'>
+			{{form2.condicion_ingreso}}<label id="helpcondi" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helpcondi|safe}}
+			<div class="errores" id="e15">{{form2.condicion_ingreso.errors}}</div>
+		</li>
+		<li class='left'>{{form2.titulo_bachiller.label}}</li>
+		<li class='right'>
+			{{form2.titulo_bachiller}}<label id="helptibac" class="ayudacampo">?</label><label class="req">*</label>
+			{{form2.helptibac|safe}}
+			<div class="errores" id="e16">{{form2.titulo_bachiller.errors}}</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+	$("#helpfing").mouseenter(function(evento) {
+		$("#ayudafing").css("display","block");
+	});
+	$("#helpfing").mouseleave(function(evento) {
+		$("#ayudafing").css("display","none");
+	});
+	$("#helpobsda").mouseenter(function(evento) {
+		$("#ayudaobsda").css("display","block");
+	});
+	$("#helpobsda").mouseleave(function(evento) {
+		$("#ayudaobsda").css("display","none");
+	});
+	$("#helpnlic").mouseenter(function(evento) {
+		$("#ayudanlic").css("display","block");
+	});
+	$("#helpnlic").mouseleave(function(evento) {
+		$("#ayudanlic").css("display","none");
+	});
+	$("#helptlic").mouseenter(function(evento) {
+		$("#ayudatlic").css("display","block");
+	});
+	$("#helptlic").mouseleave(function(evento) {
+		$("#ayudatlic").css("display","none");
+	});
+	$("#helpsrti").mouseenter(function(evento) {
+		$("#ayudasrti").css("display","block");
+	});
+	$("#helpsrti").mouseleave(function(evento) {
+		$("#ayudasrti").css("display","none");
+	});
+	$("#helpprof").mouseenter(function(evento) {
+		$("#ayudaprof").css("display","block");
+	});
+	$("#helpprof").mouseleave(function(evento) {
+		$("#ayudaprof").css("display","none");
+	});
+	$("#helppais").mouseenter(function(evento) {
+		$("#ayudapais").css("display","block");
+	});
+	$("#helppais").mouseleave(function(evento) {
+		$("#ayudapais").css("display","none");
+	});
+	$("#helpedo").mouseenter(function(evento) {
+		$("#ayudaedo").css("display","block");
+	});
+	$("#helpedo").mouseleave(function(evento) {
+		$("#ayudaedo").css("display","none");
+	});
+	$("#helpmun").mouseenter(function(evento) {
+		$("#ayudamun").css("display","block");
+	});
+	$("#helpmun").mouseleave(function(evento) {
+		$("#ayudamun").css("display","none");
+	});
+	$("#helpparr").mouseenter(function(evento) {
+		$("#ayudaparr").css("display","block");
+	});
+	$("#helpparr").mouseleave(function(evento) {
+		$("#ayudaparr").css("display","none");
+	});
+	$("#helptri").mouseenter(function(evento) {
+		$("#ayudatri").css("display","block");
+	});
+	$("#helptri").mouseleave(function(evento) {
+		$("#ayudatri").css("display","none");
+	});
+	$("#helpcondi").mouseenter(function(evento) {
+		$("#ayudacondi").css("display","block");
+	});
+	$("#helpcondi").mouseleave(function(evento) {
+		$("#ayudacondi").css("display","none");
+	});
+	$("#helpsises").mouseenter(function(evento) {
+		$("#ayudasises").css("display","block");
+	});
+	$("#helpsises").mouseleave(function(evento) {
+		$("#ayudasises").css("display","none");
+	});
+	$("#helptibac").mouseenter(function(evento) {
+		$("#ayudatibac").css("display","block");
+	});
+	$("#helptibac").mouseleave(function(evento) {
+		$("#ayudatibac").css("display","none");
+	});
+</script>

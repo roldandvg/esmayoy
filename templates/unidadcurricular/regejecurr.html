@@ -1,0 +1,63 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url unidadcurricular.views.inicio %}">{% trans "unidad curricular" %}</a>
+	&#160;>&#160;<a href="{% url unidadcurricular.views.registrarEjeCurr %}">{% trans "eje curricular" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Eje Curricular" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url unidadcurricular.views.registrarEjeCurr %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<img class="imgBoton" src="../../media/images/botones/borrar.png" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url unidadcurricular.views.registrarEjeCurr %}'">
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cod_eje.label}}</li>
+			<li class='right'>
+				{{form.cod_eje}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.cod_eje.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpdesc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.descripcion.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Ejes Curriculares Registrados" %}<br/><br/></caption>
+				<col width="20%">
+				<col width="70%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_eje}}">
+							<td class="borde_delgado">{{reg.cod_eje}}</td>
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosEje({'eje':'{{reg.cod_eje}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('eje_curricular', '{{reg.cod_eje}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

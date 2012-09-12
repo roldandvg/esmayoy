@@ -1,0 +1,99 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url horario.views.inicio %}">{% trans "horario" %}</a>
+	&#160;>&#160;<a href="{% url horario.views.registrarHorario %}">{% trans "horario" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Horarios" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url horario.views.registrarHorario %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url horario.views.registrarHorario %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.idhorario.label}}</li>
+			<li class='right'>
+				{{form.idhorario}}<label id="helpid" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.idhorario.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.estatus.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.modalidad_horario.label}}</li>
+			<li class='right'>
+				{{form.modalidad_horario}}<label id="helpmod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.modalidad_horario.errors}}</div>
+			</li>
+			<li class='left'>{{form.observacion.label}}</li>
+			<li class='right'>
+				{{form.observacion}}<label id="helpobs" class="ayudacampo">?</label>
+				<div class="errores" id="e4">{{form.observacion.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div style="padding-top:20px;clear:both;">
+		<center><h2>Horario</h2></center>
+		<table width="90%" align="center" border="0">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<col width="11.25%">
+			<tr class="alineacioncent negrita">
+				<td class="borde_delgado">{% trans "horas" %}</td>
+				<td class="borde_delgado">{% trans "lunes" %}</td>
+				<td class="borde_delgado">{% trans "martes" %}</td>
+				<td class="borde_delgado">{% trans "miércoles" %}</td>
+				<td class="borde_delgado">{% trans "jueves" %}</td>
+				<td class="borde_delgado">{% trans "viernes" %}</td>
+				<td class="borde_delgado">{% trans "sábado" %}</td>
+				<td class="borde_delgado">{% trans "domingo" %}</td>
+			</tr>
+		</table>
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Horarios Registrados" %}<br/><br/></caption>
+				<col width="30%">
+				<col width="30%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "modalidad" %}</td>
+						<td class="borde_delgado">{% trans "observaciones" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.idhorario}}">
+							<td class="borde_delgado">{{reg.modalidad_horario.des_modalidad}}</td>
+							<td class="borde_delgado">{% if reg.observaciones %}{{reg.observaciones}}{% else %}Ninguna{% endif %}</td>
+							<td class="borde_delgado">{% if reg.estatus %}{% trans "Activo" %}{% else %}{% trans "Inactivo" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosPensum({'pensum':'{{reg.idhorario}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('horario', '{{reg.idhorario}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

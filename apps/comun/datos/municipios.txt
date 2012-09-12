@@ -1,0 +1,342 @@
+1501,Acevedo,15
+0401,Achaguas,04
+1101,Acosta,11
+1601,Acosta,16
+1801,Agua Blanca,18
+1602,Aguasay,16
+1401,Alberto Adriani,14
+0601,Alberto Arvelo Torrealba,06
+2301,Almirante Padilla,23
+0201,Alto Orinoco,02
+0301,Anaco,03
+1402,Andrés Bello,14
+1502,Andrés Bello,15
+2001,Andrés Bello,20
+2101,Andrés Bello,21
+0612,Andrés Eloy Blanco,06
+1301,Andrés Eloy Blanco,13
+1901,Andrés Eloy Blanco,19
+1902,Andrés Mata,19
+1701,Antolín del Campo,17
+1001,Antonio Díaz,10
+0602,Antonio José de Sucre,06
+1403,Antonio Pinto Salinas,14
+2002,Antonio Rómulo Costa,20
+0901,Anzoátegui,09
+0302,Aragua,03
+1802,Araure,18
+8801,Archipiélago Los Roques,88
+1404,Aricagua,14
+0603,Arismendi,06
+1702,Arismendi,17
+1903,Arismendi,19
+1405,Arzobispo Chacón,14
+2201,Arístides Bastidas,22
+0202,Atabapo,02
+0203,Atures,02
+0204,Autana,02
+2003,Ayacucho,20
+2302,Baralt,23
+0604,Barinas,06
+1503,Baruta,15
+0801,Bejuma,08
+1904,Benítez,19
+1905,Bermúdez,19
+0402,Biruaca,04
+2102,Boconó,21
+0501,Bolívar,05
+0605,Bolívar,06
+1102,Bolívar,11
+1603,Bolívar,16
+1906,Bolívar,19
+2004,Bolívar,20
+2103,Bolívar,21
+2202,Bolívar,22
+1504,Brión,15
+2203,Bruzual,22
+1103,Buchivacoa,11
+1505,Buroz,15
+2303,Cabimas,23
+1104,Cacique Manaure,11
+1907,Cajigal,19
+1201,Camaguán,12
+0502,Camatagua,05
+1406,Campo Elías,14
+2104,Candelaria,21
+1407,Caracciolo Parra Olmedo,14
+2105,Carache,21
+1408,Cardenal Quintero,14
+1604,Caripe,16
+1105,Carirubana,11
+0802,Carlos Arvelo,08
+0701,Caroní,07
+1506,Carrizal,15
+1002,Casacoima,10
+2304,Catatumbo,23
+0702,Cedeño,07
+1605,Cedeño,16
+1507,Chacao,15
+1202,Chaguaramas,12
+8803,Chimanas,88
+2204,Cocorote,22
+1106,Colina,11
+2305,Colón,23
+1302,Crespo,13
+1508,Cristóbal Rojas,15
+0606,Cruz Paredes,06
+1908,Cruz Salmerón Acosta,19
+2005,Cárdenas,20
+2006,Córdoba,20
+1107,Dabajuro,11
+1108,Democracia,11
+0321,Diego Bautista Urbaneja,03
+0803,Diego Ibarra,08
+1703,Díaz,17
+0703,El Callao,07
+1509,El Hatillo,15
+1203,El Socorro,12
+2106,Escuque,21
+1803,Esteller,18
+0607,Ezequiel Zamora,06
+1606,Ezequiel Zamora,16
+0902,Falcón,09
+1109,Falcón,11
+1110,Federación,11
+0303,Fernando de Peñalver,03
+2007,Fernández Feo,20
+2306,Francisco Javier Pulgar,23
+0517,Francisco Linares Alcántara,05
+0305,Francisco de Miranda,03
+1208,Francisco de Miranda,12
+2008,Francisco de Miranda,20
+0304,Francisco del Carmen Carvajal,03
+1704,García,17
+2009,García de Hevia,20
+0503,Girardot,05
+0903,Girardot,09
+0704,Gran Sabana,07
+8804,Grupo 4,88
+8805,Grupo 5,88
+8806,Grupo 6,88
+8807,Grupo 7,88
+0804,Guacara,08
+1510,Guaicaipuro,15
+1804,Guanare,18
+1805,Guanarito,18
+0306,Guanta,03
+1409,Guaraque,14
+2010,Guásimos,20
+1705,Gómez,17
+0705,Heres,07
+0307,Independencia,03
+1511,Independencia,15
+2011,Independencia,20
+2205,Independencia,22
+1303,Iribarren,13
+1111,Jacura,11
+2307,Jesús Enrique Lossada,23
+2308,Jesús María Semprún,23
+1304,Jiménez,13
+0504,José Angel Lamas,05
+2206,José Antonio Páez,22
+2107,José Felipe Márquez Cañizales,21
+0505,José Félix Ribas,05
+1211,José Félix Ribas,12
+0310,José Gregorio Monagas,03
+2013,José María Vargas,20
+0506,José Rafael Revenga,05
+1209,José Tadeo Monagas,12
+0308,Juan Antonio Sotillo,03
+1212,Juan Germán Roscio,12
+0805,Juan José Mora,08
+0309,Juan Manuel Cajigal,03
+2108,Juan Vicente Campo Elías,21
+1410,Julio César Salas,14
+1207,Julián Mellado,12
+2014,Junín,20
+1411,Justo Briceño,14
+2012,Jáuregui,20
+2309,La Cañada de Urdaneta,23
+2109,La Ceiba,21
+2207,La Trinidad,22
+2310,Lagunillas,23
+1512,Lander,15
+1206,Las Mercedes,12
+1205,Leonardo Infante,12
+0311,Libertad,03
+2015,Libertad,20
+0101,Libertador,01
+0507,Libertador,05
+0806,Libertador,08
+1412,Libertador,14
+1607,Libertador,16
+1909,Libertador,19
+2016,Libertador,20
+0904,Lima Blanco,09
+2017,Lobatera,20
+0807,Los Guayos,08
+1513,Los Salias,15
+1112,Los Taques,11
+8802,Los Testigos,88
+2311,Machiques de Perijá,23
+0206,Manapiare,02
+1706,Maneiro,17
+0312,Manuel Ezequiel Bruzual,03
+2208,Manuel Monge,22
+2312,Mara,23
+2313,Maracaibo,23
+1707,Marcano,17
+0508,Mario Briceño Iragorry,05
+1708,Mariño,17
+1910,Mariño,19
+0205,Maroa,02
+1608,Maturín,16
+1113,Mauroa,11
+1911,Mejía,19
+2018,Michelena,20
+0808,Miranda,08
+1114,Miranda,11
+1413,Miranda,14
+2110,Miranda,21
+2314,Miranda,23
+1115,Monseñor Iturriza,11
+1806,Monseñor José Vicente de Unda,18
+0809,Montalbán,08
+2111,Monte Carmelo,21
+1912,Montes,19
+1305,Morán,13
+2112,Motatán,21
+0403,Muñoz,04
+0810,Naguanagua,08
+2209,Nirgua,22
+1414,Obispo Ramos de Lora,14
+0608,Obispos,06
+0518,Ocumare de La Costa de Oro,05
+1210,Ortiz,12
+1807,Ospino,18
+1415,Padre Noguera,14
+0711,Padre Pedro Chien,07
+1306,Palavecino,13
+1116,Palmasola,11
+2114,Pampanito,21
+2113,Pampán,21
+2019,Panamericano,20
+0905,Pao de San Juan Bautista,09
+1809,Papelón,18
+1515,Paz Castillo,15
+1003,Pedernales,10
+0609,Pedraza,06
+0405,Pedro Camejo,04
+1516,Pedro Gual,15
+0313,Pedro María Freites,03
+2020,Pedro María Ureña,20
+1215,Pedro Zaraza,12
+1709,Península de Macanao,17
+1117,Petit,11
+2210,Peña,22
+0706,Piar,07
+1609,Piar,16
+1517,Plaza,15
+1416,Pueblo Llano,14
+0811,Puerto Cabello,08
+1610,Punceres,16
+0404,Páez,04
+1514,Páez,15
+1808,Páez,18
+2315,Páez,23
+0314,Píritu,03
+1118,Píritu,11
+2115,Rafael Rangel,21
+2021,Rafael Urdaneta,20
+1417,Rangel,14
+0707,Raúl Leoni,07
+1913,Ribero,19
+0906,Ricaurte,09
+1418,Rivas Dávila,14
+0610,Rojas,06
+2316,Rosario de Perijá,23
+0708,Roscio,07
+0207,Río Negro,02
+0406,Rómulo Gallegos,04
+0907,Rómulo Gallegos,09
+2022,Samuel Darío Maldonado,20
+0908,San Carlos,09
+0509,San Casimiro,05
+2023,San Cristóbal,20
+0812,San Diego,08
+2211,San Felipe,22
+0407,San Fernando,04
+1119,San Francisco,11
+2317,San Francisco,23
+1810,San Genaro de Boconoito,18
+1204,San Gerónimo de Guayabal,12
+0813,San Joaquín,08
+0315,San José de Guanipa,03
+1213,San José de Guaribe,12
+0316,San Juan de Capistrano,03
+2029,San Judas Tadeo,20
+2116,San Rafael de Carvajal,21
+1811,San Rafael de Onoto,18
+0510,San Sebastián,05
+0317,Santa Ana,03
+1611,Santa Bárbara,16
+1214,Santa María de Ipire,12
+2318,Santa Rita,23
+1812,Santa Rosalía,18
+0511,Santiago Mariño,05
+1419,Santos Marquina,14
+0512,Santos Michelena,05
+2024,Seboruco,20
+0709,Sifontes,07
+1120,Silva,11
+0318,Simón Bolívar,03
+1518,Simón Bolívar,15
+2319,Simón Bolívar,23
+1307,Simón Planas,13
+0319,Simón Rodríguez,03
+2025,Simón Rodríguez,20
+0320,Sir Arthur Mc Gregor,03
+0611,Sosa,06
+1612,Sotillo,16
+0513,Sucre,05
+0710,Sucre,07
+1121,Sucre,11
+1420,Sucre,14
+1519,Sucre,15
+1813,Sucre,18
+1914,Sucre,19
+2026,Sucre,20
+2117,Sucre,21
+2212,Sucre,22
+2320,Sucre,23
+0909,Tinaco,09
+1122,Tocópero,11
+2027,Torbes,20
+1308,Torres,13
+0514,Tovar,05
+1421,Tovar,14
+2118,Trujillo,21
+1710,Tubores,17
+1004,Tucupita,10
+1422,Tulio Febres Cordero,14
+1814,Turén,18
+1123,Unión,11
+2213,Urachiche,22
+1613,Uracoa,16
+0515,Urdaneta,05
+1309,Urdaneta,13
+1520,Urdaneta,15
+2119,Urdaneta,21
+2028,Uribante,20
+1124,Urumaco,11
+1915,Valdez,19
+0814,Valencia,08
+2120,Valera,21
+2321,Valmore Rodríguez,23
+2401,Vargas,24
+2214,Veroes,22
+1711,Villalba,17
+0516,Zamora,05
+1125,Zamora,11
+1521,Zamora,15
+1423,Zea,14

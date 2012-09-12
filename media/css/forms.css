@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/**
+ * Hoja de estilos para los formularios del sistema
+ */
+
+/**
+ * Estilos de los diferentes campos dentro de los formularios del sistema 
+ */
+input[type="text"], input[type="password"], select, textarea {
+	background-color:#E8F1F9;
+	color:#000000;
+	font-size:12px;
+	-moz-border-radius:5px;
+	padding: 2px 2px 2px 2px;
+}
+
+#imgFoto {
+	width:70px;
+	height:70px;
+	border:solid 1px #AAC5DF;
+}
+
+.ayudacampo {
+	padding-left:4px;
+	padding-right:4px;
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer;
+}
+
+.mostrarDetalles {
+	position:absolute;
+	/*left:160px;*/
+	width:200px;
+	border:1px solid red;
+	background-color:#EEEEEE;
+	color:#000000;
+	text-align:justify;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding:4px;
+	-moz-border-radius:5px;
+	/*opacity:.9;*/
+}
+
+.help {
+	margin-top:10px;
+}
+
+/*
+ * Estilos para las columnas del formulario
+ */
+#column_left {
+    width:48%;
+    height:auto;
+    float:left;
+    border:0px;
+}
+
+#column_right {
+    width:48%;
+    height:auto;
+    float:right;
+    border:0px;
+}
+
+ul {
+	padding-left:10px;
+	padding-right:10px;
+	list-style:none;
+}
+
+ul li {
+	padding-top:10px;
+	/*border:solid 1px;*/
+}
+
+ul li.left{
+	width:20%;
+	float:left;
+	clear:both;
+	font-weight:bold;
+	font-size:10px;
+}
+
+ul li.right{
+	width:80%;
+	float:right;
+}
+
+ul#prereq {
+	list-style:circle;
+}
+
+ul#prereq li {
+	padding:0px;
+}
+
+/*
+ * Estilos para los botones del formulario
+ */
+
+.btnAction {
+	width:30px;
+	height:30px;
+	background:none;
+	border:1px solid #ccc;
+	cursor:pointer;
+	text-align:center;
+	/*margin-right:6px;*/
+}
+
+.imgBoton {
+	width:25px;
+	height:25px;
+	/*padding-right:4px;*/
+	cursor:pointer;
+	/*border:solid 1px #417790;*/
+}
+
+.sep {
+	width:10px;
+	float:left;
+}
+
+/**
+ * Estilos para el control de errores en los formularios
+ */
+.req {
+	color:red;
+	padding-left:6px;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.errores {
+	color:red;
+}
+
+/**
+ * Estilos para la tabla que muestra la consulta de registros
+ */
+.tablaconsulta {
+	width:850px;
+	margin-top:40px;
+	clear:both;
+	border: 1px solid #000;
+}
+
+.tablaconsulta thead {
+	background-color:#AAC5DF;
+}
+
+.colorazul {
+	background-color:#e8f1f9;
+}
+
+.colorblanco {
+	background-color:#FFFFFF;
+}
+
+.imgConsul {
+	width:13px; height:13px;
+}
+
+#paginacion {
+	text-align:center;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.titulo_consulta {
+	color:#1982B5;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.negrita {
+  font-weight:bold;
+}
+
+.letra12 {
+	font-size:12px;
+}
+
+.letra14 {
+	font-size:14px;
+}
+
+.letra16 {
+	font-size:16px;
+}

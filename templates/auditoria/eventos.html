@@ -1,0 +1,66 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url comun.views.auditoriaLogs %}">{% trans "eventos logs" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Eventos Logs" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "Mediante éste módulo podrá visualizar todos los eventos realizados en el sistema por los diferentes usuarios y con información detallada de las acciones realizadas en cada módulo" %}</p>
+{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo académico" %}' onclick="window.location='{% url comun.views.auditoriaLogsAcademico %}'">
+		<span>{% trans "académico" %}</span>	
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo configuración" %}' onclick="window.location='{% url comun.views.auditoriaLogsConfiguracion %}'">
+		<span>{% trans "configuración" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo horario" %}' onclick="window.location='{% url comun.views.auditoriaLogsHorario %}'">
+		<span>{% trans "horario" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo inscripción" %}' onclick="window.location='{% url comun.views.auditoriaLogsInscripcion %}'">
+		<span>{% trans "inscripción" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo institución" %}' onclick="window.location='{% url comun.views.auditoriaLogsInstitucion %}'">
+		<span>{% trans "institución" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo planificación" %}' onclick="window.location='{% url comun.views.auditoriaLogsPlanificacion %}'">
+		<span>{% trans "planificación" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo planta académica" %}' onclick="window.location='{% url comun.views.auditoriaLogsPlantaAca %}'">
+		<span>{% trans "planta académica" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo planta física" %}' onclick="window.location='{% url comun.views.auditoriaLogsPlantaFis %}'">
+		<span>{% trans "planta física" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo seguridad" %}' onclick="window.location='{% url comun.views.auditoriaLogsSeguridad %}'">
+		<span>{% trans "seguridad" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo unidad curricular" %}' onclick="window.location='{% url comun.views.auditoriaLogsUnidadCurr %}'">
+		<span>{% trans "unidad curricular" %}</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "registro de eventos en el módulo seguridad" %}' onclick="window.location='{% url comun.views.auditoriaLogsGeneral %}'">
+		<span>{% trans "general" %}</span>
+	</div>
+{% endblock %}

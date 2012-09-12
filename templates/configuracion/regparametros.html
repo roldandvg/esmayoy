@@ -1,0 +1,85 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}"loadCalendario('vdate','calvdate');"{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url configuracion.views.inicio %}">{% trans "configuración" %}</a>
+	&#160;>&#160;<a href="{% url configuracion.views.registrarParametro %}">{% trans "parámetros" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Parámetros" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url configuracion.views.registrarParametro %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url configuracion.views.registrarParametro %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.idparametro.label}}</li>
+			<li class='right'>
+				{{form.idparametro}}<label id="helpid" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.idparametro.errors}}</div>
+			</li>
+			<li class='left'>{{form.vnum.label}}</li>
+			<li class='right'>
+				{{form.vnum}}<label id="helpvnum" class="ayudacampo">?</label>
+				<div class="errores" id="e1">{{form.vnum.errors}}</div>
+			</li>
+			<li class='left'>{{form.vstring.label}}</li>
+			<li class='right'>
+				{{form.vstring}}<label id="helpvstring" class="ayudacampo">?</label>
+				<div class="errores" id="e1">{{form.vstring.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpdesc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.descripcion.errors}}</div>
+			</li>
+			<li class='left'>{{form.vdate.label}}</li>
+			<li class='right'>
+				{{form.vdate}}&#160;<img src="../../media/images/base/calendar.png" id="calvdate" style="cursor:pointer"><label id="helpvdate" class="ayudacampo">?</label>
+				<div class="errores" id="e1">{{form.vdate.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Parámetros Registrados" %}<br/><br/></caption>
+				<col width="40%">
+				<col width="20%">
+				<col width="10%">
+				<col width="20%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "número" %}</td>
+						<td class="borde_delgado">{% trans "fecha" %}</td>
+						<td class="borde_delgado">{% trans "cadena" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.idparametro}}">
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado">{% if reg.vnum %}{{reg.vnum}}{% else %}no posee{% endif %}</td>
+							<td class="borde_delgado">{{reg.vdate|date:"d-m-Y"}}</td>
+							<td class="borde_delgado">{% if reg.vstring %}{{reg.vstring}}{% else %}no posee{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosPensum({'pensum':'{{reg.idparametro}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('parametro', '{{reg.idparametro}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

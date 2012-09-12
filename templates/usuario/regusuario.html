@@ -1,0 +1,111 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block head %}
+	<script type="text/javascript" src="/media/js/pwd_meter.js"></script>
+	<link href="/media/css/pwd_meter.css" rel="stylesheet" type="text/css" media="screen"></link>
+{% endblock head %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url usuario.views.registrarUsuario %}">{% trans "usuario" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Usuarios" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url usuario.views.registrarUsuario %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url usuario.views.registrarUsuario %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	{{form.fortaleza}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label id="helpnom" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.correo.label}}</li>
+			<li class='right'>
+				{{form.correo}}<label id="helpemail" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.correo.errors}}</div>
+			</li>
+			<li class='left'>{{form.contrasenha.label}}</li>
+			<li class='right'>
+				{{form.contrasenha}}<label id="helppass" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.contrasenha.errors}}</div>
+			</li>
+			<li class='left'>{{form.activo.label}}</li>
+			<li class='right'>
+				{{form.activo}}<label id="helpactivo" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.activo.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.apellido.label}}</li>
+			<li class='right'>
+				{{form.apellido}}<label id="helpapell" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.apellido.errors}}</div>
+			</li>
+			<li class='left'>{{form.usuario.label}}</li>
+			<li class='right'>
+				{{form.usuario}}<label id="helpusr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.usuario.errors}}</div>
+			</li>
+			<li class='left'>{{form.confirmcontrasenha.label}}</li>
+			<li class='right'>
+				{{form.confirmcontrasenha}}<label id="helpcpass" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.confirmcontrasenha.errors}}</div>
+			</li>
+			<li class='left'>Fortaleza: <label id="helppassmeter" class="ayudacampo">?</label></li>
+			<li class='right'>
+				<span id='passmeter'>
+					<div id="scorebarBorder" title='{% trans "medidor de contraseñas seguras" %}'>
+	        			<div id="scorebar"><div id="score">0%</div></div>
+	    			</div>
+				</span>
+				<span>
+					<div id="complexity">{% trans "muy corta" %}</div>
+				</span>
+			</li>
+		</ul>	
+	</div>
+	{% if registros %}
+		<br/>&#160<br/>&#160<br/>&#160<br/>&#160
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Usuarios Registrados" %}<br/><br/></caption>
+				<col width="20%">
+				<col width="20%">
+				<col width="30%">
+				<col width="20%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "nombre" %}</td>
+						<td class="borde_delgado">{% trans "apellido" %}</td>
+						<td class="borde_delgado">{% trans "correo" %}</td>
+						<td class="borde_delgado">{% trans "usuario" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="tr_{{reg.id}}">
+							<td class="borde_delgado">{% if not reg.first_name and reg.is_staff %}{% trans "Administrador" %}{% else %}{{reg.first_name}}{% endif %}</td>
+							<td class="borde_delgado">{% if not reg.last_name and reg.is_staff %}{% trans "Administrador" %}{% else %}{{reg.last_name}}{% endif %}</td>
+							<td class="borde_delgado">{{reg.email}}</td>
+							<td class="borde_delgado">{{reg.username}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick=Dajax.usuario_mostrarDatosUsuario({'usuario':'{{reg.id}}'}) alt="Modificar" title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('usuario', '{{reg.id}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

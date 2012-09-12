@@ -1,0 +1,35 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url horario.views.inicio %}">{% trans "horario" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Horario" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "En este módulo el usuario podrá registrar los datos para la configuración de horarios de clase" %}</p>
+{% endblock %}
+{% block menu %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/horario/turno.png" title='{% trans "acceso al módulo de regsitro de turnos de la institución" %}' onclick="window.location='{% url horario.views.registrarTurno %}'">
+		<span>turno</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/horario/horas.png" title='{% trans "acceso al módulo de registro de horas" %}' onclick="window.location='{% url horario.views.registrarHora %}'">
+		<span>hora</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		&#160
+		<img class="imgItem" src="../../media/images/horario/dias.png" title='{% trans "acceso al módulo de registro de días laborales de la institución" %}' onclick="window.location='{% url horario.views.registrarDia %}'">
+		&#160
+		<span>día</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/horario/modalidad.png" title='{% trans "acceso al módulo de registro de modalidades de horarios" %}' onclick="window.location='{% url horario.views.registrarModhorario %}'">
+		<span>modalidad</span>
+	</div>
+	<div class="sep">&#160</div>
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/horario/horario.png" title='{% trans "acceso al módulo de registro de datos del Horario base de la institución" %}' onclick="window.location='{% url horario.views.registrarHorario %}'">
+		<span>horario</span>
+	</div>
+{% endblock %}

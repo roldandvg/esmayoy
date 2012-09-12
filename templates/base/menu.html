@@ -1,0 +1,103 @@
+{% load i18n %}
+<br>
+<center><img src="../../media/images/base/logo_esmayoy2.png" width="150px"></center>
+<ul><li><b>{% trans "usuario" %}:</b>&#160;&#160;&#160;<font style="color:white">{{username}}</font></li></ul>
+<ul class="menusis">
+	<li><img class="imgMenu" src="../../media/images/menu/inicio.png"><a class="linkmenuppal" href="{% url comun.views.inicio %}">{% trans "Inicio" %}</a></li>
+	{% if institucion %}
+		<li><img class="imgMenu" src="../../media/images/base/institucion.png"><a class="linkmenuppal" href="{% url institucion.views.inicio %}">{% trans "Institución" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url institucion.views.registrarSede %}" title='{% trans "registro de sedes" %}'>{% trans "Sede" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url institucion.views.registrarDpto %}" title='{% trans "registro de departamentos" %}'>{% trans "Departamento" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url institucion.views.registrarCarrera %}" title='{% trans "registro de carreras" %}'>{% trans "Carrera" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url institucion.views.registrarCarrSed %}" title='{% trans "registro de carreras por sede" %}'>{% trans "Carreras por Sede" %}</a></li>
+	{% endif %}
+	{% if unidadcurr %}
+		<li><img class="imgMenu" src="../../media/images/base/unidadcurricular.png"><a class="linkmenuppal" href="{% url unidadcurricular.views.inicio %}">{% trans "Unidad Curricular" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarPensum %}" title='{% trans "registro de pensum de estudio" %}'>{% trans "Pensum de estudio" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarEjeCurr %}" title='{% trans "registro del eje curricular" %}'>{% trans "Eje Curricular" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarCondUnidad %}" title='{% trans "registro de la condición de la Unidad curricular" %}'>{% trans "Condición de Unidad" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarTipoUnidCurr %}" title='{% trans "registro del tipo de Unidad curricular" %}'>{% trans "Tipo de Unidad Curricular" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarUnidadCurr %}" title='{% trans "registro de la Unidad curricular" %}'>{% trans "Unidad Curricular" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarPrelacion %}" title='{% trans "registro de prelaciones" %}'>{% trans "Prelación" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url unidadcurricular.views.registrarModuloCurricular %}" title='{% trans "registro de módulo curricular" %}'>{% trans "Módulo Curricular" %}</a></li>
+	{% endif %}
+	{% if academico %}
+		<li><img class="imgMenu" src="../../media/images/base/academico.png"><a class="linkmenuppal" href="{% url academico.views.inicio %}">{% trans "Académico" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarAlumno %}" title='{% trans "registro de alumnos" %}'>{% trans "Alumnos" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarDatosocioecon %}" title='{% trans "registro de datos socio económicos del alumno" %}'>{% trans "Datos Socio-Económicos" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarDocumento %}" title='{% trans "registro de documentos" %}'>{% trans "Documentos" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarRecdoc %}" title='{% trans "recepción de documentos" %}'>{% trans "Recepción de Documentos" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarTipotrime %}" title='{% trans "registro de tipos de trimestre" %}'>{% trans "Tipo de trimestre" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarTrimestre %}" title='{% trans "registro de trimestre" %}'>{% trans "Trimestre" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarDatosaca %}" title='{% trans "registro de datos académicos" %}'>{% trans "Datos Académicos" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarAnualidad %}" title='{% trans "registro de anualidades" %}'>{% trans "Anualidad" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarAnualidadCarrera %}" title='{% trans "registro de anualidades por carrera" %}'>{% trans "Anualidad por Carrera" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url academico.views.registrarAnualidadTriCarrera %}" title='{% trans "registro de anualidades por trimestre y carrera" %}'>{% trans "Anualidad por Trimestre" %}</a></li>
+	{% endif %}
+	{% if horario %}
+		<li><img class="imgMenu" src="../../media/images/base/horarios.png"><a class="linkmenuppal" href="{% url horario.views.inicio %}">{% trans "Horario" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarTurno %}" title='{% trans "registro de turnos" %}'>{% trans "Turno" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarHora %}" title='{% trans "registro de horas" %}'>{% trans "Hora" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarDia %}" title='{% trans "registro de días" %}'>{% trans "Día" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarModhorario %}" title='{% trans "registro de modalidades de horario" %}'>{% trans "Modalidad de Horario" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarHorario %}" title='{% trans "registro de horario" %}'>{% trans "Horario" %}</a></li>
+	{% endif %}
+	{% if planta %}
+		<li><img class="imgMenu" src="../../media/images/base/planta.png"><a class="linkmenuppal" href="{% url planta.views.inicio %}">{% trans "Planta" %}</a></li>
+		<li class="itemsec">{% trans "Académica" %}</li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.academica.views.registrarProfesion %}" title='{% trans "registro de profesiones" %}'>{% trans "Profesión" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.academica.views.registrarCondProfesor %}" title='{% trans "registro de condiciones de los profesores" %}'>{% trans "Condición del Profesor" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.academica.views.registrarProfesor %}" title='{% trans "registro de profesores" %}'>{% trans "Profesor" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.academica.views.registrarProfCarrera %}" title='{% trans "registro de profesores por carrera" %}'>{% trans "Profesor por Carrera" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.academica.views.registrarProfDisponibilidad %}" title='{% trans "registro de disponibilidad de profesores" %}'>{% trans "Disponibilidad Profesor" %}</a></li>
+		<li class="itemsec">{% trans "Física" %}</li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.fisica.views.registrarTipoAula %}" title='{% trans "registro de tipos de aula" %}'>{% trans "Tipo de Aula" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.fisica.views.registrarTipoEdificio %}" title='{% trans "registro de tipos de edificio" %}'>{% trans "Tipo de Edificio" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.fisica.views.registrarEdificio %}" title='{% trans "registro de edificio" %}'>{% trans "Edificio" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.fisica.views.registrarAula %}" title='{% trans "registro de aula" %}'>{% trans "Aula" %}</a></li>
+		<li><img class="imgMenusec2" src="../../media/images/menu/opcion.png"><a class="linkmenusec2" href="{% url planta.fisica.views.registrarAulaCarrera %}" title='{% trans "registro de aula por carrera" %}'>{% trans "Aula por Carrera" %}</a></li>
+	{% endif %}
+	{% if planificacion %}
+		<li><img class="imgMenu" src="../../media/images/base/planificacion.png"><a class="linkmenuppal" href="{% url planificacion.views.inicio %}">{% trans "Planificación" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url planificacion.views.registrarPlanificacion %}" title='{% trans "registro de datos de la planificación" %}'>{% trans "Planificar" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url planificacion.views.registrarPlanificacionUnidad %}" title='{% trans "registro de datos de la planificación de la unidad curricular" %}'>{% trans "Planificar Unidad" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url horario.views.registrarHorarioTrimestral %}" title='{% trans "registro de horario trimestral" %}'>{% trans "Horario Trimestral" %}</a></li>
+	{% endif %}
+	{% if inscripcion %}
+		<li><img class="imgMenu" src="../../media/images/base/inscripcion.png"><a class="linkmenuppal" href="{% url inscripcion.views.inicio %}">{% trans "Inscripción" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url inscripcion.views.registrarEstatusInscAnual %}" title='{% trans "registro de datos del estatus de inscripción anual" %}'>{% trans "Estatus Anual" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url inscripcion.views.registrarEstatusInscTrimestral %}" title='{% trans "registro de datos del estatus de inscripción trimestral" %}'>{% trans "Estatus Trimestral" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url inscripcion.views.registrarInscripcionAnual %}" title='{% trans "registro de datos de la inscripción anual" %}'>{% trans "Inscripción anual" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url inscripcion.views.registrarInscripcionTrimestral %}" title='{% trans "registro de datos de la inscripción trimestral" %}'>{% trans "Inscripción trimestral" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url inscripcion.views.registrarHito %}" title='{% trans "registro de datos de hitos" %}'>{% trans "Hito" %}</a></li>
+	{% endif %}
+	{% if configuracion and username.is_staff %}
+		<li><img class="imgMenu" src="../../media/images/base/configuracion.png"><a class="linkmenuppal" href="{% url configuracion.views.inicio %}">{% trans "Configuración" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url configuracion.views.registrarParametro %}" title='{% trans "registro de parámetros de la aplicación" %}'>{% trans "Parámetros" %}</a></li>
+	{% endif %}
+	{% if seguridad %}
+		<li><img class="imgMenu" src="../../media/images/base/seguridad.png"><a class="linkmenuppal" href="{% url usuario.views.inicio %}">{% trans "Seguridad" %}</a></li>
+		{% if username.is_staff %}
+			<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url usuario.views.registrarSeguridadIngAlumnos %}" title='{% trans "registro de seguridad para la inscripción de alumnos" %}'>{% trans "Inscripción Alumno" %}</a></li>
+			<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url usuario.views.registrarUsuario %}" title='{% trans "registro de usuarios" %}'>{% trans "Usuario" %}</a></li>
+			<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url usuario.views.registrarPermisosUsuario %}" title='{% trans "registro de permisos otorgados a los usuarios" %}'>{% trans "Permisos usuario" %}</a></li>
+			<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogs %}" title='{% trans "registro de eventos en el sistema" %}'>{% trans "Registro de Eventos (Logs)" %}</a></li>
+		{% endif %}
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url usuario.views.registrarModContrasenha %}" title='{% trans "modificación de contraseña de usuarios" %}'>{% trans "Modificar Contraseña" %}</a></li>
+	{% endif %}
+	{% if logs and username.is_staff %}
+		<li><img class="imgMenu" src="../../media/images/base/logs.png"><a class="linkmenuppal" href="{% url comun.views.auditoriaLogs %}">{% trans "Logs" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsAcademico %}" title='{% trans "registro de eventos logs en el módulo académico" %}'>{% trans "Académico" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsConfiguracion %}" title='{% trans "registro de eventos logs en el módulo configuración" %}'>{% trans "Configuración" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsHorario %}" title='{% trans "registro de eventos logs en el módulo horario" %}'>{% trans "Horario" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsInscripcion %}" title='{% trans "registro de eventos logs en el módulo académico" %}'>{% trans "Inscripción" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsInstitucion %}" title='{% trans "registro de eventos logs en el módulo institución" %}'>{% trans "Institución" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsPlanificacion %}" title='{% trans "registro de eventos logs en el módulo planificación" %}'>{% trans "Planificación" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsPlantaAca %}" title='{% trans "registro de eventos logs en el módulo planta académica" %}'>{% trans "Planta Académica" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsPlantaFis %}" title='{% trans "registro de eventos logs en el módulo planta física" %}'>{% trans "Planta Física" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsSeguridad %}" title='{% trans "registro de eventos logs en el módulo seguridad" %}'>{% trans "Seguridad" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsUnidadCurr %}" title='{% trans "registro de eventos logs en el módulo unidad curricular" %}'>{% trans "Unidad Curricular" %}</a></li>
+		<li><img class="imgMenusec" src="../../media/images/menu/opcion.png"><a class="linkmenusec" href="{% url comun.views.auditoriaLogsGeneral %}" title='{% trans "registro de eventos logs generales del sistema" %}'>{% trans "General" %}</a></li>
+	{% endif %}
+	<li><img class="imgMenu" src="../../media/images/menu/salir.png"><a class="linkmenuppal" href="{% url usuario.views.salir %}">{% trans "Salir" %}</a></li>
+</ul>

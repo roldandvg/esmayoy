@@ -1,0 +1,89 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url institucion.views.inicio %}">{% trans "institución" %}</a>
+	&#160;>&#160;<a href="{% url institucion.views.registrarDpto %}">{% trans "departamento" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Departamentos" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url institucion.views.registrarDpto %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url institucion.views.registrarDpto %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>	
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cod_dep.label}}</li>
+			<li class='right'>
+				{{form.cod_dep}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpcod|safe}}
+				<div class="errores" id="e1">{{form.cod_dep.errors}}</div>
+			</li>
+			<li class='left'>{{form.contacto.label}}</li>
+			<li class='right'>
+				{{form.contacto}}<label id="helpcto" class="ayudacampo">?</label>
+				<div class="errores" id="e2">{{form.contacto.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpdesc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.descripcion.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.estatus.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{{form.modificar}}
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Departamentos Registrados" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="40%">
+				<col width="20%">
+				<col width="20%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "contacto" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_dep}}">
+							<td class="borde_delgado">{{reg.cod_dep}}</td>
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado">{% if reg.contacto %}{{reg.contacto}}{% endif %}</td>
+							<td class="borde_delgado">{% if reg.estatus %}{% trans "Activa" %}{% else %}{% trans "Inactiva" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.institucion_mostrarDatosDpto({'dpto':'{{reg.cod_dep}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('departamento', '{{reg.cod_dep}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+	<script type="text/javascript">
+		/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+		$("#helpcod").mouseenter(function(evento) {
+			$("#ayudacod").css("display","block");
+		});
+		$("#helpcod").mouseleave(function(evento) {
+			$("#ayudacod").css("display","none");
+		});
+	</script>
+{% endblock %}

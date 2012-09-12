@@ -1,0 +1,44 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>
+	&#160;>&#160;<a href="{% url usuario.views.registrarModContrasenha %}">{% trans "contraseña" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Modificación de Contraseña de Usuario" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url usuario.views.registrarModContrasenha %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url usuario.views.registrarModContrasenha %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.usuario.label}}</li>
+			<li class='right'>
+				{{form.usuario}}<label id="helpusr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.usuario.errors}}</div>
+			</li>
+			<li class='left'>{{form.contrasenhanva.label}}</li>
+			<li class='right'>
+				{{form.contrasenhanva}}<label id="helppassnva" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.contrasenhanva.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul style="height:500px;">
+			<li class='left'>{{form.contrasenha.label}}</li>
+			<li class='right'>
+				{{form.contrasenha}}<label id="helppassant" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.contrasenha.errors}}</div>
+			</li>
+			<li class='left'>{{form.contrasenhaconfirm.label}}</li>
+			<li class='right'>
+				{{form.contrasenhaconfirm}}<label id="helpcpass" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.contrasenhaconfirm.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+{% endblock %}
+{% block onload %}
+	"document.getElementById('usuario').value = '{{usuario}}';"
+{% endblock %}

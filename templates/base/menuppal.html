@@ -1,0 +1,87 @@
+{% load i18n %}
+<div style="margin-top:80px;">&#1160;</div>
+<ul>
+	<li class="itemLeft">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/institucion.png" title='{% trans "acceso al módulo de regsitro de la institución" %}' onclick="window.location='{% url institucion.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Institución" %}</label>
+			<br>{% trans "Registro de datos básicos de la institución" %}
+		</div>
+	</li>
+	<li class="itemRight">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/unidadcurricular.png" title='{% trans "acceso al módulo de registro de la unidad curricular" %}' onclick="window.location='{% url unidadcurricular.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Unidad Curricular" %}</label>
+			<br>{% trans "Registro de datos básicos de la unidad curricular" %}
+		</div>
+	</li>
+	<li class="itemLeft">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/academico.png" title='{% trans "acceso al módulo de registro de datos académicos" %}' onclick="window.location='{% url academico.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Académico" %}</label>
+			<br>{% trans "Registro de datos académicos" %}
+		</div>
+	</li>
+	<li class="itemRight">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/horarios.png" title='{% trans "acceso al módulo de registro de horarios" %}' onclick="window.location='{% url horario.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Horario" %}</label>
+			<br>{% trans "Registro de datos para la planificación de los horarios de clase" %}
+		</div>
+	</li>
+	<li class="itemLeft">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/planta.png" title='{% trans "acceso al módulo de registro de datos de la planta física y académica" %}' onclick="window.location='{% url planta.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Planta" %}</label>
+			<br>{% trans "Registro de datos de planta física y planta académica" %}
+		</div>
+	</li>
+	<li class="itemRight">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/seguridad.png" title='{% trans "acceso al módulo de seguridad" %}' onclick="window.location='{% url usuario.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Seguridad" %}</label>
+			<br>{% trans "Registro de datos para la seguridad de la aplicación" %}
+		</div>
+	</li>
+	<li class="itemLeft">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/planificacion.png" title='{% trans "acceso al módulo de registro de datos de la planificación" %}' onclick="window.location='{% url planificacion.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Planificacion" %}</label>
+			<br>{% trans "Registro de datos de la planificación" %}
+		</div>
+	</li>
+	<li class="itemRight">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/inscripcion.png" title='{% trans "acceso al módulo de inscripción" %}' onclick="window.location='{% url inscripcion.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Inscripción" %}</label>
+			<br>{% trans "Registro de datos para la inscripción de alumnos" %}
+		</div>
+	</li>
+	{% if username.is_staff %}
+	<li class="itemLeft">
+		<div class="left">
+			<img class="imgItem" src="../../media/images/base/configuracion.png" title='{% trans "acceso al módulo de registro de datos de la configuración de la aplicación" %}' onclick="window.location='{% url configuracion.views.inicio %}'">
+		</div>
+		<div class="right">
+			<label class="negrita">{% trans "Configuración" %}</label>
+			<br>{% trans "Registro de datos de la configuración general de la aplicación" %}
+		</div>
+	</li>
+	{% endif %}
+</ul>

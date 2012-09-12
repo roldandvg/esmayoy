@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body {
+	margin: 10px;
+	padding: 0;
+	background: #fff;
+	padding-bottom: 1px;
+	font-size: 68.8%; /* Set base to 11px */
+}
+
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body#esmayoy-body {
+	height: 95%;
+	min-width: 960px;
+}
+
+
+#border-top.h_fondo {
+	height: 60px;
+	background-image: url(../images/base/cabecera.png);
+	background-repeat: repeat-x;
+}
+
+
+
+#border-top .title,
+#border-top .title a {
+	font-size: 1.364em;
+	font-weight: bold;
+	color: #fff;
+	line-height: 44px;
+	padding-left: 14px;
+}
+
+#border-top .logo_lef {
+	display: block;
+	width: auto;
+	float: left;
+	padding: 0 0 0 0;
+}
+
+#border-top .logo {
+	display: block;
+	width: auto;
+	float: right;
+	padding: 0 0 0 0;
+}
+
+#header-box {
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	height: 20px;
+}
+
+#fondo-box {
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	
+}
+
+/* Footer */
+#footer  {
+	text-align: center;
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+
+}
+
+/* Cuadro para el contenedor del sitio */
+#seccion-boxform {
+	width: 300px;
+	/*margin-left: 70px;
+	margin-right: 10px;*/
+	margin: 0px auto 0px;
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	
+}
+
+/* Cuadro para el login */
+
+#seccion-box {
+	
+	width: 300px;
+	/*margin-left: 70px;
+	margin-right: 10px;*/
+	margin: 0px auto 0px;
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	
+}
+
+#seccion-box .m {
+	padding: 5px;
+}
+
+#seccion-box .padding {
+	background: none;
+	padding: 0;
+}
+
+div#config #submenu-box div.t {
+	background: transparent url(../images/j_border.png) 0 0 repeat-x;
+}
+
+div#config div.t,
+div#config div.b {
+	height: 6px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+/* Login */
+.login {
+	margin: 50px auto 50px;
+	width: 250px;
+	clear: both;
+	padding: 10px 0 10px 0;
+}
+
+.contenedor {
+	margin: 50px auto 50px;
+	width: 850px;
+	clear: both;
+	padding: 10px 0 10px 0;
+}
+
+/* -- TABLE STYLES ----------------------------- */
+
+div#element-box div.m form table.adminlist tr td a {
+	font-size: 1.1em;
+}
+
+div#element-box div.m form table.adminlist tr td div.button2-left.smallsub a {
+	font-size: 1em;
+}
+
+div#element-box div.m form table.adminlist tr td p.smallsub a,
+div#element-box div.m div.pane-slider form table.adminlist a {
+	font-size: 1em;
+}

@@ -1,0 +1,117 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block titulo %}{% trans "Registro de Datos Socio Económicos" %}{% endblock %}
+{% block barratools %}
+	<button class="btnTools" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarDatosocioecon %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	&#160;
+	<img class="imgBoton" title='{% trans "Pulse el botón para borrar el formulario" %}' src="../../media/images/botones/borrar.png" onclick="window.location='{% url academico.views.registrarDatosocioecon %}'">
+	&#160;
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cedula.label}}</li>
+			<li class='right'>
+				{{form.cedula}}<label class="req">*</label>
+				<input type="button" name='btnBuscar' id='btnBuscar' value='buscar' title='{% trans "buscar alumnos registrados" %}' onclick="Dajax.academico_buscarAlumno({'cedula':document.getElementById('cedula').value});"/>
+				<div class="errores" id="e1">{{form.cedula.errors}}</div>
+			</li>
+			<li class='left'>{{form.nhijos.label}}</li>
+			<li class='right'>
+				{{form.nhijos}}<label class="req">*</label>
+				<div class="errores" id="e2">{{form.nhijos.errors}}</div>
+			</li>
+			<li class='left'>{{form.costeo_est.label}}</li>
+			<li class='right'>
+				{{form.costeo_est}}<label class="req">*</label>
+				<div class="errores" id="e3">{{form.costeo_est.errors}}</div>
+			</li>
+			<li class='left'>{{form.cond_alojamiento.label}}</li>
+			<li class='right'>
+				{{form.cond_alojamiento}}<label class="req">*</label>
+				<div class="errores" id="e4">{{form.cond_alojamiento.errors}}</div>
+			</li>
+			<li class='left'>{{form.nivel_m.label}}</li>
+			<li class='right'>
+				{{form.nivel_m}}<label class="req">*</label>
+				<div class="errores" id="e5">{{form.nivel_m.errors}}</div>
+			</li>
+			<li class='left'>{{form.trabaja.label}}</li>
+			<li class='right'>
+				{{form.trabaja}}<label class="req">*</label>
+				<div class="errores" id="e6">{{form.trabaja.errors}}</div>
+			</li>
+			<li class='left'>{{form.empresa.label}}</li>
+			<li class='right'>
+				{{form.empresa}}<label class="req">*</label>
+				{% if not form.empresa.errors %}<br><br><br><br>{% endif %}
+				<div class="errores" id="e7">{{form.empresa.errors}}</div>
+			</li>
+			<li class='left'>{{form.telefonoe.label}}</li>
+			<li class='right'>
+				{{form.telefonoe}}<label class="req">*</label>
+				<div class="errores" id="e8">{{form.telefonoe.errors}}</div>
+			</li>
+			<li class='left'>{{form.discapacidad.label}}</li>
+			<li class='right'>
+				{{form.discapacidad}}<label class="req">*</label>
+				<div class="errores" id="e9">{{form.discapacidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.indigena.label}}</li>
+			<li class='right'>
+				{{form.indigena}}<label class="req">*</label>
+				<div class="errores" id="e10">{{form.indigena.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label class="req">*</label>
+				<div class="errores" id="e11">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.mtraslado.label}}</li>
+			<li class='right'>
+				{{form.mtraslado}}<label class="req">*</label>
+				<div class="errores" id="e12">{{form.mtraslado.errors}}</div>
+			</li>
+			<li class='left'>{{form.tipovivienda.label}}</li>
+			<li class='right'>
+				{{form.tipovivienda}}<label class="req">*</label>
+				<div class="errores" id="e13">{{form.tipovivienda.errors}}</div>
+			</li>
+			<li class='left'>{{form.monto_ingreso.label}}</li>
+			<li class='right'>
+				{{form.monto_ingreso}}<label class="req">*</label>
+				<div class="errores" id="e14">{{form.monto_ingreso.errors}}</div>
+			</li>
+			<li class='left'>{{form.nivel_p.label}}</li>
+			<li class='right'>
+				{{form.nivel_p}}<label class="req">*</label>
+				<div class="errores" id="e15">{{form.nivel_p.errors}}</div>
+			</li>
+			<li class='left'>{{form.tipo_empresa.label}}</li>
+			<li class='right'>
+				{{form.tipo_empresa}}<label class="req">*</label>
+				<div class="errores" id="e16">{{form.tipo_empresa.errors}}</div>
+			</li>
+			<li class='left'>{{form.direccion.label}}</li>
+			<li class='right'>
+				{{form.direccion}}<label class="req">*</label>
+				<div class="errores" id="e17">{{form.direccion.errors}}</div>
+			</li>
+			<li class='left'>{{form.observaciones.label}}</li>
+			<li class='right'>
+				{{form.observaciones}}<label class="req">*</label>
+				<div class="errores" id="e18">{{form.observaciones.errors}}</div>
+			</li>
+			<li class='left'>{{form.des_discapacidad.label}}</li>
+			<li class='right'>
+				{{form.des_discapacidad}}<label class="req">*</label>
+				<div class="errores" id="e19">{{form.des_discapacidad.errors}}</div>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

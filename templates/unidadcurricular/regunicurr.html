@@ -1,0 +1,128 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url unidadcurricular.views.inicio %}">{% trans "unidad curricular" %}</a>
+	&#160;>&#160;<a href="{% url unidadcurricular.views.registrarUnidadCurr %}">{% trans "unidad curricular" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Unidad Curricular" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url unidadcurricular.views.registrarUnidadCurr %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url unidadcurricular.views.registrarUnidadCurr %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.id_unidad.label}}</li>
+			<li class='right'>
+				{{form.id_unidad}}<label id="helpid" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.id_unidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label id="helpnom" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.ucr.label}}</li>
+			<li class='right'>
+				{{form.ucr}}<label id="helpucr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.ucr.errors}}</div>
+			</li>
+			<li class='left'>{{form.trayecto.label}}</li>
+			<li class='right'>
+				{{form.trayecto}}<label id="helptray" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.trayecto.errors}}</div>
+			</li>
+			<li class='left'>{{form.cant_mod.label}}</li>
+			<li class='right'>
+				{{form.cant_mod}}<label id="helpcantmod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.cant_mod.errors}}</div>
+			</li>
+			<li class='left'>{{form.hilo.label}}</li>
+			<li class='right'>
+				{{form.hilo}}<label id="helphilo" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.hilo.errors}}</div>
+			</li>
+			<li class='left'>{{form.condicionunidad.label}}</li>
+			<li class='right'>
+				{{form.condicionunidad}}<label id="helpcond" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.condicionunidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.tipounidad.label}}</li>
+			<li class='right'>
+				{{form.tipounidad}}<label id="helptipo" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e8">{{form.tipounidad.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.cod_unidad.label}}</li>
+			<li class='right'>
+				{{form.cod_unidad}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e9">{{form.cod_unidad.errors}}</div>
+			</li>
+			<li class='left'>{{form.obligatoria.label}}</li>
+			<li class='right'>
+				{{form.obligatoria}}<label id="helpobl" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e10">{{form.obligatoria.errors}}</div>
+			</li>
+			<li class='left'>{{form.pre_ucr.label}}</li>
+			<li class='right'>
+				{{form.pre_ucr}}<label id="helppreucr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e11">{{form.pre_ucr.errors}}</div>
+			</li>
+			<li class='left'>{{form.trimestre.label}}</li>
+			<li class='right'>
+				{{form.trimestre}}<label id="helptri" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e12">{{form.trimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e13">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.pensum.label}}</li>
+			<li class='right'>
+				{{form.pensum}}<label id="helppen" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e14">{{form.pensum.errors}}</div>
+			</li>
+			<li class='left'>{{form.ejecurricular.label}}</li>
+			<li class='right'>
+				{{form.ejecurricular}}<label id="helpeje" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e15">{{form.ejecurricular.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{{form.modificar}}
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Unidades Curriculares Registradas" %}<br/><br/></caption>
+				<col width="20%">
+				<col width="70%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "nombre" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.id_unidad}}">
+							<td class="borde_delgado">{{reg.cod_unidad}}</td>
+							<td class="borde_delgado">{{reg.nombre}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosUnidad({'unidad':'{{reg.id_unidad}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('unidad_curricular', '{{reg.id_unidad}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

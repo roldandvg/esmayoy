@@ -1,0 +1,217 @@
+<div id="column_left">
+	<ul>
+		<li class='left'>{{form.foto.label}}</li>
+		<li class='right'>
+			<img id="imgFoto" src="{% if tienefoto %}{{foto}}{% else %}../../media/images/base/base_foto.png{% endif %}"><br><br>
+			{{form.foto}}<label id="helpfoto" class="ayudacampo">?</label>
+			{{form.helpfoto|safe}}
+			<div class="errores" id="e1">{{form.foto.errors}}</div>
+		</li>
+		<li class='left'>{{form.primerapellido.label}}</li>
+		<li class='right'>
+			{{form.primerapellido}}<label id="helppap" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helppap|safe}}
+			<div class="errores" id="e2">{{form.primerapellido.errors}}</div>
+		</li>
+		<li class='left'>{{form.primernombre.label}}</li>
+		<li class='right'>
+			{{form.primernombre}}<label id="helppno" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helppno|safe}}
+			<div class="errores" id="e3">{{form.primernombre.errors}}</div>
+		</li>
+		<li class='left'>{{form.sexo.label}}</li>
+		<li class='right'>
+			{{form.sexo}}<label id="helpsex" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpsex|safe}}
+			<div class="errores" id="e4">{{form.sexo.errors}}</div>
+		</li>
+		<li class='left'>{{form.fnacimiento.label}}</li>
+		<li class='right'>
+			{{form.fnacimiento}}&#160;<img src="../../media/images/base/calendar.png" id="calfnacimiento" style="cursor:pointer"><label id="helpfna" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpfna|safe}}
+			<div class="errores" id="e5">{{form.fnacimiento.errors}}</div>
+		</li>
+		<li class='left'>{{form.carrsed.label}}</li>
+		<li class='right'>
+			{{form.carrsed}}<label id="helpcase" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpcase|safe}}
+			<div class="errores" id="e6">{{form.carrsed.errors}}</div>
+		</li>
+		<li class='left'>{{form.direccion.label}}</li>
+		<li class='right'>
+			{{form.direccion}}<label id="helpdir" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpdir|safe}}
+			<div class="errores" id="e7">{{form.direccion.errors}}</div>
+		</li>
+		<li class='left'>{{form.movil.label}}</li>
+		<li class='right'>
+			{{form.movil}}<label id="helpcel" class="ayudacampo">?</label>
+			{{form.helpcel|safe}}
+			<div class="errores" id="e8">{{form.movil.errors}}</div>
+		</li>
+		<li class='left'>{{form.tel_ref_personal.label}}</li>
+		<li class='right'>
+			{{form.tel_ref_personal}}<label id="helptlfr" class="ayudacampo">?</label>
+			{{form.helptlfr|safe}}
+			<div class="errores" id="e9">{{form.tel_ref_personal.errors}}</div>
+		</li>
+	</ul>
+</div>
+<div id="column_right">
+	<ul>
+		<br/><br/><br/><br/><br/><br/><br/>
+		<li class='left'>{{form.cedula.label}}</li>
+		<li class='right'>
+			{{form.cedula}}<label id="helpci" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpci|safe}}
+			<div class="errores" id="e10">{{form.cedula.errors}}</div>
+		</li>
+		<li class='left'>{{form.segundoapellido.label}}</li>
+		<li class='right'>
+			{{form.segundoapellido}}<label id="helpsap" class="ayudacampo">?</label>
+			{{form.helpsap|safe}}
+			<div class="errores" id="e11">{{form.segundoapellido.errors}}</div>
+		</li>
+		<li class='left'>{{form.segundonombre.label}}</li>
+		<li class='right'>
+			{{form.segundonombre}}<label id="helpsno" class="ayudacampo">?</label>
+			{{form.helpsno|safe}}
+			<div class="errores" id="e12">{{form.segundonombre.errors}}</div>
+		</li>
+		<li class='left'>{{form.nacionalidad.label}}</li>
+		<li class='right'>
+			{{form.nacionalidad}}<label id="helpnac" class="ayudacampo">?</label><label class="req">*</label>
+			{{form.helpnac|safe}}
+			<div class="errores" id="e13">{{form.nacionalidad.errors}}</div>
+		</li>
+		<li class='left'>{{form.lugar_nacimiento.label}}</li>
+		<li class='right'>
+			{{form.lugar_nacimiento}}<label id="helplnac" class="ayudacampo">?</label>
+			{{form.helplnac|safe}}
+			<div class="errores" id="e14">{{form.lugar_nacimiento.errors}}</div>
+		</li>
+		<li class='left'>{{form.email.label}}</li>
+		<li class='right'>
+			{{form.email}}<label id="helpmail" class="ayudacampo">?</label>
+			{{form.helpmail|safe}}
+			<div class="errores" id="e15">{{form.email.errors}}</div>
+		</li>
+		<li class='left'>{{form.telefono.label}}</li>
+		<li class='right'>
+			{{form.telefono}}<label id="helptlf" class="ayudacampo">?</label>
+			{{form.helptlf|safe}}
+			<div class="errores" id="e16">{{form.telefono.errors}}</div>
+		</li>
+		<li class='left'>{{form.ref_personal.label}}</li>
+		<li class='right'>
+			{{form.ref_personal}}<label id="helprefp" class="ayudacampo">?</label>
+			{{form.helprefp|safe}}
+			<div class="errores" id="e17">{{form.ref_personal.errors}}</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+	$("#helpnac").mouseenter(function(evento) {
+		$("#ayudanac").css("display","block");
+	});
+	$("#helpnac").mouseleave(function(evento) {
+		$("#ayudanac").css("display","none");
+	});
+	$("#helpci").mouseenter(function(evento) {
+		$("#ayudaci").css("display","block");
+	});
+	$("#helpci").mouseleave(function(evento) {
+		$("#ayudaci").css("display","none");
+	});
+	$("#helppap").mouseenter(function(evento) {
+		$("#ayudapap").css("display","block");
+	});
+	$("#helppap").mouseleave(function(evento) {
+		$("#ayudapap").css("display","none");
+	});
+	$("#helpsap").mouseenter(function(evento) {
+		$("#ayudasap").css("display","block");
+	});
+	$("#helpsap").mouseleave(function(evento) {
+		$("#ayudasap").css("display","none");
+	});
+	$("#helppno").mouseenter(function(evento) {
+		$("#ayudapno").css("display","block");
+	});
+	$("#helppno").mouseleave(function(evento) {
+		$("#ayudapno").css("display","none");
+	});
+	$("#helpsno").mouseenter(function(evento) {
+		$("#ayudasno").css("display","block");
+	});
+	$("#helpsno").mouseleave(function(evento) {
+		$("#ayudasno").css("display","none");
+	});
+	$("#helpsex").mouseenter(function(evento) {
+		$("#ayudasex").css("display","block");
+	});
+	$("#helpsex").mouseleave(function(evento) {
+		$("#ayudasex").css("display","none");
+	});
+	$("#helpfna").mouseenter(function(evento) {
+		$("#ayudafna").css("display","block");
+	});
+	$("#helpfna").mouseleave(function(evento) {
+		$("#ayudafna").css("display","none");
+	});
+	$("#helpdir").mouseenter(function(evento) {
+		$("#ayudadir").css("display","block");
+	});
+	$("#helpdir").mouseleave(function(evento) {
+		$("#ayudadir").css("display","none");
+	});
+	$("#helptlf").mouseenter(function(evento) {
+		$("#ayudatlf").css("display","block");
+	});
+	$("#helptlf").mouseleave(function(evento) {
+		$("#ayudatlf").css("display","none");
+	});
+	$("#helpcel").mouseenter(function(evento) {
+		$("#ayudacel").css("display","block");
+	});
+	$("#helpcel").mouseleave(function(evento) {
+		$("#ayudacel").css("display","none");
+	});
+	$("#helpmail").mouseenter(function(evento) {
+		$("#ayudamail").css("display","block");
+	});
+	$("#helpmail").mouseleave(function(evento) {
+		$("#ayudamail").css("display","none");
+	});
+	$("#helpfoto").mouseenter(function(evento) {
+		$("#ayudafoto").css("display","block");
+	});
+	$("#helpfoto").mouseleave(function(evento) {
+		$("#ayudafoto").css("display","none");
+	});
+	$("#helprefp").mouseenter(function(evento) {
+		$("#ayudarefp").css("display","block");
+	});
+	$("#helprefp").mouseleave(function(evento) {
+		$("#ayudarefp").css("display","none");
+	});
+	$("#helptlfr").mouseenter(function(evento) {
+		$("#ayudatlfr").css("display","block");
+	});
+	$("#helptlfr").mouseleave(function(evento) {
+		$("#ayudatlfr").css("display","none");
+	});
+	$("#helplnac").mouseenter(function(evento) {
+		$("#ayudalnac").css("display","block");
+	});
+	$("#helplnac").mouseleave(function(evento) {
+		$("#ayudalnac").css("display","none");
+	});
+	$("#helpcase").mouseenter(function(evento) {
+		$("#ayudacase").css("display","block");
+	});
+	$("#helpcase").mouseleave(function(evento) {
+		$("#ayudacase").css("display","none");
+	});
+</script>

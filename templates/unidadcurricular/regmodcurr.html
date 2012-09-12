@@ -1,0 +1,105 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url unidadcurricular.views.inicio %}">{% trans "unidad curricular" %}</a>
+	&#160;>&#160;<a href="{% url unidadcurricular.views.registrarModuloCurricular %}">{% trans "módulo curricular" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Módulo Curricular" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url unidadcurricular.views.registrarModuloCurricular %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<img class="imgBoton" src="../../media/images/botones/borrar.png" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url unidadcurricular.views.registrarModuloCurricular %}'">
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cod_modulo.label}}</li>
+			<li class='right'>
+				{{form.cod_modulo}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e1">{{form.cod_modulo.errors}}</div>
+			</li>
+			<li class='left'>{{form.ucr.label}}</li>
+			<li class='right'>
+				{{form.ucr}}<label id="helpucr" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e2">{{form.ucr.errors}}</div>
+			</li>
+			<li class='left'>{{form.trayecto.label}}</li>
+			<li class='right'>
+				{{form.trayecto}}<label id="helptray" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e3">{{form.trayecto.errors}}</div>
+			</li>
+			<li class='left'>{{form.unidadcurr.label}}</li>
+			<li class='right'>
+				{{form.unidadcurr}}<label id="helpunidad" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e4">{{form.unidadcurr.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label id="helpnom" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e5">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.porcentaje.label}}</li>
+			<li class='right'>
+				{{form.porcentaje}}<label id="helpporc" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e6">{{form.porcentaje.errors}}</div>
+			</li>
+			<li class='left'>{{form.trimestre.label}}</li>
+			<li class='right'>
+				{{form.trimestre}}<label id="helptri" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e7">{{form.trimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div class="errores" id="e8">{{form.estatus.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{{form.modificar}}
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Módulos Curriculares Registrados" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="25%">
+				<col width="25%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "nombre" %}</td>
+						<td class="borde_delgado">{% trans "unidad curricular" %}</td>
+						<td class="borde_delgado">{% trans "trayecto" %}</td>
+						<td class="borde_delgado">{% trans "trimestre" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_modulo}}">
+							<td class="borde_delgado">{{reg.cod_modulo}}</td>
+							<td class="borde_delgado">{{reg.nombre}}</td>
+							<td class="borde_delgado">{{reg.unidadcurricular.nombre}}</td>
+							<td class="borde_delgado">{{reg.trayecto}}</td>
+							<td class="borde_delgado">{{reg.trimestre}}</td>
+							<td class="borde_delgado">{% if reg.estatus %}{% trans "Activa" %}{% else %}{% trans "Inactiva" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.unidadcurricular_mostrarDatosModulocurr({'modulo':'{{reg.cod_modulo}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('modulo_curricular', '{{reg.cod_modulo}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+{% endblock %}

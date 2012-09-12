@@ -1,0 +1,32 @@
+										Script de Instalación del Proyecto Socio Tecnológico Esmayoy
+
+NOMBRE
+	install.py - Permite realizar el proceso de instalación del proyecto ESMAYOY
+
+SINOPSIS
+	install.py [opciones]
+
+DESCRIPCION
+	El comando install.py es utilizado para realizar el proceso de instalación del Proyecto Socio Tecnológico Esmayoy. Para ejecutarlo debe escribir el comando python install.py desde la consola de comandos, para lo cual debe hacerlo como usuario administrador del sistema.
+	Adicionalmente se pueden proveer de algunos argumentos que le permiten al script de instalación realizar alguna actividad en particular. En caso de no indicarle arfgumentos al script, el mismo ejecutara la acción por defecto mostrando al usuario un menú de instalación con sus correspondientes acciones a realizar.
+
+OPCIONES
+	Las opciones que pueden suministrarse como parámetros a este script de instalación son:
+
+	-h, --help
+		Muestra un listado de opciones que pueden ser suministradas al script como paramétros
+
+	-m, --man
+		Permite mostrar esta documentación
+
+	-p, --pasos-install
+		Indica los pasos a seguir para la instalación manual del PST Esmayoy
+
+	-l
+		Muestra los pre-requisitos necesarios para la instalación del PST Esmayoy
+
+	-v, --VERSION
+		Indica el número del versión del Proyecto Esmayoy
+
+	-c, --copyright
+		Muestra los terminos de la licencia bajo la cual se libera la aplicación Esmayoy

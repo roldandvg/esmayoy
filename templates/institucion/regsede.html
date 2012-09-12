@@ -1,0 +1,175 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}"loadCalendario('fcreacion','calfcreacion');"{% endblock %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url institucion.views.inicio %}">{% trans "institución" %}</a>
+	&#160;>&#160;<a href="{% url institucion.views.registrarSede %}">{% trans "sede" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Sedes" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url institucion.views.registrarSede %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url institucion.views.registrarSede %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>	
+{% endblock %}
+{% block formulario %}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cod_sede.label}}</li>
+			<li class='right'>
+				{{form.cod_sede}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				<div id="ayudacod" class="mostrarDetalles help0" style="display:none;">
+					{% trans "Este campo indica el código por el cual se identificará la sede. Debe ser un código único" %}
+			   	</div>
+				<div class="errores" id="e1">{{form.cod_sede.errors}}</div>
+			</li>
+			<li class='left'>{{form.direccion.label}}</li>
+			<li class='right'>
+				{{form.direccion}}<label id="helpdir" class="ayudacampo">?</label>
+				<div id="ayudadir" class="mostrarDetalles help1" style="display:none;">
+					{% trans "Indique en este campo la dirección exacta en donde se encuentra ubicada la sede que va a registrar" %}
+			   	</div>
+				<div class="errores" id="e2">{{form.direccion.errors}}</div>
+			</li>
+			<li class='left'>{{form.fcreacion.label}}</li>
+			<li class='right'>
+				{{form.fcreacion}}&#160;<img src="../../media/images/base/calendar.png" id="calfcreacion" style="cursor:pointer"><label id="helpfecha" class="ayudacampo">?</label>
+				<div id="ayudafecha" class="mostrarDetalles help2" style="display:none;">
+					{% trans "Este campo registra la fecha en que fue creada la sede. Debe utilizar el calendario a la izquierda para seleccionar la fecha" %}
+			   	</div>
+				<div class="errores" id="e3">{{form.fcreacion.errors}}</div>
+			</li>
+			<li class='left'>{{form.contacto.label}}</li>
+			<li class='right'>
+				{{form.contacto}}<label id="helpcto" class="ayudacampo">?</label>
+				<div id="ayudacto" class="mostrarDetalles help1" style="display:none;">
+					{% trans "Este campo indica el nombre de la persona de contacto encargada de la sede." %}
+			   	</div>
+				<div class="errores" id="e4">{{form.contacto.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.descripcion.label}}</li>
+			<li class='right'>
+				{{form.descripcion}}<label id="helpdesc" class="ayudacampo">?</label><label class="req">*</label>
+				<div id="ayudadesc" class="mostrarDetalles help1" style="display:none;">
+					{% trans "Este campo permite registrar la descripción detallada de la sede, mediante la cual se identificará la misma" %}
+			   	</div>
+				<div class="errores" id="e5">{{form.descripcion.errors}}</div>
+			</li>
+			<li class='left'>{{form.telefonos.label}}</li>
+			<li class='right'>
+				{{form.telefonos}}<label id="helptlf" class="ayudacampo">?</label>
+				<div id="ayudatlf" class="mostrarDetalles help1" style="display:none;">
+					{% trans "Indique en este campo el(los) número(s) de teléfono de la sede a registrar." %}
+			   	</div>
+				<div class="errores" id="e6">{{form.telefonos.errors}}</div>
+			</li>
+			<li class='left'>{{form.estatus.label}}</li>
+			<li class='right'>
+				{{form.estatus}}<label id="helpestatus" class="ayudacampo">?</label><label class="req">*</label>
+				<div id="ayudaestatus" class="mostrarDetalles help2" style="display:none;">
+					{% trans "Seleccione de la lista desplegable el estatus actual de la sede. Activo(a): si la sede se encuentra actualmente en funcionamiento, Inactivo(a): si la sede se encuentra sin actividad." %}
+			   	</div>
+				<div class="errores" id="e7">{{form.estatus.errors}}</div>
+			</li>
+			<li class='left'>{{form.email.label}}</li>
+			<li class='right'>
+				{{form.email}}<label id="helpemail" class="ayudacampo">?</label>
+				<div id="ayudaemail" class="mostrarDetalles help1" style="display:none;">
+					{% trans "Indique en este campo la dirección de correo de la persona de contacto" %}
+			   	</div>
+				<div class="errores" id="e8">{{form.email.errors}}</div>
+			</li>
+		</ul>	
+	</div>
+	{{form.modificar}}
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Sedes Registradas" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="40%">
+				<col width="20%">
+				<col width="20%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "descripción" %}</td>
+						<td class="borde_delgado">{% trans "fecha creación" %}</td>
+						<td class="borde_delgado">{% trans "estatus" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_sede}}">
+							<td class="borde_delgado">{{reg.cod_sede}}</td>
+							<td class="borde_delgado">{{reg.descripcion}}</td>
+							<td class="borde_delgado">{{reg.fcreacion|date:"d/m/Y"}}</td>
+							<td class="borde_delgado">{% if reg.estatus %}{% trans "Activa" %}{% else %}{% trans "Inactiva" %}{% endif %}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.institucion_mostrarDatosSede({'sede':'{{reg.cod_sede}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('sede', '{{reg.cod_sede}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+	<script type="text/javascript">
+		/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+		$("#helpdesc").mouseenter(function(evento) {
+			$("#ayudadesc").css("display","block");
+		});
+		$("#helpdesc").mouseleave(function(evento) {
+			$("#ayudadesc").css("display","none");
+		});
+		$("#helpcod").mouseenter(function(evento) {
+			$("#ayudacod").css("display","block");
+		});
+		$("#helpcod").mouseleave(function(evento) {
+			$("#ayudacod").css("display","none");
+		});
+		$("#helpdir").mouseenter(function(evento) {
+			$("#ayudadir").css("display","block");
+		});
+		$("#helpdir").mouseleave(function(evento) {
+			$("#ayudadir").css("display","none");
+		});
+		$("#helpfecha").mouseenter(function(evento) {
+			$("#ayudafecha").css("display","block");
+		});
+		$("#helpfecha").mouseleave(function(evento) {
+			$("#ayudafecha").css("display","none");
+		});
+		$("#helpcto").mouseenter(function(evento) {
+			$("#ayudacto").css("display","block");
+		});
+		$("#helpcto").mouseleave(function(evento) {
+			$("#ayudacto").css("display","none");
+		});
+		$("#helptlf").mouseenter(function(evento) {
+			$("#ayudatlf").css("display","block");
+		});
+		$("#helptlf").mouseleave(function(evento) {
+			$("#ayudatlf").css("display","none");
+		});
+		$("#helpestatus").mouseenter(function(evento) {
+			$("#ayudaestatus").css("display","block");
+		});
+		$("#helpestatus").mouseleave(function(evento) {
+			$("#ayudaestatus").css("display","none");
+		});
+		$("#helpemail").mouseenter(function(evento) {
+			$("#ayudaemail").css("display","block");
+		});
+		$("#helpemail").mouseleave(function(evento) {
+			$("#ayudaemail").css("display","none");
+		});
+	</script>
+{% endblock %}

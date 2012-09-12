@@ -1,0 +1,80 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}
+	&#160;>&#160;<a href="{% url academico.views.inicio %}">{% trans "académico" %}</a>
+	&#160;>&#160;<a href="{% url academico.views.registrarTipotrime %}">{% trans "tipo trimestre" %}</a>
+{% endblock %}
+{% block titulo %}{% trans "Registro de Tipo de Trimestre" %}{% endblock %}
+{% block botones %}
+	<button class="btnAction" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarTipotrime %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	<button class="btnAction" title='{% trans "Pulse el botón para borrar el formulario" %}' onclick="window.location='{% url academico.views.registrarTipotrime %}'"><img class="imgBoton" src="../../media/images/botones/borrar.png"></button>
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cod_tipotri.label}}</li>
+			<li class='right'>
+				{{form.cod_tipotri}}<label id="helpcod" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helpcod|safe}}
+				<div class="errores" id="e1">{{form.cod_tipotri.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.tipotrimestre.label}}</li>
+			<li class='right'>
+				{{form.tipotrimestre}}<label id="helptip" class="ayudacampo">?</label><label class="req">*</label>
+				{{form.helptip|safe}}
+				<div class="errores" id="e2">{{form.tipotrimestre.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	{% if registros %}
+		<div id="registros">
+			<table align="center" class="tablaconsulta">
+				<caption class="titulo_consulta">{% trans "Tipos de Trimestres Registrados" %}<br/><br/></caption>
+				<col width="10%">
+				<col width="80%">
+				<col width="10%">
+				<thead>
+					<tr class="alineacioncent negrita">
+						<td class="borde_delgado">{% trans "código" %}</td>
+						<td class="borde_delgado">{% trans "tipo de trimestre" %}</td>
+						<td class="borde_delgado">{% trans "acc." %}</td>
+					</tr>
+				</thead>
+				<tbody>
+					{% for reg in registros.object_list %}
+						<tr class="{% cycle 'colorblanco' 'colorazul' as rowcolors %}" id="{{reg.cod_tipotri}}">
+							<td class="borde_delgado">{{reg.cod_tipotri}}</td>
+							<td class="borde_delgado">{{reg.tipotrimestre}}</td>
+							<td class="borde_delgado alineacioncent">
+								<img class="imgConsul" src="../../../media/images/consulta/editar.png" style="cursor:pointer" onclick="Dajax.academico_mostrarDatosAlumno({'alumno':'{{reg.cod_tipotri}}'})" alt='{% trans "Modificar" %}' title='{% trans "Pulse sobre este botón para modificar el registro" %}' />
+								&#160;
+								<img class="imgConsul" src="../../../media/images/consulta/eliminar.png" style="cursor:pointer" onclick="confirmarEliminar('tipo_trimestre', '{{reg.cod_tipotri}}')" alt='{% trans "Eliminar" %}' title='{% trans "Pulse sobre este botón para eliminar el registro" %}' />
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		{% include "base/base_paginacion.html" %}
+	{% endif %}
+	<script type="text/javascript">
+		/*funciones que permiten mostrar y ocultar la ayuda del campo*/
+		$("#helpcod").mouseenter(function(evento) {
+			$("#ayudacod").css("display","block");
+		});
+		$("#helpcod").mouseleave(function(evento) {
+			$("#ayudacod").css("display","none");
+		});
+		$("#helptip").mouseenter(function(evento) {
+			$("#ayudatip").css("display","block");
+		});
+		$("#helptip").mouseleave(function(evento) {
+			$("#ayudatip").css("display","none");
+		});
+	</script>
+{% endblock %}

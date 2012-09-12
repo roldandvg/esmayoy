@@ -1,0 +1,102 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block onload %}"loadCalendario('fingreso','calfingreso');"{% endblock %}
+{% block titulo %}{% trans "Registro de Datos Académicos" %}{% endblock %}
+{% block barratools %}
+	<button class="btnTools" title='{% trans "Pulse el botón para guardar los registros" %}' onclick="document.getElementById('frmPpal').action='{% url academico.views.registrarDatosaca %}'"><img class="imgBoton" src="../../media/images/botones/guardar.png"></button>
+	&#160;
+	<img class="imgBoton" title='{% trans "Pulse el botón para borrar el formulario" %}' src="../../media/images/botones/borrar.png" onclick="window.location='{% url academico.views.registrarDatosaca %}'">
+	&#160;
+{% endblock %}
+{% block formulario %}
+	{{form.modificar}}
+	<div id="column_left">
+		<ul>
+			<li class='left'>{{form.cedula.label}}</li>
+			<li class='right'>
+				{{form.cedula}}<label class="req">*</label>
+				<input type="button" name='btnBuscar' id='btnBuscar' value='buscar' title='{% trans "buscar alumnos registrados" %}' onclick="Dajax.academico_buscarAlumno({'cedula':document.getElementById('cedula').value});"/>
+				<div class="errores" id="e1">{{form.cedula.errors}}</div>
+			</li>
+			<li class='left'>{{form.fingreso.label}}</li>
+			<li class='right'>
+				{{form.fingreso}}&#160;<img src="../../media/images/base/calendar.png" id="calfingreso" style="cursor:pointer"><label class="req">*</label>
+				<div class="errores" id="e2">{{form.fingreso.errors}}</div>
+			</li>
+			<li class='left'>{{form.observaciones.label}}</li>
+			<li class='right'>
+				{{form.observaciones}}<label class="req">*</label>
+				<div class="errores" id="e3">{{form.observaciones.errors}}</div>
+			</li>
+			<li class='left'>{{form.tliceo.label}}
+			<li class='right'>
+				{{form.tliceo}}
+				<div class="errores" id="e4">{{form.tliceo.errors}}</div>
+			</li>
+			<li class='left'>{{form.pais.label}}
+			<li class='right'>
+				{{form.pais}}<label class="req">*</label>
+				<div class="errores" id="e5">{{form.pais.errors}}</div>
+			</li>
+			<li class='left'>{{form.municipio.label}}</li>
+			<li class='right'>
+				{{form.municipio}}<label class="req">*</label>
+				<div class="errores" id="e6">{{form.municipio.errors}}</div>
+			</li>
+			<li class='left'>{{form.trimestre.label}}</li>
+			<li class='right'>
+				{{form.trimestre}}<label class="req">*</label>
+				<div class="errores" id="e7">{{form.trimestre.errors}}</div>
+			</li>
+			<li class='left'>{{form.sistema_estudio.label}}</li>
+			<li class='right'>
+				{{form.sistema_estudio}}<label class="req">*</label>
+				<div class="errores" id="e8">{{form.sistema_estudio.errors}}</div>
+			</li>
+		</ul>
+	</div>
+	<div id="column_right">
+		<ul>
+			<li class='left'>{{form.nombre.label}}</li>
+			<li class='right'>
+				{{form.nombre}}<label class="req">*</label>
+				<div class="errores" id="e9">{{form.nombre.errors}}</div>
+			</li>
+			<li class='left'>{{form.profesional.label}}</li>
+			<li class='right'>
+				{{form.profesional}}<label class="req">*</label>
+				<div class="errores" id="e10">{{form.profesional.errors}}</div>
+			</li>
+			<li class='left'>{{form.nliceo.label}}
+			<li class='right'>
+				{{form.nliceo}}
+				<div class="errores" id="e11">{{form.nliceo.errors}}</div>
+			</li>
+			<li class='left'>{{form.serialtitulo.label}}</li>
+			<li class='right'>
+				{{form.serialtitulo}}<label class="req">*</label>
+				<div class="errores" id="e12">{{form.serialtitulo.errors}}</div>
+			</li>
+			<li class='left'>{{form.estado.label}}
+			<li class='right'>
+				{{form.estado}}<label class="req">*</label>
+				<div class="errores" id="e13">{{form.estado.errors}}</div>
+			</li>
+			<li class='left'>{{form.parroquia.label}}</li>
+			<li class='right'>
+				{{form.parroquia}}<label class="req">*</label>
+				<div class="errores" id="e14">{{form.parroquia.errors}}</div>
+			</li>
+			<li class='left'>{{form.condicion_ingreso.label}}</li>
+			<li class='right'>
+				{{form.condicion_ingreso}}<label class="req">*</label>
+				<div class="errores" id="e15">{{form.condicion_ingreso.errors}}</div>
+			</li>
+			<li class='left'>{{form.titulo_bachiller.label}}</li>
+			<li class='right'>
+				{{form.titulo_bachiller}}<label class="req">*</label>
+				<div class="errores" id="e16">{{form.titulo_bachiller.errors}}</div>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base/index.html" %}
+{% load i18n %}
+{% block ruta %}&#160;>&#160;<a href="{% url usuario.views.inicio %}">{% trans "seguridad" %}</a>{% endblock %}
+{% block titulo %}{% trans "Módulo - Seguridad" %}{% endblock %}
+{% block descripcionApp %}
+	<p>{% trans "En este módulo el usuario podrá registrar los datos para la configuración de la seguridad en los procesos de la aplicación" %}</p>
+{% endblock %}
+{% block menu %}
+	{% if username.is_staff %}
+		<div class='itemMnu'>
+			<img class="imgItem" src="../../media/images/usuario/seguridad.png" title='{% trans "acceso al módulo de registro de validación de seguridad" %}' onclick="window.location='{% url usuario.views.registrarSeguridadIngAlumnos %}'">
+			<span>{% trans "inscripción alumnos" %}</span>	
+		</div>
+		<div class="sep">&#160</div>
+		<div class='itemMnu'>
+			<img class="imgItem" src="../../media/images/usuario/usuario.png" title='{% trans "acceso al módulo de registro de usuarios" %}' onclick="window.location='{% url usuario.views.registrarUsuario %}'">
+			<span>{% trans "usuario" %}</span>
+		</div>
+		<div class="sep">&#160</div>
+		<div class='itemMnu'>
+			<img class="imgItem" src="../../media/images/usuario/permisos.png" title='{% trans "acceso al módulo de registro de permisos otorgados a los usuarios" %}' onclick="window.location='{% url usuario.views.registrarPermisosUsuario %}'">
+			<span>{% trans "permiso" %}</span>
+		</div>
+		<div class="sep">&#160</div>
+		<div class='itemMnu'>
+			<img class="imgItem" src="../../media/images/base/logs.png" title='{% trans "acceso al módulo de eventos logs" %}' onclick="window.location='{% url comun.views.auditoriaLogs %}'">
+			<span>{% trans "eventos log" %}</span>
+		</div>
+		<div class="sep">&#160</div>
+	{% endif %}
+	<div class='itemMnu'>
+		<img class="imgItem" src="../../media/images/usuario/clave.png" title='{% trans "acceso al módulo de cambio de clave o contraseña del usuario" %}' onclick="window.location='{% url usuario.views.registrarModContrasenha %}'">
+		<span>{% trans "contraseña" %}</span>
+	</div>
+{% endblock %}

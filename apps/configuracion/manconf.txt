@@ -1,0 +1,34 @@
+										Script de Instalación del Proyecto Socio Tecnológico Esmayoy
+
+NOMBRE
+	crearkey.py - Permite generar un par vde claves GPG para el cifrado y descifrado a los datos de conexión de la Base de Datos
+
+SINOPSIS
+	crearkey.py [opciones]
+
+DESCRIPCION
+	El comando crearkey.py es utilizado para realizar el proceso de generación de claves para cifrar y descifrar datos de importancia para el Proyecto Socio Tecnológico Esmayoy. Para ejecutarlo debe escribir el comando python crearkey.py desde la consola de comandos, seguido de las opciones obligatorias que especifican los datos de conexión al servidor de base de datos.
+
+OPCIONES
+	Las opciones que pueden suministrarse como parámetros a este script para la creación del par de claves GPG son:
+
+	--help
+		Muestra un listado de opciones que pueden ser suministradas al script como paramétros
+
+	-m, --man
+		Permite mostrar esta documentación
+
+	-h[nombre]
+                Indica el nombre del servidor de base de datos a utilizar. Este parámetro es obligatorio. Ej. -hlocalhost
+
+        -P[puerto]
+                Establece el puerto de conexión a la base de datos. Este parámetro es obligatorio. Ej. -P5432
+
+        -b[nombre]
+                Indica el nombre de la base de datos a utilizar en el PST. Este parámetro es obligatorio. Ej. -besmayoy
+
+        -u[nombre]
+                Establece el nombre de usuario con permisos para la conexión a la base de datos. Este parámetro es obligatorio. Ej. -uesmayoy
+
+        -p[password]
+                Indica la contraseña del usuario con acceso a la base de datos. Este parámetro es obligatorio. Ej. -pesmayoy

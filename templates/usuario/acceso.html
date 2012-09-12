@@ -1,0 +1,139 @@
+{% extends "base/base_login.html" %}
+{% load i18n %}
+{% block titulo %}{% trans "Acceso al Sistema" %}{% endblock %}
+{% block head %}
+	<style type='text/css'>
+		input[type=button], input[type=submit] {
+			color:#000000;
+		}
+		
+		input[type=button]:hover, input[type=submit]:hover {
+			color:#1982B5;
+		}
+	</style>
+{% endblock head %}
+{% block formulario %}
+	<br>
+	<table width="80%" align='center' style="text-align: left;" border="0" cellpadding="0" cellspacing="0">
+		<col width="20%">
+		<col width="75%">
+		<col width="5%">
+		<tbody>
+			<tr>
+				<td style="vertical-align: top;">{{form.usuario.label}}</td>
+				<td style="vertical-align: top;">
+					{{form.usuario}}
+					<div class="errores" id="e1">{{form.usuario.errors}}</div>
+				</td>
+				<td style="vertical-align: top;"><label class="req">*</label> </td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;">{{form.contrasenha.label}}</td>
+				<td style="vertical-align: top;">
+					{{form.contrasenha}}
+					<div class="errores" id="e2">{{form.contrasenha.errors}}</div>
+				</td>
+				<td align='left'><label class="req">*</label> </td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;"></td>
+				<td style="vertical-align: top;">
+					<div id="divImgcaptcha">{{ imagen|safe }}</div>
+				</td>
+				<td style="vertical-align: top;"> </td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top;">{{form.captcha.label}}</td>
+				<td style="vertical-align: top;">
+					{{form.captcha}}
+					<div class="errores" id="e3">{{form.captcha.errors}}</div>
+					<div style="display:none;">
+						<input type="hidden" value="{{ imghash }}" name="imghash" id="imghash" readonly="true"/>
+						<input type="hidden" value="{{ valor }}" name="tmp" id="tmp" readonly="true" />
+					</div>
+				</td>
+				<td style="vertical-align: top;"><label class="req">*</label> </td>
+			</tr>
+			<tr><td colspan='3'>&#160;</td></tr>
+			<tr>
+				<td colspan='3' align="center" style="vertical-align: top;">
+					<input name="btnOK" id="btnOK" value='{% trans "OK" %}' onclick="this.form.action='{% url usuario.views.acceso %}'" type="submit">
+					&#160;&#160;&#160;
+					<input name="btnCancelar" id="btnCancelar" value='{% trans "Cancelar" %}' onclick="window.location='{% url usuario.views.acceso %}'" type="button">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type='text/javascript'>
+		$("button, input:submit, input:button").button();
+	</script>
+{% endblock %}
+
+<!--<div id="dialog-acceso" title='{% trans "Acceso al Sistema" %}' class="ui-dialog-content">
+		<p style="text-align:justify;">
+			<span class="ui-icon ui-icon-info" style="float:left; margin:0 7px 7px 0;"></span>
+			<table style="text-align: left; width: 300px;" border="0" cellpadding="0" cellspacing="0">
+				<col width="30%">
+				<col width="65%">
+				<col width="5%">
+				<tbody>
+					<tr>
+						<td style="vertical-align: top;" class="negrita">{{form.usuario.label}}</td>-->
+						<!--<td style="vertical-align: top;">
+							{{form.usuario}}
+							<div class="errores" id="e1">{{form.usuario.errors}}</div>
+						</td>
+						<td style="vertical-align: top;"><label class="req">*</label> </td>
+					</tr>
+					<tr>
+						<td style="vertical-align: top;" class="negrita">{{form.contrasenha.label}}</td>
+						<td style="vertical-align: top;">
+							{{form.contrasenha}}
+							<div class="errores" id="e2">{{form.contrasenha.errors}}</div>
+						</td>
+						<td style="vertical-align: top;"><label class="req">*</label> </td>
+					</tr>
+					<tr>
+						<td style="vertical-align: top;"></td>
+						<td style="vertical-align: top;">
+							<div id="divImgcaptcha">{{ imagen|safe }}</div>
+						</td>
+						<td style="vertical-align: top;"> </td>
+					</tr>
+					<tr>
+						<td style="vertical-align: top;" class="negrita">{{form.captcha.label}}</td>
+						<td style="vertical-align: top;">
+							{{form.captcha}}
+							<div class="errores" id="e3">{{form.captcha.errors}}</div>
+							<div style="display:none;">
+								<input type="hidden" value="{{ imghash }}" name="imghash" id="imghash" readonly="true"/>
+								<input type="hidden" value="{{ valor }}" name="tmp" id="tmp" readonly="true" />-->
+							<!--</div>
+						</td>
+						<td style="vertical-align: top; width: 15%;"><label class="req">*</label> </td>
+					</tr>
+				</tbody>
+			</table>
+		</p>
+	</div>
+	<script type="text/javascript">
+				$(function() {
+					$("#dialog-acceso").dialog('open');
+					$("#dialog-acceso").dialog({
+						resizable: false,
+						height:240,
+						width: 350,
+						modal: true,
+						buttons: {
+							'Aceptar': function() {
+								$("#frmAcces").attr("action",'{% url usuario.views.acceso %}'); 
+								/*document.getElementById('frmAcces').action='{% url usuario.views.acceso %}';*/
+								$("#frmAcces").submit();
+							},
+							'Cancelar': function() {
+								window.location='{% url usuario.views.acceso %}';
+							}
+						}
+					});
+				});
+			</script>-->

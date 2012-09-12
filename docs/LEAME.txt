@@ -1,0 +1,17 @@
+Proyecto Socio-Tecnológico ESMAYOY
+
+Prerequisitos:
+Para la correcta utilización de la aplicación se requiere tener instaladas las siguientes características
+
+* Framework Django v1.1.1 - http://www.djangoproject.com/download/1.1.1/tarball/
+* Librería de conexión a base de datos PostgreSQL para python (postgresql_psycopg2)
+* Librería de python (pyCaptcha) - http://pypi.python.org/pypi/PyCAPTCHA
+* Librería de python (Dajax v0.7.5.0) - http://code.google.com/p/dajaxproject/downloads/detail?name=dajax-0.7.5.0.tar.gz
+* Herramienta para generar claves (GnuPG) - http://gnupg.org
+* Librería de python para GnuPG (python-gnupg) - http://packages.python.org/python-gnupg
+
+Pasos para generar las claves y encriptar archivo de configuración:
+1. Ejecutar el script crearkey.py de la siguiente forma:
+python crearkey.py -hservidor -Ppuerto -bbasededatos -uUsuario -ppassword
+Se debe tomar en cuenta que para ejecutar dicho script es necesario estar ubicado en la carpeta configuración dentro de apps
+2. El script anterior crea un par de llaves que son necesarias para firmar, encriptar y desencriptar los datos de configuración del servidor
