@@ -1,4 +1,11 @@
 pasos a seguir para instalar esmayoy:
+- La aplicación ESMAYOY provee un script de instalación que permite instalar el sistema y las dependencias necesarias en unos sencillos pasos. Para ello se debe ejecutar el script (en la raíz del proyecto) como usuario administrador (root) de la siguiente forma:
+  python install.py [OPCIONES]
+  Para obtener un listado de opciones disponibles debe ejecutar el siguiente comando:
+  python install.py -h
+
+  En caso de utilizar la opción de instalación antes mencionada, se deberá obviar las opciones de instalación manuales que se presentan a continuación., y pasar a la opción indicada para la creación del par de claves GPG para la seguridad de la conexión a base de datos.
+
 - Descargar el framework DJango de la siguiente dirección: http://www.djangoproject.com/download/1.2.5/tarball/
 
 - Una vez descargado descomprimir el archivo con el siguiente comando:
@@ -20,7 +27,7 @@ pasos a seguir para instalar esmayoy:
 - descomprimir las librerías suministradas con la aplicación en la carpeta extapps de la siguiente forma:
   tar zxvf dajax-0.7.5.0.tar.gz
   tar zxvf pycaptcha-0.4.tar.gz
-  tar zxvf python-gnupg-0.2.5.tar.gz
+  tar zxvf python-gnupg-0.3.1.tar.gz
 
 - Instalar las librerías descomprimidas de la siguiente manera (entrando en cada una de las carpetas descomprimidas):
   sudo python setup.py install
@@ -39,15 +46,8 @@ pasos a seguir para instalar esmayoy:
   \q
   exit
 
-- Crear un archivo llamado servidorbd.txt en la carpeta apps/configuracion con la siguiente información (cada una en líneas separadas y sin espacios en blanco):
-  nombrebd
-  usuariobd
-  contraseñabd
-  servidorbd
-  puertobd
-
-- Una vez creado este archivo se debe ejecutar el script crearkey.py ubicado en la misma carpeta (apps/configuración):
-  python crearkey.py
+- Ejecutar el script crearkey.py ubicado en la misma carpeta (apps/configuración), e indicarle los datos de conexión a la base de datos. Para mayor información utilizar el comando --help:
+  python crearkey.py [COMANDOS]
   
 debe ser paciente ya que este procedimiento suele demorar un poco. Esto permite crear un par de claves gnupg que permiten cifrar y firmar el archivo de configuración de acceso a la base de datos.
 
